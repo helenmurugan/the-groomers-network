@@ -1,0 +1,1 @@
+web: gunicorn groomers_network.wsgi

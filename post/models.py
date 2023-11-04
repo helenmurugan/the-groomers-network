@@ -20,13 +20,18 @@ class Post(models.Model):
         on_delete=models.CASCADE, 
         related_name="post_posts"
     )
-    content = models.TextField()
+    content = models.TextField(
+        blank=True,
+        null=True,
+    )
     featured_image = CloudinaryField(
         'image', 
         default='placeholder'
         )
     excerpt = models.TextField(
-        blank=True
+        blank=True,
+        null=True, 
+        max_length=200,
         )
     created_on = models.DateTimeField(
         auto_now_add=True
@@ -37,7 +42,8 @@ class Post(models.Model):
     likes = models.ManyToManyField(
         User, 
         related_name='post_likes', 
-        blank=True)
+        blank=True,
+        )
 
     class Meta:
         ordering = ["-created_on"]

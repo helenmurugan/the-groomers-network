@@ -11,7 +11,7 @@ class Profile(models.Model):
         verbose_name='User',
         help_text=(
             'format: required, unique=True'
-        )
+        ),
     )
     first_name = models.CharField(
         max_length=50,
@@ -20,7 +20,7 @@ class Profile(models.Model):
         verbose_name='First name',
         help_text=(
             'format: not required, max_length=50'
-        )
+        ),
     )
     last_name = models.CharField(
         max_length=50,
@@ -29,26 +29,22 @@ class Profile(models.Model):
         verbose_name='Last name',
         help_text=(
             'format: not required, max_length=50'
-        )
+        ),
     )
-    avatar = CloudinaryField(
-        'avatar',
-        folder='avatars',
+    company_name = models.TextField(
+        blank=True,
+        null=True, 
+        max_length=30,
+    )
+    location = models.TextField(
         blank=True,
         null=True,
+        max_length=30,
     )
-    company_name = models.TextField()
-    company_logo = CloudinaryField(
-        'image', 
-        default='placeholder'
-        )
-    location = TextField(
+    bio = models.TextField(
         blank=True,
-        null = True,
-    )
-    bio = TextField(
-        blank=True,
-        null = True,
+        null=True,
+        max_length=1000
     )
 
     def __str__(self):

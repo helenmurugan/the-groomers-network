@@ -6,10 +6,7 @@ class Post(models.Model):
     """Model for the posts"""
     title = models.CharField(
         max_length=200,
-        verbose_name="post",
-        help_text=(
-            'format: required, unique=False'
-        )
+        verbose_name="Title",
         )
     slug = models.SlugField(
         max_length=200, 

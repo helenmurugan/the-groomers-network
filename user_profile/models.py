@@ -9,34 +9,25 @@ class Profile(models.Model):
         on_delete=models.CASCADE,
         related_name='profile',
         verbose_name='User',
-        help_text=(
-            'format: required, unique=True'
-        ),
     )
     first_name = models.CharField(
         max_length=50,
         blank=True,
         null=True,
         verbose_name='First name',
-        help_text=(
-            'format: not required, max_length=50'
-        ),
     )
     last_name = models.CharField(
         max_length=50,
         blank=True,
         null=True,
         verbose_name='Last name',
-        help_text=(
-            'format: not required, max_length=50'
-        ),
     )
-    company_name = models.TextField(
+    company_name = models.CharField(
         blank=True,
         null=True, 
         max_length=30,
     )
-    location = models.TextField(
+    location = models.CharField(
         blank=True,
         null=True,
         max_length=30,

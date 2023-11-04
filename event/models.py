@@ -7,9 +7,6 @@ class Event(models.Model):
     title = models.CharField(
             max_length=200,
             verbose_name="event",
-            help_text=(
-                'format: required, unique=False'
-            ),
         )
     slug = models.SlugField(
         max_length=200, 
@@ -39,14 +36,13 @@ class Event(models.Model):
     updated_on = models.DateTimeField(
         auto_now=True
         )
-    location = models.TextField(
+    location = models.CharField(
         blank=True,
         null=True, 
         max_length=30,
     )
-    date = models.DateTimeField(
-    )
-    time = models.DateTimeField(
+    date_time = models.DateTimeField(
+        verbose_name='Date and Time'
     )
     likes = models.ManyToManyField(
         User, 

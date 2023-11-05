@@ -59,6 +59,8 @@ class Comment(models.Model):
         related_name="comments"
         )
     name = models.CharField(
+        blank=True,
+        null=True,
         max_length=80
         )
     body = models.TextField()

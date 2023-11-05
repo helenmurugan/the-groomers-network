@@ -58,23 +58,32 @@ class Event(models.Model):
     def number_of_likes(self):
         return self.likes.count()
 
-# class Comment(models.Model):
 
-#     post = models.ForeignKey(
-#         Event, 
-#         on_delete=models.CASCADE,
-#         related_name="comments"
-#         )
-#     body = models.TextField()
-#     created_on = models.DateTimeField(
-#         auto_now_add=True
-#     )
+class Comment(models.Model):
 
-#     class Meta:
-#         ordering = ["created_on"]
+    post = models.ForeignKey(
+        Event, 
+        on_delete=models.CASCADE,
+        related_name="comments"
+        )
+    name = models.CharField(
+        blank=True,
+        null=True,
+        max_length=80
+        )
+    body = models.TextField()
+    created_on = models.DateTimeField(
+        auto_now_add=True
+    )
+    approved = models.BooleanField(default=True)
 
-#     def __str__(self):
-#         return f"Comment {self.body} by {self.name}"
+    class Meta:
+        ordering = ["created_on"]
+
+    def __str__(self):
+        return f"Comment {self.body} by {self.name}"
+
+
 
 
 

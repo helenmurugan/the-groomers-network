@@ -32,7 +32,11 @@ SECRET_KEY = 'SECRET_KEY'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-helenmuruga-thegroomers-3jiflqj5wgs.ws-eu105.gitpod.io', 'localhost', 'the-groomers-network-96ece9118f5d.herokuapp.com']
+ALLOWED_HOSTS = [
+    '8000-helenmuruga-thegroomers-3jiflqj5wgs.ws-eu106.gitpod.io', 
+    'localhost', 
+    'the-groomers-network-96ece9118f5d.herokuapp.com'
+    ]
 
 
 # Application definition

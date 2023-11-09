@@ -6,7 +6,7 @@ body {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #19747E;
 }
 
 .thin {
@@ -22,7 +22,7 @@ body {
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #E2E2E2;
 }
 
 .card {
@@ -135,4 +135,9 @@ body {
     color: #E84610;
     background: transparent;
     border: none;
+}
+
+/* footer */
+.teal-bg {
+    background: #19747E
 }

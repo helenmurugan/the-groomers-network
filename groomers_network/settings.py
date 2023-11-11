@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     'event',
     'post',
     'user_profile',
+    'pages',
 ]
 
 SITE_ID = 1

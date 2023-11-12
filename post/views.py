@@ -5,6 +5,9 @@ from .models import Post
 from .forms import CommentForm
 
 class PostList(generic.ListView):
+    """
+    View for displaying a list of posts
+    """
     model = Post
     queryset = Post.objects.order_by("-created_on")
     template_name = "index.html"
@@ -12,8 +15,13 @@ class PostList(generic.ListView):
 
 
 class PostDetail(View):
-
+    """
+    View for displaying a selected post.
+    """
     def get(self, request, slug, *args, **kwargs):
+        """
+        Retrieve and display a post.
+        """
         queryset = Post.objects
         post = get_object_or_404(queryset, slug=slug)
         comments = post.comments.filter(approved=True).order_by("-created_on")
@@ -33,9 +41,12 @@ class PostDetail(View):
         )
 
     def post(self, request, slug, *args, **kwargs):
+        """
+        Handle comments on posts and render the post_detail view.
+        """
         queryset = Post.objects
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.filter(approved=True).order_by("-created_on")
+        comments = post.comments.all().order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -63,8 +74,14 @@ class PostDetail(View):
         )
 
 class PostLike(View):
+    """
+    View to toggle likes on posts.
+    """
     
     def post(self, request, slug, *args, **kwargs):
+        """
+        Toggle likes on posts.
+        """
         post = get_object_or_404(Post, slug=slug)
         if post.likes.filter(id=request.user.id).exists():
             post.likes.remove(request.user)

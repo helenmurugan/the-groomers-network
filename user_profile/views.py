@@ -21,7 +21,7 @@ class ProfileView(View):
             }
             return render(
                 request,
-                'user_profile/my_profile.html',
+                'my_profile.html',
                 context
             )
         else:

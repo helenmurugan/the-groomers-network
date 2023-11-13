@@ -3,7 +3,9 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 class Post(models.Model):
-
+    """
+    Model for user posts
+    """
     title = models.CharField(
         max_length=200,
         verbose_name="Title",
@@ -52,6 +54,9 @@ class Post(models.Model):
         return self.likes.count()
 
 class Comment(models.Model):
+    """
+    Model for comments 
+    """
 
     post = models.ForeignKey(
         Post, 
@@ -73,6 +78,9 @@ class Comment(models.Model):
         ordering = ["created_on"]
 
     def __str__(self):
+        """
+        Returns string for comment
+        """
         return f"Comment {self.body} by {self.name}"
 
 

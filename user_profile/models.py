@@ -3,7 +3,9 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 class Profile(models.Model):
-    """Model for the User_profile"""
+    """
+    Model for the user profiles
+    """
     user = models.OneToOneField(
         User,
         on_delete=models.CASCADE,
@@ -39,6 +41,9 @@ class Profile(models.Model):
     )
 
     def __str__(self):
+        """
+        Returns a string representation of the user's name
+        """
         if self.first_name and self.last_name:
             return f'{self.first_name} {self.last_name}'
         if self.first_name:

@@ -3,6 +3,9 @@ from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
 class Event(models.Model):
+    """
+    Model for an event
+    """
     title = models.CharField(
             max_length=200,
             verbose_name="event",
@@ -53,13 +56,22 @@ class Event(models.Model):
         ordering = ["-created_on"]
 
     def __str__(self):
+        """
+        Returns string for event title/name
+        """
         return self.title
 
     def number_of_likes(self):
+        """
+        Returns number of likes
+        """
         return self.likes.count()
 
 
 class Comment(models.Model):
+    """
+    Model for comments 
+    """
 
     post = models.ForeignKey(
         Event, 
@@ -81,6 +93,9 @@ class Comment(models.Model):
         ordering = ["created_on"]
 
     def __str__(self):
+        """
+        Returns string for comment
+        """
         return f"Comment {self.body} by {self.name}"
 
 

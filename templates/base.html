@@ -44,7 +44,7 @@
                         <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'my_profile' %}">My Profile</a>
+                        <a class="nav-link" href="{% url 'my_profile' user=request.user %}">My Profile {{request.user.email}}</a>
                     </li>
                     {% else %}
                     <li class="nav-item">

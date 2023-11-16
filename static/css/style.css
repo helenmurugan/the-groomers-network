@@ -146,6 +146,14 @@ body {
     background: transparent;
     border: none;
 }
+/* my_profile */
+.profile-card {
+    background-color: aliceblue;
+}
+
+.big {
+    font-size: 5rem;
+}
 
 /* footer */
 .teal-bg {

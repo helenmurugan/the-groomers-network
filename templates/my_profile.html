@@ -4,16 +4,35 @@
 
 {% block content %}
 <section>
-    <div>
-        
-       <h1>hello this is my profile</h1>
-       {{user_profile.first_name}}
-       {{user_profile.last_name}}
-       {{user_profile.company_name}}
-
-
-
-           
+    <div class="container my-5 py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8 col-lg-7">
+                <div class="profile-card" style="border-radius: 1rem;">
+                    <div class="text-center mt-4">
+                        <h1 class="card-body teal-text big"><i class="fa-solid fa-user"></i></h1>
+                    </div>
+                    <div class=card-body>
+                        <div class="text-center mt-4">
+                            <h5 class="mb-2 teal-text">Username</h5>
+                            <p class="grey-text">{{ request.user.username }}</p>
+                            <h5 class="mb-2 teal-text">Full Name</h5>
+                            <p class="grey-text">{{user_profile.first_name}} {{user_profile.last_name}}</p>
+                            <h5 class="mb-2 teal-text">Company Name</h5>
+                            <p class="grey-text">{{user_profile.company_name}}</p>
+                            <h5 class="mb-2 teal-text">Location</h5>
+                            <p class="grey-text">{{user_profile.location}}</p>
+                            <h5 class="mb-2 teal-text">Bio</h5>
+                            <p class="grey-text">{{user_profile.bio}}</p>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-primary mb-3">Edit Profile</a>
+                        <a href="#" class="btn btn-danger mb-3">Delete Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
+
 </section>
 {% endblock %}

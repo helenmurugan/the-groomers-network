@@ -42,10 +42,10 @@
                         <a class="nav-link" href="{% url 'event' %}">Events</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link" href="{% url 'my_profile' user=request.user %}">My Profile</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'my_profile' user=request.user %}">My Profile  <i class="fa-solid fa-user"></i></a>
+                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
                     </li>
                     {% else %}
                     <li class="nav-item">

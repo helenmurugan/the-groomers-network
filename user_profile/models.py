@@ -17,6 +17,7 @@ class Profile(models.Model):
         blank=True,
         null=True,
         verbose_name='First name',
+        default='',
     )
     last_name = models.CharField(
         max_length=50,

@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
+from django.views.generic import UpdateView
 from .models import Profile
 from .forms import ProfileForm 
 
@@ -31,15 +32,18 @@ class ProfileView(View):
                 'account/login.html'
             )
 
-class ProfileUpdate(View):
+            # i dont think i need the if/else statement here now because the profile link isnt there if not authenticated
+
+class ProfileUpdate(UpdateView):
     """
     View for updating my profile
-    """
 
-class ProfileCreate(View):
     """
-    View for creating my profile
-    """
+    model = Profile
+    form_class = ProfileForm
+    template_name = "my_profile_update.html"
+    success_url ="/"
+
 
 class ProfileDelete(View):
     """

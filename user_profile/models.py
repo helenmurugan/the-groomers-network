@@ -23,21 +23,25 @@ class Profile(models.Model):
         blank=True,
         null=True,
         verbose_name='Last name',
+        default='',
     )
     company_name = models.CharField(
         blank=True,
         null=True, 
         max_length=30,
+        default='',
     )
     location = models.CharField(
         blank=True,
         null=True,
         max_length=30,
+        default=''
     )
     bio = models.TextField(
         blank=True,
         null=True,
-        max_length=1000
+        max_length=1000,
+        default='',
     )
 
     def __str__(self):

@@ -1,11 +1,11 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from .models import Profile
-
+from .forms import ProfileForm 
 
 class ProfileView(View):
     """
-    View for the profile page.
+    View for reading the profile page.
     """
     def get(self, request, *args, **kwargs):
         """
@@ -30,4 +30,19 @@ class ProfileView(View):
                 request,
                 'account/login.html'
             )
+
+class ProfileUpdate(View):
+    """
+    View for updating my profile
+    """
+
+class ProfileCreate(View):
+    """
+    View for creating my profile
+    """
+
+class ProfileDelete(View):
+    """
+    View for deleting my profile
+    """
  

@@ -9,10 +9,11 @@
             <div class="col-md-8 col-lg-7">
                 <div class="profile-card" style="border-radius: 1rem;">
                     <div class="text-center">
-                        <h1 class="card-body teal-text big-fa"><i class="fa-solid fa-user"></i></h1>
+                        <h1 class="card-body teal-text">EDIT PROFILE</h1>
                     </div>
                     <div class=card-body>
-                        <div class="text-center">
+                        <form class="text-center" method="POST">
+                        <div >
                             <h5 class="mb-2 teal-text">Username</h5>
                             <p class="grey-text">{{ request.user.username }}</p>
                             <h5 class="mb-2 teal-text">Full Name</h5>
@@ -23,10 +24,10 @@
                             <p class="grey-text">{{user_profile.location}}</p>
                             <h5 class="mb-2 teal-text">Bio</h5>
                             <p class="grey-text">{{user_profile.bio}}</p>
-                        </div>
+                        </form>
                     </div>
                     <div class="text-center">
-                        <a href="#" class="btn btn-secondary mb-4">Edit Profile</a>
+                        <a href="{% url 'my_profile_update' %}" class="btn btn-secondary mb-4">Edit Profile</a>
                         <a href="#" class="btn btn-danger mb-4">Delete Profile</a>
                     </div>
                 </div>
@@ -36,6 +37,3 @@
 
 </section>
 {% endblock %}
-
-<!-- <a href="{% url 'my_profile_update' %}" class="btn btn-secondary mb-4">Edit Profile</a>
-<a href="{% url 'my_profile_delete' %}" class="btn btn-danger mb-4">Delete Profile</a> -->

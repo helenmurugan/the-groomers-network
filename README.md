@@ -15,23 +15,32 @@ however, The Groomer's Network provides a dedicated setting that encourages a mo
 
 
 
-### Target Audience
+## Target Audience
 
 The target audience for this website is all pet grooming professionals.
 
-### User Stories
+## User Stories
 
-#### First Time Visitor
-
-Table
-
-#### Regular User
+### First Time Visitor
 
 Table
 
-#### Manager / Admin
+### Regular User
 
 Table
+
+### Manager / Admin
+
+Table
+
+## Credits
+- Boilerplate code, navbar and footer copied and modified from Code Institute's walkthrough blog project
+- Inspiration on structure and design of templates taken from Kim Bergstroem Gamer's Insight blog project.
+- Signals code taken from Juliia Konovalova e-commerce project.
+- Excellent mentoring and expert guidance from Juliia Konovalova
+
+
+
 
 
 

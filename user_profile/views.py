@@ -42,7 +42,7 @@ class ProfileUpdate(UpdateView):
     model = Profile
     form_class = ProfileForm
     template_name = "my_profile_update.html"
-    success_url ="/"
+    success_url ="/user_profile/<str:user>"
 
 
 class ProfileDelete(View):

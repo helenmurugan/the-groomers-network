@@ -12,20 +12,14 @@ class Profile(models.Model):
         related_name='profile',
         verbose_name='User',
     )
-    first_name = models.CharField(
+    full_name = models.CharField(
         max_length=50,
         blank=True,
         null=True,
-        verbose_name='First name',
-        default='',
+        verbose_name='Full name',
+        default=' ',
     )
-    last_name = models.CharField(
-        max_length=50,
-        blank=True,
-        null=True,
-        verbose_name='Last name',
-        default='',
-    )
+    
     company_name = models.CharField(
         blank=True,
         null=True, 
@@ -38,6 +32,7 @@ class Profile(models.Model):
         max_length=30,
         default=''
     )
+    
     bio = models.TextField(
         blank=True,
         null=True,
@@ -45,12 +40,12 @@ class Profile(models.Model):
         default='',
     )
 
-    def __str__(self):
-        """
-        Returns a string representation of the user's name
-        """
-        if self.first_name and self.last_name:
-            return f'{self.first_name} {self.last_name}'
-        if self.first_name:
-            return self.first_name
-        return self.user.username
+    # def __str__(self):
+    #     """
+    #     Returns a string representation of the user's name
+    #     """
+    #     if self.first_name and self.last_name:
+    #         return f'{self.first_name} {self.last_name}'
+    #     if self.first_name:
+    #         return self.first_name
+    #     return self.user.username

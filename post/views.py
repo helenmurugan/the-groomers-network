@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
+from django.views.generic import CreateView
 from django.http import HttpResponseRedirect
 from .models import Post
-from .forms import CommentForm
+from .forms import PostForm, CommentForm
 
 class PostList(generic.ListView):
     """
@@ -89,4 +90,16 @@ class PostLike(View):
             post.likes.add(request.user)
 
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+class PostCreate(CreateView):
+    """
+    View for creating a post
+    """
+    model = Post
+    template_name = "post_create.html"
+    form_class = PostForm
+    success_url = "/"
+
+    
 

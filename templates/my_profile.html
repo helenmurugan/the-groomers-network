@@ -16,7 +16,7 @@
                             <h5 class="mb-2 teal-text">Username</h5>
                             <p class="grey-text">{{ request.user.username }}</p>
                             <h5 class="mb-2 teal-text">Full Name</h5>
-                            <p class="grey-text">{{user_profile.first_name}} {{user_profile.last_name}}</p>
+                            <p class="grey-text">{{user_profile.full_name}}</p>
                             <h5 class="mb-2 teal-text">Company Name</h5>
                             <p class="grey-text">{{user_profile.company_name}}</p>
                             <h5 class="mb-2 teal-text">Location</h5>
@@ -32,7 +32,6 @@
             </div>
         </div>
     </div>
-
 </section>
 {% endblock %}
 

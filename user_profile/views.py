@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
-from django.views.generic import UpdateView, DeleteView
+from django.views.generic import UpdateView
 from .models import Profile
 from .forms import ProfileForm 
 
@@ -45,11 +45,13 @@ class ProfileUpdate(UpdateView):
     success_url ="/user_profile/<str:user>"
 
 
-class ProfileDelete(DeleteView):
-    """
-    View for deleting a profile
-    """
-    model = Profile
-    success_url ="/"
-    template_name = "my_profile_delete.html"
+
+
+
+
+
+
+
+
+
  

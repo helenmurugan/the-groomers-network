@@ -1,9 +1,12 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.views.generic import CreateView
+from django.views.generic import CreateView, UpdateView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.utils.text import slugify
 from django.http import HttpResponseRedirect
 from .models import Post
 from .forms import PostForm, CommentForm
+
 
 class PostList(generic.ListView):
     """
@@ -92,14 +95,41 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class PostCreate(CreateView):
+class PostCreate(LoginRequiredMixin, CreateView):
     """
     View for creating a post
     """
     model = Post
     template_name = "post_create.html"
     form_class = PostForm
-    success_url = "/"
+    success_url = "/posts/"
+
+    def form_valid(self, form):
+        """
+        Custom logic to handle form validation when creating a new blog post
+        """
+        form.instance.created_by = self.request.user
+        form.instance.author_id = self.request.user.pk
+        form.instance.slug = slugify(form.instance.title)
+        return super().form_valid(form)
+
+
+class PostUpdate(LoginRequiredMixin, UpdateView):
+    """
+    View for updating a post
+    """
+    model = Post
+    template_name = "post_update.html"
+    form_class = PostForm
+    success_url = '/'
+    
+    def test_func(self):
+        """
+        Allow only if post is own post
+        """
+        post = self.get_object()
+        return self.request.user == post.author
+
 
     
 

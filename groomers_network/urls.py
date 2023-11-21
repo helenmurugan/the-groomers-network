@@ -26,3 +26,5 @@ urlpatterns = [
     path('', include('pages.urls'), name='landing_page'),
     path('user_profile/', include('user_profile.urls')),
 ]
+
+

@@ -22,7 +22,7 @@
                             <h5 class="mb-2 teal-text">Location</h5>
                             <p class="grey-text">{{user_profile.location}}</p>
                             <h5 class="mb-2 teal-text">Bio</h5>
-                            <p class="grey-text">{{user_profile.bio}}</p>
+                            <p class="grey-text">{{user_profile.bio | safe }}</p>
                         </div>
                     </div>
                     <div class="text-center">

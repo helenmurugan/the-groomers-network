@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
 from django.views.generic import CreateView, UpdateView
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.core.exceptions import PermissionDenied
 from django.utils.text import slugify
 from django.http import HttpResponseRedirect
 from .models import Post
@@ -104,14 +105,14 @@ class PostCreate(LoginRequiredMixin, CreateView):
     form_class = PostForm
     success_url = "/posts/"
 
-    def form_valid(self, form):
-        """
-        Custom logic to handle form validation when creating a new blog post
-        """
-        form.instance.created_by = self.request.user
-        form.instance.author_id = self.request.user.pk
-        form.instance.slug = slugify(form.instance.title)
-        return super().form_valid(form)
+    # def form_valid(self, form):
+    #     """
+    #     Custom logic to handle form validation when creating a new blog post
+    #     """
+    #     form.instance.created_by = self.request.user
+    #     form.instance.author_id = self.request.user.pk
+    #     form.instance.slug = slugify(form.instance.title)
+    #     return super().form_valid(form)
 
 
 class PostUpdate(LoginRequiredMixin, UpdateView):
@@ -121,14 +122,27 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
     model = Post
     template_name = "post_update.html"
     form_class = PostForm
-    success_url = '/'
+
+    def get_success_url(self):
+        return reverse('post_detail', kwargs={"slug": self.object.slug})
     
-    def test_func(self):
-        """
-        Allow only if post is own post
-        """
-        post = self.get_object()
-        return self.request.user == post.author
+
+    # def get(self, request, slug):
+    #     """
+    #     Function is to ensure only the author is able
+    #     to access the url to edit the post or else
+    #     an error message will be shown
+    #     """
+    #     post = get_object_or_404(Post, slug=slug)
+    #     user = request.user
+    #     if str(user.username) != str(post.author):
+    #         raise PermissionDenied
+    #     else:
+    #         return render(request, 'post_update.html', {
+    #             'post': post,
+    #             'slug': slug
+    #         })
+
 
 
     

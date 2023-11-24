@@ -1,11 +1,12 @@
 from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic, View
-from django.views.generic import CreateView, UpdateView
+from django.views.generic import CreateView, UpdateView, DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.core.exceptions import PermissionDenied
 from django.utils.text import slugify
 from django.http import HttpResponseRedirect
-from .models import Post
+from django.urls import reverse_lazy
+from .models import Post, Comment
 from .forms import PostForm, CommentForm
 
 
@@ -144,6 +145,24 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
     #         })
 
 
+class PostDelete(LoginRequiredMixin, DeleteView):
+    """
+    View for deleting a post
+    """
+    model = Post
+    template_name = "post_confirm_delete.html"
+    success_url = reverse_lazy("home")
 
+
+class CommentDelete(LoginRequiredMixin, DeleteView):
+    """
+    View for deleting a comment
+    """
+    model = Comment
+    template_name = "comment_confirm_delete.html"
+    success_url = reverse_lazy("home")
+    
+    # def get_success_url(self):
+    #     return reverse('post_detail', kwargs={"slug": self.object.slug})
     
 

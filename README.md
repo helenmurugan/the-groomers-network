@@ -4,8 +4,11 @@
 
 ![Main image](documentation/readme_header.png)
 
-The Groomer's Network is a professional networking site that allows pet groomers to network and access information about upcoming events. It has a login system and allows users to set up a profile. Authenticated users can create, read, update and delete their own posts and comments, as well as read and comment on other user's posts. 
-In the real world, pet groomers use private Facebook groups to network and promote their events. The Groomer's Network provides a dedicated setting that encourages a professional approach to networking.
+The Groomer's Network is a professional networking site that allows pet grooming professionals to network, ask each other for advice via posts, and access information about upcoming events. It has a registration/login system and allows users to set up a personalised profile. Authenticated users can create, read, update and delete their own posts and their own comments, as well as read, comment and like other user's posts. 
+
+In the real world, pet grooming professionals use private Facebook groups to network and promote their events. There are many such groups, covering a diverse range of themes most of which are very active. The groups are run by volunteers and can be very difficult to manage, this is in part due to Facebook not being a professional setting. Events such as grooming competitions, workshops and training are often promoted only on these private Facebook groups which can be restrictive.
+
+The Groomer's Network provides a dedicated setting that encourages a professional approach to networking. As the majority of pet grooming professionals work alone as small business owners and therefore the need for this type of platform is real, to enhance professional standards through sharing of information and to avoid isolation.
 
 ---
 ## Contents
@@ -15,6 +18,7 @@ In the real world, pet groomers use private Facebook groups to network and promo
     + [Target Audience](#target-audience)
     + [User Stories](#user-stories)
 - [Planning](#planning)
+    + [Agile methodology](#agile-methodology)
     + [Database](#database)
     + [Wireframes](#wireframes)
 - [Design](#design)
@@ -73,6 +77,8 @@ Admin/Manager
 Table
 
 ## Planning
+
+### Agile Methodology 
 
 ### Database
 Profile Table

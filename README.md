@@ -127,8 +127,9 @@ The application has been thoroughly tested and code validated. All testing docum
 
 ## Credits
 ### Code
-- Boilerplate code, navbar and footer copied and modified from Code Institute's walkthrough blog project
-- Signals code taken from Juliia Konovalova e-commerce project.
+- Boilerplate code, navbar and footer code modified from Code Institute's walkthrough blog project.
+- Signals code taken modified from Juliia Konovalova's PP5 e-commerce project.
+- 'get_success_url' taken from Kim Bergstroem's PP4 blog project.
 
 
 ### Media

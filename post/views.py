@@ -163,6 +163,7 @@ class CommentDelete(LoginRequiredMixin, DeleteView):
 
     
     def get_success_url(self):
-        return reverse('post_detail', args={self.object.id})
-    
+        #code taken from Kim Bergstroems PP4
+        post_slug = self.object.post.slug
+        return reverse("post_detail", kwargs={"slug": post_slug})
 

@@ -160,9 +160,9 @@ class CommentDelete(LoginRequiredMixin, DeleteView):
     """
     model = Comment
     template_name = "comment_confirm_delete.html"
-    success_url = reverse_lazy("home")
+
     
-    # def get_success_url(self):
-    #     return reverse('post_detail', kwargs={"slug": self.object.slug})
+    def get_success_url(self):
+        return reverse('post_detail', args={self.object.id})
     
 

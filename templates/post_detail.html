@@ -81,7 +81,8 @@
                     </p>
                     {{ comment.body | safe }}
                 </div>
-                <a href="{% url 'comment_confirm_delete' comment.slug %}" class="btn btn-danger mb-4">Delete Comment</a>
+               
+                <a href="{% url 'comment_confirm_delete' comment.id %}" class="btn btn-danger mb-4">Delete Comment</a>
                 {% endfor %}
             </div>
         </div>

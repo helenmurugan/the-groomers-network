@@ -106,6 +106,10 @@ class PostCreate(LoginRequiredMixin, CreateView):
     form_class = PostForm
     success_url = "/posts/"
 
+    def form_valid(self, form):
+        form.instance.author = self.request.user
+        return super().form_valid(form)
+
     # def form_valid(self, form):
     #     """
     #     Custom logic to handle form validation when creating a new blog post
@@ -127,6 +131,13 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
     def get_success_url(self):
         return reverse('post_detail', kwargs={"slug": self.object.slug})
     
+    #following code taken from Kim Bergstroem's PP4
+    # def test_func(self):
+    #     """
+    #     Check if the current user is the author of the post being updated
+    #     """
+    #     post = self.get_object()
+    #     return self.request.user == post.author
 
     # def get(self, request, slug):
     #     """
@@ -145,6 +156,8 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
     #         })
 
 
+    
+
 class PostDelete(LoginRequiredMixin, DeleteView):
     """
     View for deleting a post
@@ -161,9 +174,9 @@ class CommentDelete(LoginRequiredMixin, DeleteView):
     model = Comment
     template_name = "comment_confirm_delete.html"
 
-    
+
     def get_success_url(self):
-        #code taken from Kim Bergstroems PP4
+        #following code taken from Kim Bergstroem's PP4
         post_slug = self.object.post.slug
         return reverse("post_detail", kwargs={"slug": post_slug})
 

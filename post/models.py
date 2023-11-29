@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
+from django.utils.text import slugify
 
 class Post(models.Model):
     """
@@ -44,6 +45,18 @@ class Post(models.Model):
         blank=True,
         )
 
+
+    def save(self, *args, **kwargs):
+            if not self.slug:
+                # Generate a slug based on the username and post title
+                base_slug = slugify(self.title)
+                unique_slug = f"{base_slug}"  #not sure if User is correct variable here
+                self.slug = unique_slug
+
+            return super().save(*args, **kwargs)
+
+
+
     class Meta:
         ordering = ["-created_on"]
 
@@ -52,6 +65,7 @@ class Post(models.Model):
 
     def number_of_likes(self):
         return self.likes.count()
+
 
 class Comment(models.Model):
     """

@@ -32,7 +32,6 @@ class ProfileView(View):
                 'account/login.html'
             )
 
-            # i dont think i need the if/else statement here now because the profile link isnt there if not authenticated
 
 class ProfileUpdate(UpdateView):
     """

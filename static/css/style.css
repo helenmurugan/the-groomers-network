@@ -10,6 +10,10 @@ body {
     color: #19747E;
 }
 
+.helptext {
+    display: none;
+}
+
 /* Landing Page */
 .teal-text {
     color: #19747E

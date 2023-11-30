@@ -59,7 +59,7 @@ class PostDetail(View):
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
-            comment_form.instance.email = request.user.email
+            comment_form.instance.email = request.user.email #I dont think I need this here
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment.post = post
@@ -107,55 +107,43 @@ class PostCreate(LoginRequiredMixin, CreateView):
     success_url = "/posts/"
 
     def form_valid(self, form):
+        """
+        Adds logged in username as author for post
+        """
         form.instance.author = self.request.user
         return super().form_valid(form)
 
-    # def form_valid(self, form):
-    #     """
-    #     Custom logic to handle form validation when creating a new blog post
-    #     """
-    #     form.instance.created_by = self.request.user
-    #     form.instance.author_id = self.request.user.pk
-    #     form.instance.slug = slugify(form.instance.title)
-    #     return super().form_valid(form)
-
-
+    
 class PostUpdate(LoginRequiredMixin, UpdateView):
     """
     View for updating a post
     """
     model = Post
-    template_name = "post_update.html"
     form_class = PostForm
+    
+
+    # Code on url permission access validation is taken from
+    # DamianJacob: https://github.com/Damianjacob/MS4_breadit/tree/main/breadit
+    def get(self, request, slug):
+        """
+        Check if logged in user is post author.
+        """
+        post = get_object_or_404(Post, slug=slug)
+        user = request.user
+        if str(user.username) != str(post.author):
+            raise PermissionDenied
+        else:
+            return render(request, 'post_update.html', {
+                'post': post,
+                'slug': slug
+            })
+    
 
     def get_success_url(self):
+        """
+        Direct user to home page once post is updated successfully
+        """
         return reverse('post_detail', kwargs={"slug": self.object.slug})
-    
-    #following code taken from Kim Bergstroem's PP4
-    # def test_func(self):
-    #     """
-    #     Check if the current user is the author of the post being updated
-    #     """
-    #     post = self.get_object()
-    #     return self.request.user == post.author
-
-    # def get(self, request, slug):
-    #     """
-    #     Function is to ensure only the author is able
-    #     to access the url to edit the post or else
-    #     an error message will be shown
-    #     """
-    #     post = get_object_or_404(Post, slug=slug)
-    #     user = request.user
-    #     if str(user.username) != str(post.author):
-    #         raise PermissionDenied
-    #     else:
-    #         return render(request, 'post_update.html', {
-    #             'post': post,
-    #             'slug': slug
-    #         })
-
-
     
 
 class PostDelete(LoginRequiredMixin, DeleteView):
@@ -163,8 +151,24 @@ class PostDelete(LoginRequiredMixin, DeleteView):
     View for deleting a post
     """
     model = Post
-    template_name = "post_confirm_delete.html"
     success_url = reverse_lazy("home")
+
+
+    # Code on url permission access validation is taken from
+    # DamianJacob: https://github.com/Damianjacob/MS4_breadit/tree/main/breadit
+    def get(self, request, slug):
+        """
+        Check if logged in user is post author.
+        """
+        post = get_object_or_404(Post, slug=slug)
+        user = request.user
+        if str(user.username) != str(post.author):
+            raise PermissionDenied
+        else:
+            return render(request, 'post_confirm_delete.html', {
+                'post': post,
+                'slug': slug
+            })
 
 
 class CommentDelete(LoginRequiredMixin, DeleteView):
@@ -172,8 +176,20 @@ class CommentDelete(LoginRequiredMixin, DeleteView):
     View for deleting a comment
     """
     model = Comment
-    template_name = "comment_confirm_delete.html"
+    # template_name = "comment_confirm_delete.html"
 
+    def get(self, request, pk):
+        """
+        Check if logged in user is comment author.
+        """
+        comment = get_object_or_404(Comment)
+        user = request.user
+        if str(user.username) != str(comment.name):
+            raise PermissionDenied
+        else:
+            return render(request, 'comment_confirm_delete.html', {
+                'post': post,
+            })
 
     def get_success_url(self):
         #following code taken from Kim Bergstroem's PP4

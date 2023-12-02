@@ -62,6 +62,7 @@ class PostDetail(View):
             comment_form.instance.email = request.user.email 
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
+            comment.author = request.user
             comment.post = post
             comment.save()
         else:
@@ -177,21 +178,21 @@ class CommentDelete(LoginRequiredMixin, DeleteView):
     View for deleting a comment
     """
     model = Comment
-    # template_name = "comment_confirm_delete.html"
+    template_name = "comment_confirm_delete.html"
 
-    def get(self, request, pk):
-        """
-        Check if logged in user is comment author.
-        """
-        comment = get_object_or_404(Comment, id=pk)
-        user = request.user
-        if str(user.username) != str(comment.name):
-            raise PermissionDenied
-        else:
-            return render(request, 'comment_confirm_delete.html', {
-                'object': comment,
+    # def get(self, request, pk):
+    #     """
+    #     Check if logged in user is comment author.
+    #     """
+    #     comment = get_object_or_404(Comment, id=pk)
+    #     user = request.user
+    #     if str(user.username) != str(comment.name):
+    #         raise PermissionDenied
+    #     else:
+    #         return render(request, 'comment_confirm_delete.html', {
+    #             'object': comment,
                 
-            })
+    #         })
 
     def get_success_url(self):
         #following code taken from Kim Bergstroem's PP4

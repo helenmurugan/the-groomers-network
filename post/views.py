@@ -59,7 +59,7 @@ class PostDetail(View):
 
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
-            comment_form.instance.email = request.user.email #I dont think I need this here
+            comment_form.instance.email = request.user.email 
             comment_form.instance.name = request.user.username
             comment = comment_form.save(commit=False)
             comment.post = post
@@ -120,23 +120,24 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
     """
     model = Post
     form_class = PostForm
+    template_name = "post_update.html"
     
 
     # Code on url permission access validation is taken from
     # DamianJacob: https://github.com/Damianjacob/MS4_breadit/tree/main/breadit
-    def get(self, request, slug):
-        """
-        Check if logged in user is post author.
-        """
-        post = get_object_or_404(Post, slug=slug)
-        user = request.user
-        if str(user.username) != str(post.author):
-            raise PermissionDenied
-        else:
-            return render(request, 'post_update.html', {
-                'post': post,
-                'slug': slug
-            })
+    # def get(self, request, slug):
+    #     """
+    #     Check if logged in user is post author.
+    #     """
+    #     post = get_object_or_404(Post, slug=slug)
+    #     user = request.user
+    #     if str(user.username) != str(post.author):
+    #         raise PermissionDenied
+    #     else:
+    #         return render(request, 'post_update.html', {
+    #             'post': post,
+    #             'slug': slug
+    #         })
     
 
     def get_success_url(self):
@@ -182,13 +183,14 @@ class CommentDelete(LoginRequiredMixin, DeleteView):
         """
         Check if logged in user is comment author.
         """
-        comment = get_object_or_404(Comment)
+        comment = get_object_or_404(Comment, id=pk)
         user = request.user
         if str(user.username) != str(comment.name):
             raise PermissionDenied
         else:
             return render(request, 'comment_confirm_delete.html', {
-                'post': post,
+                'object': comment,
+                
             })
 
     def get_success_url(self):

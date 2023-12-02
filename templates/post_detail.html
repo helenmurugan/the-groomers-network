@@ -59,8 +59,10 @@
         </div>
     </div>
     <div class="text-center">
+        {% if post.author.id == request.user.id %}
         <a href="{% url 'post_update' post.slug %}" class="btn btn-secondary mb-4">Edit Post</a>
         <a href="{% url 'post_confirm_delete' post.slug %}" class="btn btn-danger mb-4">Delete Post</a>
+        {% endif %}
     </div>
     <div class="row">
         <div class="col">
@@ -81,8 +83,9 @@
                     </p>
                     {{ comment.body | safe }}
                 </div>
-               
+                {% if comment.author.id == request.user.id %}
                 <a href="{% url 'comment_confirm_delete' comment.id %}" class="btn btn-danger mb-4">Delete Comment</a>
+                {% endif %}
                 {% endfor %}
             </div>
         </div>

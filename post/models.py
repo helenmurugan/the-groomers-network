@@ -51,7 +51,6 @@ class Post(models.Model):
             return super().save(*args, **kwargs)
 
 
-
     class Meta:
         ordering = ["-created_on"]
 
@@ -76,6 +75,11 @@ class Comment(models.Model):
         blank=True,
         null=True,
         max_length=80
+        )
+    author = models.ForeignKey(
+        User, 
+        on_delete=models.CASCADE, 
+        related_name="post_comment"
         )
     body = models.TextField()
     created_on = models.DateTimeField(

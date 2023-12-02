@@ -6,6 +6,8 @@ from django.core.exceptions import PermissionDenied
 from django.utils.text import slugify
 from django.http import HttpResponseRedirect
 from django.urls import reverse_lazy
+from django.contrib import messages
+from django.contrib.messages.views import SuccessMessageMixin
 from .models import Post, Comment
 from .forms import PostForm, CommentForm
 
@@ -65,8 +67,11 @@ class PostDetail(View):
             comment.author = request.user
             comment.post = post
             comment.save()
+            messages.success(request, "Your comment has been published!")
         else:
             comment_form = CommentForm()
+
+        
 
 
         return render(
@@ -98,7 +103,7 @@ class PostLike(View):
         return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
-class PostCreate(LoginRequiredMixin, CreateView):
+class PostCreate(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     """
     View for creating a post
     """
@@ -106,6 +111,8 @@ class PostCreate(LoginRequiredMixin, CreateView):
     template_name = "post_create.html"
     form_class = PostForm
     success_url = "/posts/"
+    success_message = "Your post has been published!"
+    
 
     def form_valid(self, form):
         """
@@ -115,13 +122,14 @@ class PostCreate(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
     
-class PostUpdate(LoginRequiredMixin, UpdateView):
+class PostUpdate(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     """
     View for updating a post
     """
     model = Post
     form_class = PostForm
     template_name = "post_update.html"
+    success_message = "Your post has been updated!"
     
 
     # Code on url permission access validation is taken from
@@ -148,12 +156,18 @@ class PostUpdate(LoginRequiredMixin, UpdateView):
         return reverse('post_detail', kwargs={"slug": self.object.slug})
     
 
-class PostDelete(LoginRequiredMixin, DeleteView):
+class PostDelete(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
     """
     View for deleting a post
     """
     model = Post
     success_url = reverse_lazy("home")
+    success_message = "Your post has been deleted!"
+
+    def delete(self, request, *args, **kwargs):
+        obj = self.get_object()
+        messages.success(self.request, self.success_message % obj.__dict__)
+        return super(PostDelete, self).delete(request, *args, **kwargs)
 
 
     # Code on url permission access validation is taken from
@@ -179,6 +193,13 @@ class CommentDelete(LoginRequiredMixin, DeleteView):
     """
     model = Comment
     template_name = "comment_confirm_delete.html"
+    success_message = "Your comment has been deleted!"
+
+    def delete(self, request, *args, **kwargs):
+        obj = self.get_object()
+        messages.success(self.request, self.success_message % obj.__dict__)
+        return super(CommentDelete, self).delete(request, *args, **kwargs)
+
 
     # def get(self, request, pk):
     #     """

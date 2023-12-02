@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.views import generic, View
 from django.views.generic import UpdateView
+from django.contrib.messages.views import SuccessMessageMixin
 from .models import Profile
 from .forms import ProfileForm 
 
@@ -33,7 +34,7 @@ class ProfileView(View):
             )
 
 
-class ProfileUpdate(UpdateView):
+class ProfileUpdate(SuccessMessageMixin, UpdateView):
     """
     View for updating a profile
 
@@ -42,6 +43,7 @@ class ProfileUpdate(UpdateView):
     form_class = ProfileForm
     template_name = "my_profile_update.html"
     success_url ="/user_profile/<str:user>"
+    success_message = "Your profile has been updated!"
 
 
 

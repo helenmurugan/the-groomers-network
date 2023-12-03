@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 from django.utils.text import slugify
+from django.utils import timezone
 
 class Post(models.Model):
     """
@@ -40,12 +41,13 @@ class Post(models.Model):
         blank=True,
         )
 
-
+    #following code taken from Kim Bergstroem's PP4
     def save(self, *args, **kwargs):
             if not self.slug:
                 # Generate a slug based on the username and post title
                 base_slug = slugify(self.title)
-                unique_slug = f"{base_slug}"  #not sure if User is correct variable here
+                timestamp = timezone.now().strftime('%Y%m%d%H%M%S')
+                unique_slug = f"{base_slug}-{timestamp}"
                 self.slug = unique_slug
 
             return super().save(*args, **kwargs)

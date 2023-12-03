@@ -40,12 +40,3 @@ class Profile(models.Model):
         default='',
     )
 
-    # def __str__(self):
-    #     """
-    #     Returns a string representation of the user's name
-    #     """
-    #     if self.first_name and self.last_name:
-    #         return f'{self.first_name} {self.last_name}'
-    #     if self.first_name:
-    #         return self.first_name
-    #     return self.user.username

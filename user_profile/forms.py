@@ -3,7 +3,6 @@ from django import forms
 from django_summernote.widgets import SummernoteWidget
 
 
-
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile

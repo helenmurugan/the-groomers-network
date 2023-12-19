@@ -34,7 +34,7 @@ SECRET_KEY = 'SECRET_KEY'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-helenmuruga-thegroomers-3jiflqj5wgs.ws-eu106.gitpod.io', 
+    '8000-helenmuruga-thegroomers-3jiflqj5wgs.ws-eu107.gitpod.io', 
     'localhost', 
     'the-groomers-network-96ece9118f5d.herokuapp.com'
     ]
@@ -65,7 +65,7 @@ INSTALLED_APPS = [
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/posts/'
 LOGOUT_REDIRECT_URL = '/'
 
 MESSAGE_TAGS = {

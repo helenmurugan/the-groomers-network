@@ -46,19 +46,6 @@ class ProfileUpdate(SuccessMessageMixin, UpdateView):
     success_message = "Your profile has been updated!"
 
 
-    def form_valid(self, request):
-        form = ProfileForm(request.POST)
-        if form.is_valid():
-            messages.success(request, "Your profile is updated successfully!")
-            return HttpResponseRedirect(reverse_lazy("user_profile/<str:user>"))
-        else:
-            form = ProfileForm()
-
-        return render(request, 'my_profile_update.html', 
-        {
-            'form': form
-        }
-        )
 
 
 

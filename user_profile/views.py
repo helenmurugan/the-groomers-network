@@ -45,6 +45,16 @@ class ProfileUpdate(SuccessMessageMixin, UpdateView):
     success_url ="/user_profile/<str:user>"
     success_message = "Your profile has been updated!"
 
+    # def post(self, request):
+    #     """
+    #     Handles form validation for updating ProfileForm
+    #     """
+    #     profile_form = ProfileForm(data=request.POST)
+
+    #     if profile_form.is_valid():
+    #         profile_form.save()
+
+
 
 
 

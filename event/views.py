@@ -24,7 +24,7 @@ class EventDetail(View):
         """
         queryset = Event.objects
         post = get_object_or_404(queryset, slug=slug)
-        comments = post.comments.all().order_by("-created_on")
+        # comments = post.comments.all().order_by("-created_on")
         liked = False
         if post.likes.filter(id=self.request.user.id).exists():
             liked = True
@@ -34,7 +34,7 @@ class EventDetail(View):
             "event_detail.html",
             {
                 "event": post,
-                "comments": comments,
+                # "comments": comments,
                 "liked": liked
             },
         )

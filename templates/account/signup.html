@@ -1,28 +1,49 @@
 {% extends "base.html" %}
-
-{% load i18n %}
-
-{% block head_title %}{% trans "Signup" %}{% endblock %}
+{% load widget_tweaks %}
 
 {% block content %}
 <div class="container">
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <h3>{% trans "Sign Up" %}</h3>
-
-            <p>{% blocktrans %}Welcome to The Groomer's Network. Already have an account? Then please <a
-                    class="link" href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
+            <h3 class="text-center">Sign Up</h3>
+            <p class="text-center">Welcome to The Groomer's Network.<br>
+                Already have an account? Then please <a class="link" href="{{ login_url }}">sign in</a></p>
         </div>
     </div>
     <div class="row">
         <div class="col-md-8 mt-3 offset-md-2">
-            <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
+            <form class="signup text-center" id="signup_form" method="post" action="{% url 'account_signup' %}">
                 {% csrf_token %}
-                {{ form.as_p }}
+                {{ form.non_field_errors | safe }}
+                <input type="hidden" name="remember" value="true" />
+                <div>
+                    <div class="-space-y-px rounded-md shadow-sm">
+                        <div>
+                        {{ form.username.errors | safe }}
+                        <label for="username" class="sr-only">Username</label>
+                        {% render_field form.username %}
+                        </div>
+                        <div>
+                        {{ form.email.errors | safe }}
+                        <label for="email" class="sr-only">Username</label>
+                        {% render_field form.email %}
+                        </div>
+                        <div>
+                        {{ form.password1.errors | safe }}
+                        <label for="id_password1" class="sr-only">Password</label>
+                        {% render_field form.password1 %}
+                        </div>
+                        <div>
+                        {{ form.password2.errors | safe }}
+                        <label for="password2" class="sr-only">Password</label>
+                        {% render_field form.password2 %}
+                    </div>
+                </div>
+                </div>
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button class="btn btn-signup right" type="submit">{% trans "Sign Up" %} &raquo;</button>
+                <button class="btn btn-signup right" type="submit"></button>Sign Up</button>
             </form>
         </div>
     </div>

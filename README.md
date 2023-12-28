@@ -52,6 +52,7 @@ The Groomer's Network provides a dedicated setting that encourages a professiona
     + [Code](#code)
     + [Media](#media)
     + [Content](#content)
+    + [Documentation and Useful Blogs](#documentation-and-useful-blogs)
     + [Acknowledgements](#acknowledgents)
 
 
@@ -134,7 +135,8 @@ The application has been thoroughly tested and code validated. All testing docum
 
 ### Media
 ### Content
-### Documentation
+### Documentation and Useful Blogs
+https://builtwithdjango.com/blog/styling-authentication-pages
 ### Acknowledgents
 - Excellent mentoring and expert guidance from Juliia Konovalova
 - Inspiration on structure and design of templates taken from Kim Bergstroem Gamer's Insight blog project.

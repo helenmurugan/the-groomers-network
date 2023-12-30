@@ -10,8 +10,8 @@
                 Already have an account? Then please <a class="link" href="{{ login_url }}">sign in</a></p>
         </div>
     </div>
-    <div class="row text-center">
-        <div class="col-md-8 mt-3 offset-md-2">
+    <div class="row">
+        <div class="col-sm-3 offset-sm-3 col-lg-2 mt-3 offset-lg-5 col-md-5 offset-md-4">
             <form id="signup_form" method="post" action="{% url 'account_signup' %}">
                 {% csrf_token %}
                 {{ form.non_field_errors | safe }}
@@ -19,29 +19,31 @@
                 <div>
                     <div class="m-2">
                     {{ form.username.errors | safe }}
-                    <label for="username" class="sr-only">Username</label>
+                    <label class="float-left" for="username">Username</label><br>
                     {% render_field form.username %}
                     </div>
                     <div class="m-2">
                     {{ form.email.errors | safe }}
-                    <label for="email" class="sr-only">Email</label>
+                    <label for="email">Email</label><br>
                     {% render_field form.email %}
                     </div>
                     <div class="m-2">
                     {{ form.password1.errors | safe }}
-                    <label for="id_password1" class="sr-only">Password</label>
+                    <label for="id_password1">Password</label><br>
                     {% render_field form.password1 %}
                     </div>
                     <div class="m-2">
                     {{ form.password2.errors | safe }}
-                    <label for="password2" class="sr-only">Confirm Password</label>
+                    <label for="password2">Confirm Password</label><br>
                     {% render_field form.password2 %}
                 </div>
                 </div>
                 {% if redirect_field_value %}
                 <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
                 {% endif %}
-                <button class="btn btn-signup right m-2" type="submit">Sign Up</button>
+                <div class="text-center">
+                    <button class="btn btn-signup right m-2" type="submit">Sign Up</button>
+                </div>
             </form>
         </div>
     </div>

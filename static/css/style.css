@@ -8,6 +8,7 @@
     font-size: 1.4rem;
     font-weight: 700;
     color: #19747E;
+    margin-right: 20px;
 }
 
 .helptext {
@@ -74,7 +75,7 @@
 
 .post-link:hover,
 .page-link {
-    color: rgb(65, 64, 64);
+    color: #414040;
 }
 
 /* post detail and event detail */
@@ -135,4 +136,8 @@
 /* footer */
 .teal-bg {
     background: #19747E
+}
+
+#signup_form {
+    width: 200px;
 }

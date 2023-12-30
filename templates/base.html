@@ -27,9 +27,9 @@
     <nav class="navbar navbar-expand-lg navbar-light nav-bg">
         <div class="container-fluid line">
             {% if user.is_authenticated %}
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">The Groomer's Network</span></span></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">The Groomer's Network</span></a>
             {% else %}
-            <span class="brand">The Groomer's Network</span></span></a>
+            <span class="brand">The Groomer's Network</span>
             {% endif %}
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">

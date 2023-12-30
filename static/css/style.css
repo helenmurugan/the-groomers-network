@@ -132,12 +132,16 @@
     border: none;
     background: transparent;
 }
+/* sign-up */
+#signup_form {
+    width: 200px;
+}
 
 /* footer */
 .teal-bg {
     background: #19747E
 }
-
-#signup_form {
-    width: 200px;
+.icon-white {
+    color: white;
 }
+

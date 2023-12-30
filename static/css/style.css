@@ -1,4 +1,9 @@
-/* Navigation */
+/* main */
+.main-bg {
+    background-color: #E2E2E2;
+}
+
+/* navigation */
 body {
     background-color: #F9FAFC;
 }
@@ -14,7 +19,7 @@ body {
     display: none;
 }
 
-/* Landing Page */
+/* landing page */
 .teal-text {
     color: #19747E
 }
@@ -34,22 +39,16 @@ body {
     color: #19747E;
 }
 
-.thin {
-    font-weight: 300;
+/* profile */
+.profile-card {
+    background-color: aliceblue;
 }
 
-.light-bg {
-    background-color: #fff;
+.big-fa {
+    font-size: 5rem;
 }
 
-.dark-bg {
-    background-color: #445261;
-}
-
-.main-bg {
-    background-color: #E2E2E2;
-}
-
+/* index/post and event pages */
 .card {
     border: none;
     background-color: transparent;
@@ -73,6 +72,18 @@ body {
     text-transform: uppercase;
 }
 
+.post-link {
+    text-decoration: none;
+    color: #445261;
+}
+
+.post-link:hover,
+.page-link {
+    color: blue;
+}
+
+/* post detail and event detail */
+
 .masthead {
     margin-top: 10px;
     overflow: hidden;
@@ -88,7 +99,7 @@ body {
     position: relative;
 }
 
-.masthead-image {
+/* .masthead-image {
     position: relative;
     overflow: hidden;
 }
@@ -105,17 +116,7 @@ body {
     -moz-transform: skew(15deg);
     transform: skew(15deg);
     z-index: 100;
-}
-
-.post-link {
-    text-decoration: none;
-    color: #445261;
-}
-
-.post-link:hover,
-.page-link {
-    color: #E84610;
-}
+} */
 
 .post-title {
     margin-top: 20%;
@@ -127,36 +128,10 @@ body {
     color: lightgray;
 }
 
-.link {
-    color: blue;
-    text-decoration: none;
-}
-
-.link:hover,
-.link:active {
-    color: #445261;
-    text-decoration: underline;
-}
-
 .btn-like {
     color: #E84610;
     border: none;
     background: transparent;
-}
-
-.btn-like:hover,
-.btn-like:active {
-    color: #E84610;
-    background: transparent;
-    border: none;
-}
-/* my_profile */
-.profile-card {
-    background-color: aliceblue;
-}
-
-.big-fa {
-    font-size: 5rem;
 }
 
 /* footer */

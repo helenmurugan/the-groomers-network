@@ -2,49 +2,48 @@
 
 <div class="container-fluid masthead">
         <div class="row">
-            <div class="masthead-text">
-                <h1 class="post-title margin-left">{{ event.title }}</h1>
-                <h3 class="post-subtitle margin-left">{{ event.location }} </h3>
-                <h3 class="post-date margin-left">{{ event.date_time }}</h3>
-            </div>
-        </div>
-</div>
-<div class="container img-size">
-    {% if "placeholder" in event.featured_image.url %}
-    <img src="/static/images/labrador-in-the-bath.jpg" alt="placeholder image">
-    {% else %}
-    <img src=" {{ event.featured_image.url }}">
-    {% endif %}
-</div>
-<div class="container">
-    <div class="row">
-        <div class="card col-lg-8 offset-lg-2">
-            <div class="card-body">
-                <p class="card-text">
-                    {{ event.content | safe }}
-                </p>
-                <div class="row">
-                    <div class="col-2">
-                        <strong>
-                            {% if user.is_authenticated %}
-                            <form class="d-inline" action="{% url 'event_like' event.slug %}" method="POST">
-                                {% csrf_token %}
-                                {% if liked %}
-                                <button type="submit" name="event_id" value="{{event.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
-                                {% else %}
-                                <button type="submit" name="event_id" value="{{event.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
-                                {% endif %}
-                            </form>
-                            {% else %}
-                            <span class="text-secondary"><i class="far fa-heart"></i></span>
-                            {% endif %}
-                        <span class="text-secondary">{{ event.number_of_likes }} </span>
-                        </strong>
-                    </div>
+            <div class="card masthead-text">
+                <div class="card-body col-xl-5 offset-xl-3 col-md-8 offset-md-2">
+                    <h1 class="card-title">{{ event.title }}</h1>
+                    <h3 class="card-text">{{ event.location }} </h3>
+                    <h3 class="card-text">{{ event.date_time }}</h3>
                 </div>
             </div>
         </div>
-    </div>
 </div>
+
+<div class="card col-xl-5 offset-xl-3 col-md-8 offset-md-2">
+    {% if "placeholder" in event.featured_image.url %}
+    <img class="card-img-top" src="/static/images/labrador-in-the-bath.jpg" alt="placeholder image">
+    {% else %}
+    <img class="card-img-top" src=" {{ event.featured_image.url }}">
+    {% endif %}
+    <div class="card-body">
+        <p class="card-text">
+            {{ event.content | safe }}
+        </p>
+        <div class="row">
+            <div class="col-2">
+                <strong>
+                    {% if user.is_authenticated %}
+                    <form class="d-inline" action="{% url 'event_like' event.slug %}" method="POST">
+                        {% csrf_token %}
+                        {% if liked %}
+                        <button type="submit" name="event_id" value="{{event.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                        {% else %}
+                        <button type="submit" name="event_id" value="{{event.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                        {% endif %}
+                    </form>
+                    {% else %}
+                    <span class="text-secondary"><i class="far fa-heart"></i></span>
+                    {% endif %}
+                <span class="text-secondary">{{ event.number_of_likes }} </span>
+                </strong>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 
 {% endblock content %}

@@ -65,27 +65,30 @@
             </div>
         </div>
         <div>
-            <h3 class="card-text">Comments:</h3>
+            <!-- <h3 class="card-text">Comments:</h3> -->
             <div>
                 {% for comment in comments %}
                 <div class="comments" style="padding: 10px;">
                     <p class="font-weight-bold">
                         {{ comment.name }}
-                        <span class=" text-muted font-weight-normal">
+                        <span class="text-muted font-weight-normal">
                             {{ comment.created_on }}
                         </span> wrote:
                     </p>
                     {{ comment.body | safe }}
                 </div>
                 {% if comment.author.id == request.user.id %}
-                <a href="{% url 'comment_confirm_delete' comment.id %}" class="btn btn-danger mb-4">Delete Comment</a>
+                <a href="{% url 'comment_confirm_delete' comment.id %}" class="text-danger mb-4">Delete</a>
                 {% endif %}
+                <div>
+                    <hr>
+                </div>
                 {% endfor %}
             </div>
         </div>
         <div>
             {% if user.is_authenticated %}
-            <h3 class="card-text">Leave a comment:</h3>
+            <!-- <h3 class="card-text">Leave a comment:</h3> -->
             <p>Posting as: {{ user.username }}</p>
             <form method="post" style="margin-top: 1.3em;">
                 {{ comment_form | crispy }}

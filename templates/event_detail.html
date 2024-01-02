@@ -1,23 +1,25 @@
 {% extends 'base.html' %} {% block content %}
 
 <div class="container-fluid masthead">
-        <div class="row">
-            <div class="card masthead-text">
-                <div class="card-body col-xl-5 offset-xl-3 col-md-8 offset-md-2">
-                    <h1 class="card-title">{{ event.title }}</h1>
-                    <h3 class="card-text">{{ event.location }} </h3>
-                    <h3 class="card-text">{{ event.date_time }}</h3>
-                </div>
+    <div class="row">
+        <div class="card masthead-text">
+            <div class="card-body col-xl-5 offset-xl-3 col-md-8 offset-md-2">
+                <h1 class="card-title">{{ event.title }}</h1>
+                <h3 class="card-text">{{ event.location }} </h3>
+                <h3 class="card-text">{{ event.date_time }}</h3>
             </div>
         </div>
+    </div>
 </div>
 
 <div class="card col-xl-5 offset-xl-3 col-md-8 offset-md-2">
-    {% if "placeholder" in event.featured_image.url %}
-    <img class="card-img-top" src="/static/images/labrador-in-the-bath.jpg" alt="placeholder image">
-    {% else %}
-    <img class="card-img-top" src=" {{ event.featured_image.url }}">
-    {% endif %}
+    <div class="card-img-top">
+        {% if "placeholder" in event.featured_image.url %}
+        <img class="card-img-top" src="/static/images/labrador-in-the-bath.jpg" alt="placeholder image">
+        {% else %}
+        <img class="card-img-top" src=" {{ event.featured_image.url }}">
+        {% endif %}
+    </div>
     <div class="card-body">
         <p class="card-text">
             {{ event.content | safe }}
@@ -42,7 +44,6 @@
             </div>
         </div>
     </div>
-
 </div>
 
 

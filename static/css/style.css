@@ -34,6 +34,7 @@
 /* profile page */
 .profile-card {
     background-color: aliceblue;
+    border-radius: 1rem;
 }
 
 .big-fa {
@@ -67,6 +68,7 @@
 .post-link {
     text-decoration: none;
     color: #445261;
+    margin-left: 4px;
 }
 
 .post-link:hover,

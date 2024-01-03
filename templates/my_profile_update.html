@@ -7,16 +7,17 @@
     <div class="container my-5">
         <div class="row justify-content-center">
             <div class="col-md-8 col-lg-7">
-                <div class="profile-card" style="border-radius: 1rem;">
+                <div class="profile-card">
                     <div class="text-center">
                         <h3 class="card-body teal-text">EDIT PROFILE</h3>
                     </div>
                     <div class=card-body>
-                        <form method="post" style="margin-top: 1.3em;">
+                        <form method="post" class="mt-4">
                             {{ form | crispy }}
                             {% csrf_token %}
                             <div class="text-center">
-                                <button type="submit" class="btn btn-secondary my-4">Submit</button>
+                                <button type="submit" class="btn btn-signup my-4">Save Changes</button>
+                                <a href="{% url 'my_profile' user=request.user  %}" class="post-link">Cancel</a>
                             </div>
                         </form>
                     </div>

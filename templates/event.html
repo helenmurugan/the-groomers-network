@@ -15,16 +15,16 @@
                             <div class="image-container">
                                 {% if "placeholder" in event.featured_image.url %}
                                 <img class="card-img-top"
-                                    src="/static/images/labrador-in-the-bath.jpg">
+                                    src="/static/images/labrador-in-the-bath.jpg" alt="placeholder image">
                                 {% else %}
-                                <img class="card-img-top" src=" {{ event.featured_image.url }}">
+                                <img class="card-img-top" src=" {{ event.featured_image.url }}" alt="featured image">
                                 {% endif %}
                             </div>
                             <a href="{% url 'event_detail' event.slug  %}" class="post-link">
                                 <h2 class="card-title">{{ event.title }}</h2>
                                 <p class="card-text">{{ event.excerpt }}</p>
                             </a>
-                            <hr />
+                            <hr>
                             <p class="card-text text-muted h6">{{ event.date_time}} | {{ event.location}} <i class="far fa-heart"></i>
                                 {{ event.number_of_likes }}</p>
                         </div>

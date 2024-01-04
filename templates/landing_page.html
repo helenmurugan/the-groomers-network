@@ -13,10 +13,10 @@
                     <h1 class="display-4 fw-bold mb-5 darkgrey-text">Professional Networking for Pet Groomers</h1>
                     <div>
                         {% if user.is_authenticated %}
-                        <a class="btn-lg py-2 btn-signup text-decoration-none"
+                        <a class="btn-lg py-2 btn-signup"
                         href="{% url 'home' %}">Start Networking!</a>
                         {% else %}
-                        <a class="btn-lg py-2 btn-signup text-decoration-none"
+                        <a class="btn-lg py-2 btn-signup"
                         href="{% url 'account_signup' %}">Join for free!</a>
                         {% endif %}
                     </div>

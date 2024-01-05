@@ -22,12 +22,14 @@ class Post(models.Model):
         related_name="post_posts"
     )
     content = models.TextField(
-        blank=True,
-        null=True,
+        blank=False,
+        null=False,
     )
     featured_image = CloudinaryField(
         'image', 
-        default='placeholder'
+        default='placeholder',
+        blank=True,
+        null=True,
         )
     created_on = models.DateTimeField(
         auto_now_add=True
@@ -44,7 +46,7 @@ class Post(models.Model):
     #following code taken from Kim Bergstroem's PP4
     def save(self, *args, **kwargs):
             if not self.slug:
-                # Generate a slug based on the username and post title
+                # Generate a slug based on post title and time stamp
                 base_slug = slugify(self.title)
                 timestamp = timezone.now().strftime('%Y%m%d%H%M%S')
                 unique_slug = f"{base_slug}-{timestamp}"

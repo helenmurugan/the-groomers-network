@@ -15,7 +15,3 @@ def save_profile(sender, instance, **kwargs):
     instance.profile.save()
 
 
-# @receiver(post_delete, sender=User)
-# def logout (sender, instance, **kwargs):
-#     if deleted:
-

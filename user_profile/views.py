@@ -45,24 +45,6 @@ class ProfileUpdate(SuccessMessageMixin, UpdateView):
     success_url ="/user_profile/<str:user>"
     success_message = "Your profile has been updated!"
 
-    # code modified from Kim Bergstroem's Gamer's Insight project
-
-    # def post(self, request):
-    #     """
-    #     Handles the submission of user profile update forms
-    #     """
-    #     profile_form = ProfileForm()
-
-    #     if profile_form.is_valid():
-    #         user_form.save()
-    #         profile_form.save()
-    #         return HttpResponseRedirect(reverse_lazy("profile"))
-    #     context = self.get_context_data(
-    #         user_form=user_form, profile_form=profile_form
-    #     )
-
-    #     return self.render_to_response(context)
-
 
 
 

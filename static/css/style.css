@@ -109,3 +109,17 @@
     color: white;
 }
 
+/* media queries */
+/* for medium size screens above 768 px */
+@media screen and (min-width: 768px) {
+    .image-contain {
+        object-fit: cover;
+        object-position: right top;
+        width: 28vw;
+        height: 28vw;
+    }
+    
+    .card-hr {
+        width: 28vw;
+    }
+}

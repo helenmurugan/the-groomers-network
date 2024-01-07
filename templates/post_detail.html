@@ -87,8 +87,8 @@
         </div>
         <div>
             {% if user.is_authenticated %}
-            <p>Comment as {{ user.username }}</p>
-            <form method="post">
+            <p>Comment as {{ user.username }}:</p>
+            <form method="post" action="">
                 {{ comment_form | crispy }}
                 {% csrf_token %}
                 <button type="submit" class="btn btn-signup mt-2">Submit</button>

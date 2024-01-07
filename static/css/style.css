@@ -11,6 +11,11 @@
     margin-right: 20px;
 }
 
+.nav-link:hover,
+.active {
+    color: black !important;
+}
+
 /* landing page */
 .teal-text {
     color: #19747E
@@ -74,7 +79,7 @@
 
 .post-link:hover,
 .page-link {
-    color: #414040;
+    color: black;
 }
 
 /* post detail and event detail pages*/

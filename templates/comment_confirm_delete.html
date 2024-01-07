@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
+
 <form method="post" action="{% url 'comment_confirm_delete' pk=object.id %}" class="text-center">
     {% csrf_token %}
     <p>Are you sure you want to delete this comment?</p>
@@ -8,4 +9,5 @@
     <input type="submit" value="Confirm" class="btn btn-danger">
     <a href="{% url 'home' %}" class="post-link">Cancel</a>
 </form>
+
 {% endblock %}

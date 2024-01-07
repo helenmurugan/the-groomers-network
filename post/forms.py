@@ -1,5 +1,6 @@
 from .models import Post, Comment
 from django import forms
+from crispy_forms.helper import FormHelper
 
 
 class PostForm(forms.ModelForm):
@@ -7,16 +8,14 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ('title', 'tagline', 'content', 'featured_image',)
     
-    content = forms.CharField
-
-
-
+   
 class CommentForm(forms.ModelForm):
     class Meta:
         model = Comment
         fields = ('body',)
+        labels = {'body': '',}
 
-    body = forms.CharField
+  
 
 
 

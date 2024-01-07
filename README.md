@@ -136,8 +136,11 @@ The application has been thoroughly tested and code validated. All testing docum
 ### Media
 ### Content
 ### Documentation and Useful Blogs
-https://builtwithdjango.com/blog/styling-authentication-pages
-https://sentry.io/answers/how-do-i-auto-resize-an-image-to-fit-a-div-container/#:~:text=To%20fix%20this%2C%20we%20can,contain%E2%80%9D%20and%20%E2%80%9Ccover%E2%80%9D.
+- Bootstrap
+- Django
+- https://builtwithdjango.com/blog/styling-authentication-pages
+- https://sentry.io/answers/how-do-i-auto-resize-an-image-to-fit-a-div-container/#:~:text=To%20fix%20this%2C%20we%20can,contain%E2%80%9D%20and%20%E2%80%9Ccover%E2%80%9D.
+- https://stackoverflow.com/questions/25044370/make-clicked-tab-active-in-bootstrap
 ### Acknowledgents
 - Excellent mentoring and expert guidance from Juliia Konovalova
 - Inspiration on structure and design of templates taken from Kim Bergstroem Gamer's Insight blog project.

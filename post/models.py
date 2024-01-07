@@ -9,11 +9,11 @@ class Post(models.Model):
     Model for user posts
     """
     title = models.CharField(
-        max_length=200,
+        max_length=150,
         verbose_name="Title",
         )
     slug = models.SlugField(
-        max_length=200, 
+        max_length=150, 
         unique=True
         )
     author = models.ForeignKey(
@@ -31,6 +31,11 @@ class Post(models.Model):
         blank=True,
         null=True,
         )
+    tagline = models.CharField(
+        max_length=200,
+        null=True,
+        blank=True,
+    )
     created_on = models.DateTimeField(
         auto_now_add=True
         )

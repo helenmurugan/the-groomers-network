@@ -5,7 +5,7 @@ from django import forms
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
-        fields = ('title', 'content', 'featured_image',)
+        fields = ('title', 'tagline', 'content', 'featured_image',)
     
     content = forms.CharField
 

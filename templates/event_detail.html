@@ -16,7 +16,9 @@
 <div class="card col-xl-5 offset-xl-3 col-md-8 offset-md-2">
     <div class="card-img-top">
         {% if "placeholder" in event.featured_image.url %}
-        <img class="card-img-top" src="/static/images/labrador-in-the-bath.jpg" alt="placeholder image">
+        <img class="card-img-top"
+            src="/static/images/labrador-placeholder-grey-bkgd.png" 
+            alt="placeholder AI image of yellow labrador running with grey background">>
         {% else %}
         <img class="card-img-top" src=" {{ event.featured_image.url }}" alt="featured image">
         {% endif %}

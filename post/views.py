@@ -151,7 +151,7 @@ class PostDelete(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
         return super(PostDelete, self).delete(request, *args, **kwargs)
 
 
-    # Code on url permission access validation is taken from
+    # Following codeode on url permission access taken from
     # DamianJacob: https://github.com/Damianjacob/MS4_breadit/tree/main/breadit
     def get(self, request, slug):
         """
@@ -183,7 +183,6 @@ class CommentDelete(LoginRequiredMixin, DeleteView):
 
 
     def get_success_url(self):
-        #following code taken from Kim Bergstroem's PP4
         post_slug = self.object.post.slug
         return reverse("post_detail", kwargs={"slug": post_slug})
 

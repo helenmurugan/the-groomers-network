@@ -48,16 +48,16 @@ class Post(models.Model):
         blank=True,
         )
 
-    #following code taken from Kim Bergstroem's PP4
+    #following code on slug generation taken from Kim Bergstroem's PP4 - https://github.com/KimBergstroem/PP4
     def save(self, *args, **kwargs):
-            if not self.slug:
-                # Generate a slug based on post title and time stamp
-                base_slug = slugify(self.title)
-                timestamp = timezone.now().strftime('%Y%m%d%H%M%S')
-                unique_slug = f"{base_slug}-{timestamp}"
-                self.slug = unique_slug
+        if not self.slug:
+            # Generate a slug based on post title and timestamp
+            base_slug = slugify(self.title)
+            timestamp = timezone.now().strftime('%Y%m%d%H%M%S')
+            unique_slug = f"{base_slug}-{timestamp}"
+            self.slug = unique_slug
 
-            return super().save(*args, **kwargs)
+        return super().save(*args, **kwargs)
 
 
     class Meta:

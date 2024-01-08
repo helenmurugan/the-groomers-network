@@ -25,7 +25,9 @@
     </div>
     <div class="card-img-top">
         {% if "placeholder" in post.featured_image.url %}
-        <img class="card-img-top" src="/static/images/labrador-in-the-bath.jpg" alt="placeholder image">
+        <img class="card-img-top" 
+            src="/static/images/labrador-placeholder-grey-bkgd.png" 
+            alt="placeholder AI image of yellow labrador running with grey background">
         {% else %}
         <img class="card-img-top" src=" {{ post.featured_image.url }}">
         {% endif %}

@@ -16,13 +16,29 @@
                             <h5 class="mb-2 teal-text">Username</h5>
                             <p>{{ request.user.username }}</p>
                             <h5 class="mb-2 teal-text">Full Name</h5>
-                            <p>{{user_profile.full_name}}</p>
+                                {% if user_profile.full_name %}
+                                    <p>{{user_profile.full_name}}</p>
+                                {% else %}
+                                    <p>-</p>
+                                {% endif %}
                             <h5 class="mb-2 teal-text">Company Name</h5>
-                            <p>{{user_profile.company_name}}</p>
+                                {% if user_profile.company_name %}
+                                    <p>{{user_profile.company_name}}</p>
+                                {% else %}
+                                    <p>-</p>
+                                {% endif %}
                             <h5 class="mb-2 teal-text">Location</h5>
-                            <p>{{user_profile.location}}</p>
+                                {% if user_profile.location %}
+                                    <p>{{user_profile.location}}</p>
+                                {% else %}
+                                    <p>-</p>
+                                {% endif %}
                             <h5 class="mb-2 teal-text">Bio</h5>
-                            <p>{{user_profile.bio | safe }}</p>
+                                {% if user_profile.bio %}
+                                    <p>{{user_profile.bio | safe }}</p>
+                                {% else %}
+                                    <p>-</p>
+                                {% endif %}
                         </div>
                     </div>
                     <div class="text-center">

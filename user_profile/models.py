@@ -17,7 +17,7 @@ class Profile(models.Model):
         blank=True,
         null=True,
         verbose_name='Full name',
-        default=' ',
+        default='',
     )
     
     company_name = models.CharField(
@@ -30,7 +30,7 @@ class Profile(models.Model):
         blank=True,
         null=True,
         max_length=30,
-        default=''
+        default='',
     )
     
     bio = models.TextField(

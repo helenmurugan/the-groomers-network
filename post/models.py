@@ -4,6 +4,7 @@ from cloudinary.models import CloudinaryField
 from django.utils.text import slugify
 from django.utils import timezone
 
+
 class Post(models.Model):
     """
     Model for user posts
@@ -13,12 +14,12 @@ class Post(models.Model):
         verbose_name="Title",
         )
     slug = models.SlugField(
-        max_length=150, 
+        max_length=150,
         unique=True
         )
     author = models.ForeignKey(
-        User, 
-        on_delete=models.CASCADE, 
+        User,
+        on_delete=models.CASCADE,
         related_name="post_posts"
     )
     content = models.TextField(
@@ -26,7 +27,7 @@ class Post(models.Model):
         null=False,
     )
     featured_image = CloudinaryField(
-        'image', 
+        'image',
         default='placeholder',
         blank=True,
         null=True,
@@ -43,12 +44,13 @@ class Post(models.Model):
         auto_now=True
         )
     likes = models.ManyToManyField(
-        User, 
-        related_name='post_likes', 
+        User,
+        related_name='post_likes',
         blank=True,
         )
 
-    #following code on slug generation taken from Kim Bergstroem's PP4 - https://github.com/KimBergstroem/PP4
+    # following code on slug generation taken from Kim Bergstroem's PP4
+    # https://github.com/KimBergstroem/PP4
     def save(self, *args, **kwargs):
         if not self.slug:
             # Generate a slug based on post title and timestamp
@@ -96,13 +98,12 @@ class Comment(models.Model):
     )
     approved = models.BooleanField(default=True)
 
+
     class Meta:
         ordering = ["created_on"]
 
-    def __str__(self):
-        """
-        Returns string for comment
-        """
-        return f"Comment {self.body} by {self.name}"
-
-
+        def __str__(self):
+            """
+            Returns string for comment
+            """
+            return f"Comment {self.body} by {self.name}"

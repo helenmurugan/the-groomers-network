@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
+
 class Event(models.Model):
     """
     Model for an event
@@ -11,12 +12,12 @@ class Event(models.Model):
             verbose_name="event",
         )
     slug = models.SlugField(
-        max_length=150, 
+        max_length=150,
         unique=True
         )
     author = models.ForeignKey(
-        User, 
-        on_delete=models.CASCADE, 
+        User,
+        on_delete=models.CASCADE,
         related_name="event_events"
     )
     content = models.TextField(
@@ -40,15 +41,15 @@ class Event(models.Model):
         )
     location = models.CharField(
         blank=True,
-        null=True, 
+        null=True,
         max_length=30,
     )
     date_time = models.DateTimeField(
         verbose_name='Date and Time'
     )
     likes = models.ManyToManyField(
-        User, 
-        related_name='event_likes', 
+        User,
+        related_name='event_likes',
         blank=True,
     )
 
@@ -70,11 +71,10 @@ class Event(models.Model):
 
 class Comment(models.Model):
     """
-    Model for comments 
+    Model for comments
     """
-
     post = models.ForeignKey(
-        Event, 
+        Event,
         on_delete=models.CASCADE,
         related_name="comments"
         )
@@ -97,10 +97,3 @@ class Comment(models.Model):
         Returns string for comment
         """
         return f"Comment {self.body} by {self.name}"
-
-
-
-
-
-
-

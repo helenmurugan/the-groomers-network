@@ -3,9 +3,10 @@ from .models import Event, Comment
 
 from django_summernote.admin import SummernoteModelAdmin
 
+
 @admin.register(Event)
 class EventAdmin(SummernoteModelAdmin):
-    
+
     prepopulated_fields = {'slug': ('title',)}
     list_filter = ('created_on',)
     summernote_fields = ('content')

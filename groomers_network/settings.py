@@ -15,7 +15,7 @@ import os
 from django.contrib.messages import constants as messages
 import dj_database_url
 if os.path.isfile("env.py"):
-   import env
+    import env
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -34,8 +34,8 @@ SECRET_KEY = 'SECRET_KEY'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '8000-helenmuruga-thegroomers-3jiflqj5wgs.ws-eu107.gitpod.io', 
-    'localhost', 
+    '8000-helenmuruga-thegroomers-3jiflqj5wgs.ws-eu107.gitpod.io',
+    'localhost',
     'the-groomers-network-96ece9118f5d.herokuapp.com'
     ]
 
@@ -125,8 +125,6 @@ DATABASES = {
 #    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
 # }
 
-
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -173,10 +171,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_URL = '/media/'
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
-
-
 # projectconfig/settings.py
-
 MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
@@ -187,4 +182,3 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ACCOUNT_EMAIL_VERIFICATION = 'none' 
-

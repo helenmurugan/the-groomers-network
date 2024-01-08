@@ -3,6 +3,7 @@ from django.views import generic, View
 from django.http import HttpResponseRedirect
 from .models import Event
 
+
 class EventList(generic.ListView):
     """
     View for displaying a list of events
@@ -39,11 +40,11 @@ class EventDetail(View):
             },
         )
 
+
 class EventLike(View):
     """
     View to toggle likes on events
     """
-    
     def post(self, request, slug, *args, **kwargs):
         """
         Toggle likes on events

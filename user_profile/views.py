@@ -3,7 +3,8 @@ from django.views import generic, View
 from django.views.generic import UpdateView
 from django.contrib.messages.views import SuccessMessageMixin
 from .models import Profile
-from .forms import ProfileForm 
+from .forms import ProfileForm
+from django.contrib.auth.models import User
 
 class ProfileView(View):
     """
@@ -44,6 +45,15 @@ class ProfileUpdate(SuccessMessageMixin, UpdateView):
     template_name = "my_profile_update.html"
     success_url ="/user_profile/<str:user>"
     success_message = "Your profile has been updated!"
+
+
+"""
+View for retrieving and viewing another user's profile
+"""
+def get_user_profile(request, username): 
+    user = User.objects.get(username=username)
+    user_profile = get_object_or_404(Profile, user=user)
+    return render(request, 'user_profile.html', {"user_profile":user_profile})
 
 
 

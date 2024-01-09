@@ -143,6 +143,7 @@ The application has been thoroughly tested and code validated. All testing docum
 - https://sentry.io/answers/how-do-i-auto-resize-an-image-to-fit-a-div-container/#:~:text=To%20fix%20this%2C%20we%20can,contain%E2%80%9D%20and%20%E2%80%9Ccover%E2%80%9D.
 - https://stackoverflow.com/questions/25044370/make-clicked-tab-active-in-bootstrap
 - https://stackoverflow.com/questions/11472495/remove-labels-in-a-django-crispy-forms
+- https://stackoverflow.com/questions/33724344/how-can-i-display-a-user-profile-using-django
 ### Acknowledgents
 - Excellent mentoring and expert guidance from Juliia Konovalova
 - Inspiration on structure and design of templates taken from Kim Bergstroem Gamer's Insight blog project.

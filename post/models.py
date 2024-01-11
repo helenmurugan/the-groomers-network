@@ -61,7 +61,6 @@ class Post(models.Model):
 
         return super().save(*args, **kwargs)
 
-
     class Meta:
         ordering = ["-created_on"]
 
@@ -74,11 +73,11 @@ class Post(models.Model):
 
 class Comment(models.Model):
     """
-    Model for comments 
+    Model for comments
     """
 
     post = models.ForeignKey(
-        Post, 
+        Post,
         on_delete=models.CASCADE,
         related_name="comments"
         )
@@ -88,8 +87,8 @@ class Comment(models.Model):
         max_length=80
         )
     author = models.ForeignKey(
-        User, 
-        on_delete=models.CASCADE, 
+        User,
+        on_delete=models.CASCADE,
         related_name="post_comment"
         )
     body = models.TextField()
@@ -97,7 +96,6 @@ class Comment(models.Model):
         auto_now_add=True
     )
     approved = models.BooleanField(default=True)
-
 
     class Meta:
         ordering = ["created_on"]

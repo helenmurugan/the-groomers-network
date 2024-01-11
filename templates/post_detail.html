@@ -10,8 +10,12 @@
         <div class="card masthead-text">
             <div class="card-body col-xl-5 offset-xl-3 col-md-8 offset-md-2">
                 <h1 class="card-title">{{ post.title }}</h1>
-                <h3 class="card-text">{{ post.author }}</h3>
-                <h3 class="card-text">posted on {{ post.created_on }}</h3>
+                <h5 class="card-text">
+                    <a href="{% url 'profile' post.author %}" class="no-decoration masthead-author">
+                        {{ post.author }}
+                    </a>
+                </h5>
+                <h5 class="card-text">{{ post.created_on }}</h5>
             </div>
         </div>
     </div>
@@ -69,17 +73,20 @@
         <div>
             <div>
                 {% for comment in comments %}
-                <div class="p-1">
-                    <p>
-                        {{ comment.name }}
+                <div class="mb-2">
+                    <p class="mb-2">
+                        <a href="{% url 'profile' comment.name %}" class="no-decoration">
+                            {{ comment.name }}
+                        </a>
                         <span class="text-muted">
                             {{ comment.created_on }}
-                        </span> wrote:
+                        </span> 
+                        wrote:
                     </p>
                     {{ comment.body | safe }}
                 </div>
                 {% if comment.author.id == request.user.id %}
-                <a href="{% url 'comment_confirm_delete' comment.id %}" class="text-danger mb-4">Delete</a>
+                <a href="{% url 'comment_confirm_delete' comment.id %}" class="text-danger mb-2">Delete</a>
                 {% endif %}
                 <div>
                     <hr>

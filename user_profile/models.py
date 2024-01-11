@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
+
 class Profile(models.Model):
     """
     Model for the user profiles
@@ -19,10 +20,10 @@ class Profile(models.Model):
         verbose_name='Full name',
         default='',
     )
-    
+
     company_name = models.CharField(
         blank=True,
-        null=True, 
+        null=True,
         max_length=30,
         default='',
     )
@@ -32,11 +33,10 @@ class Profile(models.Model):
         max_length=30,
         default='',
     )
-    
+
     bio = models.TextField(
         blank=True,
         null=True,
         max_length=1000,
         default='',
     )
-

@@ -71,7 +71,6 @@ class PostDetail(View):
             comment_form = CommentForm()
             messages.error(request, "Comment form was empty!")
 
-    
         return render(
             request,
             "post_detail.html",
@@ -83,11 +82,12 @@ class PostDetail(View):
             },
         )
 
+
 class PostLike(View):
     """
     View to toggle likes on posts.
     """
-    
+
     def post(self, request, slug, *args, **kwargs):
         """
         Toggle likes on posts.
@@ -110,7 +110,6 @@ class PostCreate(SuccessMessageMixin, LoginRequiredMixin, CreateView):
     form_class = PostForm
     success_url = "/posts/"
     success_message = "Your post has been published!"
-    
 
     def form_valid(self, form):
         """
@@ -119,7 +118,7 @@ class PostCreate(SuccessMessageMixin, LoginRequiredMixin, CreateView):
         form.instance.author = self.request.user
         return super().form_valid(form)
 
-    
+
 class PostUpdate(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     """
     View for updating a post
@@ -128,14 +127,13 @@ class PostUpdate(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     form_class = PostForm
     template_name = "post_update.html"
     success_message = "Your post has been updated!"
-    
 
     def get_success_url(self):
         """
         Direct user to home page once post is updated successfully
         """
         return reverse('post_detail', kwargs={"slug": self.object.slug})
-    
+
 
 class PostDelete(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
     """
@@ -150,9 +148,9 @@ class PostDelete(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
         messages.success(self.request, self.success_message % obj.__dict__)
         return super(PostDelete, self).delete(request, *args, **kwargs)
 
-
     # Following codeode on url permission access taken from
     # DamianJacob: https://github.com/Damianjacob/MS4_breadit/tree/main/breadit
+
     def get(self, request, slug):
         """
         Check if logged in user is post author.
@@ -181,8 +179,6 @@ class CommentDelete(LoginRequiredMixin, DeleteView):
         messages.success(self.request, self.success_message % obj.__dict__)
         return super(CommentDelete, self).delete(request, *args, **kwargs)
 
-
     def get_success_url(self):
         post_slug = self.object.post.slug
         return reverse("post_detail", kwargs={"slug": post_slug})
-

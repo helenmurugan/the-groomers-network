@@ -22,7 +22,9 @@
                                 <img class="card-img-top image-contain" src=" {{ post.featured_image.url }}" alt="featured image">
                                 {% endif %}
                                 <div class="image-flash">
-                                    <p class="author">Author: {{ post.author }}</p>
+                                    <a href="{% url 'profile' post.author %}">
+                                        <p class="author">Author: {{ post.author }}</p>
+                                    </a>
                                 </div>
                             </div>
                             <a href="{% url 'post_detail' post.slug  %}" class="post-link">

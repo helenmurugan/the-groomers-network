@@ -6,6 +6,7 @@ from .models import Profile
 from .forms import ProfileForm
 from django.contrib.auth.models import User
 
+
 class ProfileView(View):
     """
     View for reading the profile page.
@@ -43,30 +44,14 @@ class ProfileUpdate(SuccessMessageMixin, UpdateView):
     model = Profile
     form_class = ProfileForm
     template_name = "my_profile_update.html"
-    success_url ="/user_profile/<str:user>"
+    success_url = "/user_profile/<str:user>"
     success_message = "Your profile has been updated!"
 
 
-"""
-View for retrieving and viewing another user's profile
-"""
-def get_user_profile(request, username): 
+def get_user_profile(request, username):
+    """
+    View for retrieving and viewing another user's profile
+    """
     user = User.objects.get(username=username)
     user_profile = get_object_or_404(Profile, user=user)
-    return render(request, 'user_profile.html', {"user_profile":user_profile})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    return render(request, 'user_profile.html', {"user_profile": user_profile})

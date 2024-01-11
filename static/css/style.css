@@ -97,6 +97,16 @@
     border: none;
     background: transparent;
 }
+
+.no-decoration {
+    text-decoration: none;
+}
+
+.masthead-author,
+.masthead-author:hover {
+    color: white;
+}
+
 /* sign-up page*/
 #signup_form {
     width: 200px;

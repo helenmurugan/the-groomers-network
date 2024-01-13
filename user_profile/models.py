@@ -20,7 +20,6 @@ class Profile(models.Model):
         verbose_name='Full name',
         default='',
     )
-
     company_name = models.CharField(
         blank=True,
         null=True,

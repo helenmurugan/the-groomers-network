@@ -135,6 +135,7 @@ The application has been thoroughly tested and code validated. All testing docum
 
 
 ### Media
+- https://favicon.io/favicon-generator/
 ### Content
 ### Documentation and Useful Blogs
 - Bootstrap

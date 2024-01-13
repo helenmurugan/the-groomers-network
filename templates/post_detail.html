@@ -9,13 +9,13 @@
     <div class="row">
         <div class="card masthead-text">
             <div class="card-body col-xl-5 offset-xl-3 col-md-8 offset-md-2">
-                <h1 class="card-title">{{ post.title }}</h1>
-                <h5 class="card-text">
+                <h1 class="card-title mb-4">{{ post.title }}</h1>
+                <p class="card-text masthead-subheading">
                     <a href="{% url 'profile' post.author %}" class="no-decoration masthead-author">
                         {{ post.author }}
                     </a>
-                </h5>
-                <h5 class="card-text">{{ post.created_on }}</h5>
+                </p>
+                <p class="card-text masthead-subheading">{{ post.created_on }}</p>
             </div>
         </div>
     </div>
@@ -33,7 +33,8 @@
             src="/static/images/labrador-placeholder-grey-bkgd.png" 
             alt="placeholder AI image of yellow labrador running with grey background">
         {% else %}
-        <img class="card-img-top" src=" {{ post.featured_image.url }}">
+        <img class="card-img-top" src=" {{ post.featured_image.url }}"
+            alt="featured image">
         {% endif %}
     </div>
     <div class="card-body">
@@ -47,9 +48,9 @@
                     <form class="d-inline" action="{% url 'post_like' post.slug %}" method="POST">
                         {% csrf_token %}
                         {% if liked %}
-                        <button type="submit" name="post_id" value="{{post.slug}}" class="btn-like"><i class="fas fa-heart"></i></button>
+                        <button type="submit" name="post_id" value="{{post.slug}}" class="btn-like" aria-label="heart icon liked"><i class="fas fa-heart"></i></button>
                         {% else %}
-                        <button type="submit" name="post_id" value="{{post.slug}}" class="btn-like"><i class="far fa-heart"></i></button>
+                        <button type="submit" name="post_id" value="{{post.slug}}" class="btn-like" aria-label="heart icon not liked"><i class="far fa-heart"></i></button>
                         {% endif %}
                     </form>
                     {% else %}
@@ -96,7 +97,6 @@
         </div>
         <div>
             {% if user.is_authenticated %}
-            <p>Comment as {{ user.username }}:</p>
             <form method="post" action="">
                 {{ comment_form | crispy }}
                 {% csrf_token %}

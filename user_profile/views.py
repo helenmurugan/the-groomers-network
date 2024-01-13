@@ -9,18 +9,14 @@ from django.contrib.auth.models import User
 
 class ProfileView(View):
     """
-    View for reading the profile page.
+    View for retrieving data and viewing my_profile page.
     """
     def get(self, request, *args, **kwargs):
-        """
-        Get the profile page
-        """
         if request.user.is_authenticated:
             user_profile = get_object_or_404(
                 Profile,
                 user=request.user
             )
-            print(user_profile)
             context = {
                 'user_profile': user_profile,
             }
@@ -38,7 +34,7 @@ class ProfileView(View):
 
 class ProfileUpdate(SuccessMessageMixin, UpdateView):
     """
-    View for updating a profile
+    View for updating my_profile
 
     """
     model = Profile
@@ -50,8 +46,12 @@ class ProfileUpdate(SuccessMessageMixin, UpdateView):
 
 def get_user_profile(request, username):
     """
-    View for retrieving and viewing another user's profile
+    View for retrieving data and viewing a user's profile
     """
     user = User.objects.get(username=username)
     user_profile = get_object_or_404(Profile, user=user)
-    return render(request, 'user_profile.html', {"user_profile": user_profile})
+    return render(
+        request,
+        'user_profile.html',
+        {"user_profile": user_profile}
+    )

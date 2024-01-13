@@ -89,11 +89,22 @@
 
 .masthead-text {
     background-color: #19747E;
-    color: aliceblue;
+    color: white;
+}
+
+.masthead-subheading {
+    color: white;
+    font-size: 1.25rem;
+    font-weight: 500;
+}
+
+.masthead-author,
+.masthead-author:hover {
+    color: white;
 }
 
 .btn-like {
-    color: #E84610;
+    color: red;
     border: none;
     background: transparent;
 }
@@ -102,10 +113,9 @@
     text-decoration: none;
 }
 
-.masthead-author,
-.masthead-author:hover {
-    color: white;
-}
+/* .asteriskField {
+    display: none;
+} */
 
 /* sign-up page*/
 #signup_form {

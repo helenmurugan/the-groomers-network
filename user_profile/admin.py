@@ -1,9 +1,11 @@
 from django.contrib import admin
 from .models import Profile
-from django_summernote.admin import SummernoteModelAdmin
 
 
 @admin.register(Profile)
-class ProfileAdmin(SummernoteModelAdmin):
-
-    summernote_fields = ('bio')
+class ProfileAdmin(admin.ModelAdmin):
+    """
+    Customisation of profile in admin panel
+    """
+    list_display = ('user', 'full_name', 'company_name', 'location',)
+    search_fields = ['full_name', 'company_name', 'location']

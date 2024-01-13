@@ -179,6 +179,12 @@ class CommentDelete(LoginRequiredMixin, DeleteView):
         messages.success(self.request, self.success_message % obj.__dict__)
         return super(CommentDelete, self).delete(request, *args, **kwargs)
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['post'] = self.object.post
+        return context
+
     def get_success_url(self):
-        post_slug = self.object.post.slug
+        post = self.object.post
+        post_slug = post.slug
         return reverse("post_detail", kwargs={"slug": post_slug})

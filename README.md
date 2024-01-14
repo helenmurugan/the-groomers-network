@@ -1,14 +1,29 @@
 # The Groomer's Network
 
-**Deployed website: [Link to website](https://.com)**
+Developer: [Helen Murugan](https://github.com/helenmurugan)<br>
+Deployed website: [Link to website](https://.com)<br>
 
-![Main image](documentation/readme_header.png)
+![Main image](documentation/readme_landing_page.jpg)
 
-The Groomer's Network is a professional networking site that allows pet grooming professionals to network, ask each other for advice via posts, and access information about upcoming events. It has a registration/login system and allows users to set up a personalised profile. Authenticated users can create, read, update and delete their own posts and their own comments, as well as read, comment and like other user's posts. 
+The Groomer's Network is a professional networking site that allows pet grooming professionals to network and access information about upcoming events. It has a registration/login system and allows users to create, read and update a personalised profile. Users can create, read, update and delete thir own posts, comment on posts, delete their own comments and view upcoming events.
 
-In the real world, pet grooming professionals use private Facebook groups to network and promote their events. There are many such groups, covering a diverse range of themes most of which are very active. The groups are run by volunteers and can be very difficult to manage, this is in part due to Facebook not being a professional setting. Events such as grooming competitions, workshops and training are often promoted only on these private Facebook groups which can be restrictive.
+Currently, pet grooming professionals use private Facebook groups to network and promote events. There are many such groups covering a diverse range of themes, some of which are very active. Events such as grooming competitions, workshops and seminars are often promoted only on these private Facebook groups which can be restrictive. The Groomer's Network provides a dedicated setting that encourages a professional approach to networking. The majority of pet grooming professionals work alone, as small business owners, and therefore the need for this type of platform is real, to enhance professional standards through sharing of information and to avoid isolation in this profession.
 
-The Groomer's Network provides a dedicated setting that encourages a professional approach to networking. As the majority of pet grooming professionals work alone as small business owners and therefore the need for this type of platform is real, to enhance professional standards through sharing of information and to avoid isolation.
+
+![GitHub Badge](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=for-the-badge)
+![Gitpod Badge](https://img.shields.io/badge/Gitpod-FFAE33?logo=gitpod&logoColor=fff&style=for-the-badge)
+![Git Badge](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff&style=for-the-badge)
+![Heroku Badge](https://img.shields.io/badge/Heroku-430098?logo=heroku&logoColor=fff&style=for-the-badge)
+![PostgreSQL Badge](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=fff&style=for-the-badge)
+
+![HTML5 Badge](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=fff&style=for-the-badge)
+![CSS3 Badge](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=fff&style=for-the-badge)
+![JSS Badge](https://img.shields.io/badge/JSS-F7DF1E?logo=jss&logoColor=000&style=for-the-badge)
+![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=for-the-badge)
+![Markdown Badge](https://img.shields.io/badge/Markdown-000?logo=markdown&logoColor=fff&style=for-the-badge)
+
+![Bootstrap Badge](https://img.shields.io/badge/Bootstrap-7952B3?logo=bootstrap&logoColor=fff&style=for-the-badge)
+![Django Badge](https://img.shields.io/badge/Django-092E20?logo=django&logoColor=fff&style=for-the-badge)
 
 ---
 ## Contents
@@ -65,17 +80,31 @@ The target audience for this website is all pet grooming professionals.
 
 ### User Stories 
 
-First Time Visitor
+Epic 1: New User Experience
+- [Visually Appealing Landing Page](https://github.com/helenmurugan/the-groomers-network/issues/27) - As a Site User, I am welcomed by a visually appealing landing page with intuitive navigation so that I can select to register or sign in to the site.
+- [Account Registration](https://github.com/helenmurugan/the-groomers-network/issues/5) - As a Site User, I can register for an account so that I can sign in and have access to the complete functionality of the site.
 
-Table
+Epic 2: User Interaction With Posts and Comments
+- [Create and Manage Posts](https://github.com/helenmurugan/the-groomers-network/issues/8) - As a Site User, I can create and manage my own posts so that I can network with other users.
+- [Images](https://github.com/helenmurugan/the-groomers-network/issues/30) - As a Site User, I can upload and view images so that posts are meaningful and engaging.
+- [View Posts](https://github.com/helenmurugan/the-groomers-network/issues/1) - As a Site User, I can view a list of posts so that I can click on a post to view the full content
+- [Site Pagination for Posts](https://github.com/helenmurugan/the-groomers-network/issues/17) - As a Site User, I can view several posts on each page so that I can easily navigate between pages.
+- [Interact Using Comments](https://github.com/helenmurugan/the-groomers-network/issues/20) - As a Site User, I can manage my comments on posts so that I can be a part of the conversation.
+- [Like/Unlike Posts](https://github.com/helenmurugan/the-groomers-network/issues/7) - As a Site User, I can like or unlike a post so that I can interact with the content.
 
-Regular User
 
-Table
+Epic 3: Events
+- [View Events](https://github.com/helenmurugan/the-groomers-network/issues/19) - As a Site User, I can view a list of events and click on an event so that I can read the full content.
+- [Site Pagination for Events](https://github.com/helenmurugan/the-groomers-network/issues/37) - As a Site User, I can view several events on each page so that I can easily navigate between pages.
+- [Like/Unlike Comments](https://github.com/helenmurugan/the-groomers-network/issues/3) - As a Site User, I can like or unlike an event so that I can interact with the content.
+- [Create and Manage Events](https://github.com/helenmurugan/the-groomers-network/issues/35) - As a Site Admin, I can create and manage events so that they can be shared with the user.
 
-Admin/Manager
+Epic 4: User Profiles
+- [User Profile](https://github.com/helenmurugan/the-groomers-network/issues/25) - As a Site User, I can manage my profile so that I can display and update my details as necessary.
+- [View Other User's Profiles](https://github.com/helenmurugan/the-groomers-network/issues/36) - As a Site User, I can click on the username of another user so that I can view their profile.
 
-Table
+Epic 5: Administration and Site Management
+- [Site Management](https://github.com/helenmurugan/the-groomers-network/issues/16) - As a Site Admin, I can use a dedicated admin panel so that I can delete any inappropriate content and manage the content of the site.
 
 ## Planning
 

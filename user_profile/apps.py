@@ -3,6 +3,9 @@ from django.db.models.signals import post_save
 
 
 class UserProfileConfig(AppConfig):
+    """
+    Configuration for user_profile app
+    """
     default_auto_field = 'django.db.models.BigAutoField'
     name = 'user_profile'
 

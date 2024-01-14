@@ -35,7 +35,6 @@ class ProfileView(View):
 class ProfileUpdate(SuccessMessageMixin, UpdateView):
     """
     View for updating my_profile
-
     """
     model = Profile
     form_class = ProfileForm
@@ -46,7 +45,7 @@ class ProfileUpdate(SuccessMessageMixin, UpdateView):
 
 def get_user_profile(request, username):
     """
-    View for retrieving data and viewing a user's profile
+    Retrieve data and view another user's profile
     """
     user = User.objects.get(username=username)
     user_profile = get_object_or_404(Profile, user=user)

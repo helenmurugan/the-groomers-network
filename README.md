@@ -5,10 +5,7 @@ Deployed website: [Link to website](https://.com)<br>
 
 ![Main image](documentation/readme_landing_page.jpg)
 
-The Groomer's Network is a professional networking site that allows pet grooming professionals to network and access information about upcoming events. It has a registration/login system and allows users to create, read and update a personalised profile. Users can create, read, update and delete thir own posts, comment on posts, delete their own comments and view upcoming events.
-
-Currently, pet grooming professionals use private Facebook groups to network and promote events. There are many such groups covering a diverse range of themes, some of which are very active. Events such as grooming competitions, workshops and seminars are often promoted only on these private Facebook groups which can be restrictive. The Groomer's Network provides a dedicated setting that encourages a professional approach to networking. The majority of pet grooming professionals work alone, as small business owners, and therefore the need for this type of platform is real, to enhance professional standards through sharing of information and to avoid isolation in this profession.
-
+The Groomer's Network is a Django web application that allows pet grooming professionals to network and access information about upcoming events. It has a registration/login system that allows users to create and manage a personalised profile. Users can post content to promote themselves, share information and network with other users. They can also access information about upcoming grooming workshops, seminars and competitions.
 
 ![GitHub Badge](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=for-the-badge)
 ![Gitpod Badge](https://img.shields.io/badge/Gitpod-FFAE33?logo=gitpod&logoColor=fff&style=for-the-badge)
@@ -30,13 +27,14 @@ Currently, pet grooming professionals use private Facebook groups to network and
 - [Project Goals](#project-goals)
     + [User Goals](#user-goals)
     + [Site Owner Goals](#site-owner-goals)
+    + [Justification](#justification)
     + [Target Audience](#target-audience)
     + [User Stories](#user-stories)
 - [Planning](#planning)
     + [Agile methodology](#agile-methodology)
     + [Database](#database)
-    + [Wireframes](#wireframes)
 - [Design](#design)
+    + [Wireframes](#wireframes)
     + [Colour](#colour)
     + [Fonts](#fonts)
     + [Structure](#structure)
@@ -48,8 +46,8 @@ Currently, pet grooming professionals use private Facebook groups to network and
     + [Registration/Log in](#registrationlog-in)
     + [Navigation](#navigation)
     + [Future Development](#future-development)
--[Testing](#testing)
--[Bugs](#bugs)
+- [Testing](#testing)
+- [Bugs](#bugs)
     + [Fixed Bugs](#fixed-bugs)
     + [Unfixed Bugs](#unfixed-bugs)
 - [Technologies Used](#technologies-used)
@@ -70,19 +68,40 @@ Currently, pet grooming professionals use private Facebook groups to network and
     + [Documentation and Useful Blogs](#documentation-and-useful-blogs)
     + [Acknowledgements](#acknowledgents)
 
-
+---
 ## Project Goals
-### User Goals
-### Site Owner Goals
-### Target Audience
 
-The target audience for this website is all pet grooming professionals.
+### User Goals
+- Intuitive and easy navigation around the site.
+- Dedicated platform for like-minded grooming professionals.
+- Personalised profiles to enable the user to highlight their accomplishments within the grooming community.
+- Engaging posts and events that benefit the user through sharing of knowledge.
+- Sharing of knowledge, promote professional accomplishments and network through posts.
+- Interaction with content through comments and likes.
+- Responsive design. Users can expect the application to work on all their devices.
+
+### Site Owner Goals
+- Site management through a dedicated admin panel, allowing administrators to manage user accounts, moderate content and promote grooming events.
+- A platform which fosters a sense of community and raises professional standards.
+
+### Justification
+- Currently, professional pet groomers use private Facebook pages as a platform to ask questions to other groomers and promote events. The pages are very active and can be difficult to manage.
+- The Groomer's Network provides a dedicated setting that encourages a more professional approach to networking. The majority of pet grooming professionals work alone, as small business owners, and therefore the need for this type of platform is real, to enhance professional standards through sharing of information.
+- Often grooming events such as seminars, workshops, training and competitions are promoted solely on private Facebook pages which can be restrictive. The Groomer's Network provides an alternative site where events can be listed in one place.
+
+### Target Audience
+The Groomer's Network is designed for UK pet grooming professionals who:
+- Are committed to improving professional standards through sharing information.
+- Seek to improve their knowledge and skills by attending professional events.
+- Seek to network with others and raise their profile within the grooming community.
+- Wish to stay updated with the latest trends, technologies and standards in their profession.
 
 ### User Stories 
 
 Epic 1: New User Experience
 - [Visually Appealing Landing Page](https://github.com/helenmurugan/the-groomers-network/issues/27) - As a Site User, I am welcomed by a visually appealing landing page with intuitive navigation so that I can select to register or sign in to the site.
 - [Account Registration](https://github.com/helenmurugan/the-groomers-network/issues/5) - As a Site User, I can register for an account so that I can sign in and have access to the complete functionality of the site.
+- [Immediate feedback through messages](https://github.com/helenmurugan/the-groomers-network/issues/39) - As a Site User, I can immediately receive feedback when I make changes to data so that I understand what action I have just performed.
 
 Epic 2: User Interaction With Posts and Comments
 - [Create and Manage Posts](https://github.com/helenmurugan/the-groomers-network/issues/8) - As a Site User, I can create and manage my own posts so that I can network with other users.
@@ -91,7 +110,6 @@ Epic 2: User Interaction With Posts and Comments
 - [Site Pagination for Posts](https://github.com/helenmurugan/the-groomers-network/issues/17) - As a Site User, I can view several posts on each page so that I can easily navigate between pages.
 - [Interact Using Comments](https://github.com/helenmurugan/the-groomers-network/issues/20) - As a Site User, I can manage my comments on posts so that I can be a part of the conversation.
 - [Like/Unlike Posts](https://github.com/helenmurugan/the-groomers-network/issues/7) - As a Site User, I can like or unlike a post so that I can interact with the content.
-
 
 Epic 3: Events
 - [View Events](https://github.com/helenmurugan/the-groomers-network/issues/19) - As a Site User, I can view a list of events and click on an event so that I can read the full content.
@@ -105,10 +123,9 @@ Epic 4: User Profiles
 
 Epic 5: Administration and Site Management
 - [Site Management](https://github.com/helenmurugan/the-groomers-network/issues/16) - As a Site Admin, I can use a dedicated admin panel so that I can delete any inappropriate content and manage the content of the site.
-
+---
 ## Planning
 
-### Agile Methodology 
 
 ### Database
 Profile Table
@@ -116,16 +133,19 @@ Post Table
 Events Table
 Comments Table
 
-### Wireframes
+### Agile Methodology
+Agile methodologies and principles were used when planning and creating The Groomer's Network.
 
+---
 ## Design
-
+The principles of good UX design were followed when designing and creating The Groomer's Network.
+### Wireframes
 ### Colour
 ### Fonts
 ### Structure
 
 
-
+---
 ## Features
 ### Landing Page
 ### Posts/Home Page
@@ -134,14 +154,14 @@ Comments Table
 ### Registration/Log in
 ### Navigation
 ### Future Development
-
+---
 ## Testing
-The application has been thoroughly tested and code validated. All testing documentation can be found in the separate [testing.md](testing.md) file.
-
+The application has been thoroughly tested and code validated. All testing documentation can be found in the separate [TESTING.md](/TESTING.md) file.
+---
 ## Bugs
 ### Fixed Bugs
 ### Unfixed Bugs
-
+---
 ## Technologies Used
 ### Languages
 ### Frameworks
@@ -149,13 +169,13 @@ The application has been thoroughly tested and code validated. All testing docum
 ### Technologies and Programs
 ### Supporting Libraries and Packages
 - widget_tweaks for modifying the allauth signup form - see blog link below
-
+---
 ## Deployment
 ### Before Deployment
 ### Deployment on Heroku
 ### Forking
 ### Cloning
-
+---
 ## Credits
 ### Code
 - Boilerplate code, navbar and footer code modified from Code Institute's walkthrough blog project.

@@ -12,10 +12,11 @@
 ## User Story Testing
 
 | User Story | Acceptance Criteria | Pass/Fail | 
-| -------- | --------- | --- |
+| --- | --- | --- |
 | As a Site User, I am welcomed by a visually appealing landing page with intuitive navigation so that I can select to register or sign in to the site. | The landing page is inviting and easy to navigate to other pages of the site. | PASS |
 | | The purpose of the site is immediately evident to new users. | PASS |
-| As a Site User, I can register for an account so that I can sign in and have access to the complete functionality of the site. | From the landing page new users can register for an account by providing a username and optional email address. | PASS || | From the landing page, registered users can sign in to access their account. | PASS |
+| As a Site User, I can register for an account so that I can sign in and have access to the complete functionality of the site. | From the landing page new users can register for an account by providing a username and optional email address. | PASS |
+| | From the landing page, registered users can sign in to access their account. | PASS |
 | | Users can easily sign out from the navbar. | PASS |
 | | Authenticated users have full access to the site and functionality. | PASS |
 | | Unauthenticated users have no access to the site, beyond the landing page and registration/signin pages. | PASS |
@@ -71,6 +72,20 @@
 
 ---
 ## Form Validation
+The following tables document how form inputs are validated.
+
+### Registration Form
+
+| Form Field | Requirement | Validation Error | Pass/Fail | 
+| --- | --- | --- | --- |
+| --- | --- | --- | --- |
+
+
+### Sign in Form
+### Profile Form
+### Post Form
+### Comment Form
+
 ---
 ## Code Validation
 ---
@@ -78,8 +93,8 @@
 ---
 ## Responsivity
 ---
-## Browser Compataibility
-
+## Browser Compatability
+The Groomer's Network has been thoroughly tested and shown to work well across the following browsers.
 - Chrome
 - Safari
 - Firefox

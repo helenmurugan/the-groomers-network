@@ -128,6 +128,13 @@ class PostUpdate(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
     template_name = "post_update.html"
     success_message = "Your post has been updated!"
 
+    def get_queryset(self):
+        """
+        Override to get a queryset of the post. Ensures that only the author can update the post.
+        """
+        queryset = super().get_queryset()
+        return queryset.filter(author=self.request.user)
+
     def get_success_url(self):
         """
         Direct user to home page once post is updated successfully
@@ -143,8 +150,17 @@ class PostDelete(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
     success_url = reverse_lazy("home")
     success_message = "Your post has been deleted!"
 
+    def get_queryset(self):
+        """
+        Override to get a queryset of the post. Ensures that only the author can update the post.
+        """
+        queryset = super().get_queryset()
+        return queryset.filter(author=self.request.user)
+
     def delete(self, request, *args, **kwargs):
         obj = self.get_object()
+        if str(user.username) != str(post.author):
+            raise PermissionDenied
         messages.success(self.request, self.success_message % obj.__dict__)
         return super(PostDelete, self).delete(request, *args, **kwargs)
 

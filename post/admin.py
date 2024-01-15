@@ -9,7 +9,7 @@ class PostAdmin(admin.ModelAdmin):
     """
     prepopulated_fields = {'slug': ('title',)}
     list_display = ('title', 'author', 'tagline', 'created_on')
-    search_fields = ['title', 'content', 'tagline']
+    search_fields = ['title', 'content', 'tagline', 'author__username']
     list_filter = ('created_on',)
 
 

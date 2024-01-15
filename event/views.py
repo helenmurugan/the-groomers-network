@@ -19,6 +19,9 @@ class EventDetail(View):
     View for displaying a selected event.
     """
     def get(self, request, slug, *args, **kwargs):
+        """
+        Display selected event
+        """
         queryset = Event.objects
         post = get_object_or_404(queryset, slug=slug)
         liked = False
@@ -40,6 +43,9 @@ class EventLike(View):
     View to toggle likes on events
     """
     def post(self, request, slug, *args, **kwargs):
+        """
+        Toggles likes on event
+        """
         event = get_object_or_404(Event, slug=slug)
         if event.likes.filter(id=request.user.id).exists():
             event.likes.remove(request.user)

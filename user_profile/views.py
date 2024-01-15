@@ -42,6 +42,14 @@ class ProfileUpdate(SuccessMessageMixin, UpdateView):
     success_url = "/user_profile/<str:user>"
     success_message = "Your profile has been updated!"
 
+    def get_queryset(self):
+        """
+        Override to get a queryset of the profile. 
+        Ensures that only the user can edit their own profile.
+        """
+        queryset = super().get_queryset()
+        return queryset.filter(user=self.request.user)
+
 
 def get_user_profile(request, username):
     """

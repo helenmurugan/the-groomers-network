@@ -87,7 +87,6 @@ class PostLike(View):
     """
     View to toggle likes on posts.
     """
-
     def post(self, request, slug, *args, **kwargs):
         """
         Toggle likes on posts.
@@ -130,7 +129,8 @@ class PostUpdate(SuccessMessageMixin, LoginRequiredMixin, UpdateView):
 
     def get_queryset(self):
         """
-        Override to get a queryset of the post. Ensures that only the author can update the post.
+        Override to get a queryset of the post.
+        Ensures that only the author can update the post.
         """
         queryset = super().get_queryset()
         return queryset.filter(author=self.request.user)
@@ -152,7 +152,8 @@ class PostDelete(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
 
     def get_queryset(self):
         """
-        Override to get a queryset of the post. Ensures that only the author can update the post.
+        Override to get a queryset of the post.
+        Ensures that only the author can delete the post.
         """
         queryset = super().get_queryset()
         return queryset.filter(author=self.request.user)
@@ -164,7 +165,7 @@ class PostDelete(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
         messages.success(self.request, self.success_message % obj.__dict__)
         return super(PostDelete, self).delete(request, *args, **kwargs)
 
-    # Following codeode on url permission access taken from
+    # Following code on url permission access taken from
     # DamianJacob: https://github.com/Damianjacob/MS4_breadit/tree/main/breadit
 
     def get(self, request, slug):
@@ -190,17 +191,34 @@ class CommentDelete(LoginRequiredMixin, DeleteView):
     template_name = "comment_confirm_delete.html"
     success_message = "Your comment has been deleted!"
 
+    def get_queryset(self):
+        """
+        Override to get a queryset of the post.
+        Ensures that only the author can delete the comment.
+        """
+        queryset = super().get_queryset()
+        return queryset.filter(author=self.request.user)
+
     def delete(self, request, *args, **kwargs):
+        """
+        Deletes comment
+        """
         obj = self.get_object()
         messages.success(self.request, self.success_message % obj.__dict__)
         return super(CommentDelete, self).delete(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
+        """
+        Gets context data (which post for the comment is related to)
+        """
         context = super().get_context_data(**kwargs)
         context['post'] = self.object.post
         return context
 
     def get_success_url(self):
+        """
+        Redirects user to the relevant post
+        """
         post = self.object.post
         post_slug = post.slug
         return reverse("post_detail", kwargs={"slug": post_slug})

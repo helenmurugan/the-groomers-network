@@ -186,7 +186,7 @@ Cloudinary was used to store static and media files.
 
 ### Before Deployment
 Important points for before deployment
-1. The requirements for the project were addded to a requirements.txt file using the command 'pip3 freeze > requirements.txt' in the terminal.
+1. The requirements for the project were added to a requirements.txt file using the command 'pip3 freeze > requirements.txt' in the terminal.
 2. In .gitignore, include env.py to ensure sensitive information is not pushed to GitHub.
 3. In settings.py, set 'DEBUG = False' to prevent verbose error pages and to prevent Django serving static files itself instead of relying on Cloudinary.
 

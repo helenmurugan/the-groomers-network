@@ -185,7 +185,7 @@ Cloudinary was used to store static and media files.
 2. Copy your CLOUDINARY_URL
 
 ### Before Deployment
-Important points to note before deployment
+Important points for before deployment
 1. The requirements for the project were addded to a requirements.txt file using the command 'pip3 freeze > requirements.txt' in the terminal.
 2. In .gitignore, include env.py to ensure sensitive information is not pushed to GitHub.
 3. In settings.py, set 'DEBUG = False' to prevent verbose error pages and to prevent Django serving static files itself instead of relying on Cloudinary.
@@ -201,12 +201,20 @@ This app was deployed to Heroku using the following steps.
 - CLOUDINARY_URL
 4. Click 'Add buildpack'. The buildpacks will install further dependencies that are not included in the requirements.txt. For this project, the buildpack required is Python.
 5. Select the Deploy tab
-6. If successfully built, a message appears 'Your app was successfully deployed'. Click 'view' to view the deployed page. 
+6. If successfully built, a message appears 'Your app was successfully deployed'. Click 'View' to view the deployed page. 
 7. Note the deployed URL.
 
-
 ### Forking
+1. From the GitHub repository, click on 'Fork', 'Create a Fork'
+2. Change the name and description of the fork as required.
+3. Select to copy only the main branch or copy all branches.
+4. Click 'Create a Fork'. A new repository will appear in your GitHub repositories if successful.
+
 ### Cloning
+1. From the GitHub repository, click 'Code' and copy the link.
+1. Open git bash and change the working directory to the desired location.
+1. Enter 'git clone' and paste the link.
+1. Press Enter to create your local clone.
 ---
 ## Credits
 ### Code
@@ -218,17 +226,21 @@ This app was deployed to Heroku using the following steps.
 ### Media
 - https://favicon.io/favicon-generator/
 ### Content
+
 ### Documentation and Useful Blogs
-- Bootstrap
-- Django
-- https://builtwithdjango.com/blog/styling-authentication-pages
-- https://sentry.io/answers/how-do-i-auto-resize-an-image-to-fit-a-div-container/#:~:text=To%20fix%20this%2C%20we%20can,contain%E2%80%9D%20and%20%E2%80%9Ccover%E2%80%9D.
-- https://stackoverflow.com/questions/25044370/make-clicked-tab-active-in-bootstrap
-- https://stackoverflow.com/questions/11472495/remove-labels-in-a-django-crispy-forms
-- https://stackoverflow.com/questions/33724344/how-can-i-display-a-user-profile-using-django
-### Acknowledgents
-- Excellent mentoring and expert guidance from Juliia Konovalova
-- Inspiration on structure and design of templates taken from Kim Bergstroem Gamer's Insight blog project.
+The following documentation, blogs, tutorials and guides were used to aid development.
+- [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
+- [Django](https://docs.djangoproject.com/en/5.0/)
+- [Built with Django Blog](https://builtwithdjango.com/blog/styling-authentication-pages)
+- [Sentry](https://sentry.io/welcome/)
+- [Stack Overflow - Bootstrap Nav](https://stackoverflow.com/questions/25044370/make-clicked-tab-active-in-bootstrap)
+- [Stack Overflow - Crispy Forms](https://stackoverflow.com/questions/11472495/remove-labels-in-a-django-crispy-forms)
+- [Stack Overflow - User Profile](https://stackoverflow.com/questions/33724344/how-can-i-display-a-user-profile-using-django)
+- [Widget Tweaks Documentation](https://pypi.org/project/django-widget-tweaks/)
+
+### Acknowledgments
+- Excellent mentoring and expert guidance from Juliia Konovalova and Spencer Barriball
+- Inspiration on structure and design of templates taken from Kim Bergstroem's PP4 Gamer's Insight blog project.
 
 
 

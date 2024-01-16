@@ -33,7 +33,7 @@ The Groomer's Network is a Django web application that allows pet grooming profe
 - [Planning](#planning)
     + [Agile methodology](#agile-methodology)
     + [Database](#database)
-- [Design](#design)
+- [UX Design](#ux-design)
     + [Wireframes](#wireframes)
     + [Colour](#colour)
     + [Fonts](#fonts)
@@ -137,7 +137,7 @@ Comments Table
 Agile methodologies and principles were used when planning and creating The Groomer's Network.
 
 ---
-## Design
+## UX Design
 The principles of good UX design were followed when designing and creating The Groomer's Network.
 ### Wireframes
 ### Colour

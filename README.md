@@ -196,7 +196,7 @@ This app was deployed to Heroku using the following steps.
 2. Create a unique name for your app, and select your location.
 3. Open the settings tab, Click 'Reveal Config Vars'. I added the following Config Vars for this project:
 - DATABASE_URL
-- DISABLE_COLLECTSTATIC = 0
+- DISABLE_COLLECTSTATIC = 0 (Note this is set to 1 during development)
 - SECRET_KEY
 - CLOUDINARY_URL
 4. Click 'Add buildpack'. The buildpacks will install further dependencies that are not included in the requirements.txt. For this project, the buildpack required is Python.

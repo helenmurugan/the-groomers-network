@@ -21,6 +21,8 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
+X_FRAME_OPTIONS = 'SAMEORIGIN'
+
 ALLOWED_HOSTS = [
     '8000-helenmuruga-thegroomers-3jiflqj5wgs.ws-eu107.gitpod.io',
     'localhost',

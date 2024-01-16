@@ -29,7 +29,11 @@
                             </div>
                             <a href="{% url 'post_detail' post.slug  %}" class="post-link">
                                 <h5 class="card-title font-size">{{ post.title }}</h5>
-                                <p class="card-text">{{ post.tagline}}</p>
+                                {% if post.tagline %}
+                                    <p class="card-text">{{ post.tagline}}</p>
+                                {% else %}
+                                    <br>
+                                {% endif %}
                             </a>
                             <hr class="card-hr">
                             <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>

@@ -19,25 +19,25 @@
                                 {% if user_profile.full_name %}
                                     <p>{{user_profile.full_name}}</p>
                                 {% else %}
-                                    <p>-</p>
+                                    <br>
                                 {% endif %}
                             <h5 class="mb-2 teal-text">Company Name</h5>
                                 {% if user_profile.company_name %}
                                     <p>{{user_profile.company_name}}</p>
                                 {% else %}
-                                    <p>-</p>
+                                    <br>
                                 {% endif %}
                             <h5 class="mb-2 teal-text">Location</h5>
                                 {% if user_profile.location %}
                                     <p>{{user_profile.location}}</p>
                                 {% else %}
-                                    <p>-</p>
+                                    <br>
                                 {% endif %}
                             <h5 class="mb-2 teal-text">Bio</h5>
                                 {% if user_profile.bio %}
                                     <p>{{user_profile.bio | safe }}</p>
                                 {% else %}
-                                    <p>-</p>
+                                    <br>
                                 {% endif %}
                         </div>
                     </div>

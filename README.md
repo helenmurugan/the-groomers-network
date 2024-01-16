@@ -57,8 +57,10 @@ The Groomer's Network is a Django web application that allows pet grooming profe
     + [Technologies and Programs](#technologies-and-programs)
     + [Supporting Libraries and Packages](#supporting-libraries-and-packages)
 - [Deployment](#deployment)
+    + [ElephantSQL](#elephantsql)
+    + [Cloudinary](#cloudinary)
     + [Before Deployment](#before-deployment)
-    + [Deployment on Heroku](#deployment-on-heroku)
+    + [Deployment to Heroku](#deployment-to-heroku)
     + [Forking](#Forking)
     + [Cloning](#cloning)
 - [Credits](#credits)
@@ -171,8 +173,38 @@ The application has been thoroughly tested and code validated. All testing docum
 - widget_tweaks for modifying the allauth signup form - see blog link below
 ---
 ## Deployment
+### ElephantSQL
+An external database was created in ElephantSQL using the following steps
+1. Log in to ElephantSQL and select 'Create New Instance'
+2. Select a plan, input your details and review.
+3. Once created, use the copy icon to copy the DATBASE_URL.
+
+### Cloudinary
+Cloudinary was used to store static and media files.
+1. Log in to Cloudinary
+2. Copy your CLOUDINARY_URL
+
 ### Before Deployment
-### Deployment on Heroku
+Important points to note before deployment
+1. The requirements for the project were addded to a requirements.txt file using the command 'pip3 freeze > requirements.txt' in the terminal.
+2. In .gitignore, include env.py to ensure sensitive information is not pushed to GitHub.
+3. In settings.py, set 'DEBUG = False' to prevent verbose error pages and to prevent Django serving static files itself instead of relying on Cloudinary.
+
+### Deployment to Heroku
+This app was deployed to Heroku using the following steps.
+1. Log in to Heroku and from the Dashboard, select 'Create New App'
+2. Create a unique name for your app, and select your location.
+3. Open the settings tab, Click 'Reveal Config Vars'. I added the following Config Vars for this project:
+- DATABASE_URL
+- DISABLE_COLLECTSTATIC = 0
+- SECRET_KEY
+- CLOUDINARY_URL
+4. Click 'Add buildpack'. The buildpacks will install further dependencies that are not included in the requirements.txt. For this project, the buildpack required is Python.
+5. Select the Deploy tab
+6. If successfully built, a message appears 'Your app was successfully deployed'. Click 'view' to view the deployed page. 
+7. Note the deployed URL.
+
+
 ### Forking
 ### Cloning
 ---

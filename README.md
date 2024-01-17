@@ -1,7 +1,7 @@
 # The Groomer's Network
 
 Developer: [Helen Murugan](https://github.com/helenmurugan)<br>
-Deployed website: [Link to website](https://.com)<br>
+Deployed website: [Link to website](https://the-groomers-network-96ece9118f5d.herokuapp.com/)<br>
 
 ![Main image](documentation/readme_landing_page.jpg)
 
@@ -162,6 +162,12 @@ The application has been thoroughly tested and code validated. All testing docum
 ---
 ## Bugs
 ### Fixed Bugs
+- During Development the following bugs were fixed:
+
+- During Deployment the following bugs were fixed:
+    - Initially CSS was not loading on the delpoyed project. To fix this I removed the DISABLE_COLLECTSTATIC Config Var and set DEBUG=False.
+    - Initially the Images were not loading on the deployed project. To fix this I added {% load static %} tags to the top of each html template that requires an image to be loaded and corrected the image source Django syntax as follows src="{% static 'images/labrador.png' %}".
+
 ### Unfixed Bugs
 ---
 ## Technologies Used
@@ -196,14 +202,14 @@ Important points for before deployment
 This app was deployed to Heroku using the following steps.
 1. Log in to Heroku and from the Dashboard, select 'Create New App'
 2. Create a unique name for your app, and select your location.
-3. Open the settings tab, Click 'Reveal Config Vars'. I added the following Config Vars for this project:
+3. Open the settings tab, Click 'Reveal Config Vars'. I added the following Config Vars for deployment of this project:
 - DATABASE_URL
-- DISABLE_COLLECTSTATIC = 0 (Note this is set to 1 during development)
 - SECRET_KEY
 - CLOUDINARY_URL
 4. Click 'Add buildpack'. The buildpacks will install further dependencies that are not included in the requirements.txt. For this project, the buildpack required is Python.
 5. Select the Deploy tab. You can select to view build log to watch the project being built.
-6. When successfully built, a message appears in the build log showing the URL'https://the-groomers-network-96ece9118f5d.herokuapp.com/ deployed to Heroku'. Click 'Open App' to view the deployed app.
+6. When successfully built, a message appears in the build log showing the URL'https://the-groomers-network-96ece9118f5d.herokuapp.com/ deployed to Heroku'. 
+7. Click 'Open App' or 'View' to open the deployed app.
 
 ### Forking
 1. From the GitHub repository, click on 'Fork', 'Create a Fork'
@@ -220,7 +226,7 @@ This app was deployed to Heroku using the following steps.
 ## Credits
 ### Code
 - Boilerplate code, navbar and footer code modified from Code Institute's walkthrough blog project.
-- Signals code was taken and modified from Juliia Konovalova's [e-commerce project]().
+- Signals code was taken and modified from Juliia Konovalova's [e-commerce project](https://github.com/IuliiaKonovalova/e-commerce).
 - The code for 'get_success_url' function was taken and modified from Kim Bergstroem's [PP4 project](https://github.com/KimBergstroem/PP4).
 
 

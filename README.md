@@ -179,6 +179,7 @@ An external database was created in ElephantSQL using the following steps
 2. Select a plan, input your details and review.
 3. Once created, use the copy icon to copy the DATBASE_URL.
 
+
 ### Cloudinary
 Cloudinary was used to store static and media files.
 1. Log in to Cloudinary
@@ -189,6 +190,7 @@ Important points for before deployment
 1. The requirements for the project were added to a requirements.txt file using the command 'pip3 freeze > requirements.txt' in the terminal.
 2. In .gitignore, include env.py to ensure sensitive information is not pushed to GitHub.
 3. In settings.py, set 'DEBUG = False' to prevent verbose error pages and to prevent Django serving static files itself instead of relying on Cloudinary.
+4. It is necessary to make migrations and migrate the models to the database before deployment.
 
 ### Deployment to Heroku
 This app was deployed to Heroku using the following steps.
@@ -200,8 +202,8 @@ This app was deployed to Heroku using the following steps.
 - SECRET_KEY
 - CLOUDINARY_URL
 4. Click 'Add buildpack'. The buildpacks will install further dependencies that are not included in the requirements.txt. For this project, the buildpack required is Python.
-5. Select the Deploy tab
-6. When successfully built, a message appears showing the URL'https://the-groomers-network-96ece9118f5d.herokuapp.com/ deployed to Heroku'. Click 'Open App' to view the deployed app.
+5. Select the Deploy tab. You can select to view build log to watch the project being built.
+6. When successfully built, a message appears in the build log showing the URL'https://the-groomers-network-96ece9118f5d.herokuapp.com/ deployed to Heroku'. Click 'Open App' to view the deployed app.
 
 ### Forking
 1. From the GitHub repository, click on 'Fork', 'Create a Fork'
@@ -223,7 +225,9 @@ This app was deployed to Heroku using the following steps.
 
 
 ### Media
-- https://favicon.io/favicon-generator/
+- Favicon was created using [Favicon.io](https://favicon.io/favicon-generator/)
+- Dog image was taken from [rawpixel](https://www.rawpixel.com/) (id-12054680)
+
 ### Content
 
 ### Documentation and Useful Blogs

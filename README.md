@@ -201,8 +201,7 @@ This app was deployed to Heroku using the following steps.
 - CLOUDINARY_URL
 4. Click 'Add buildpack'. The buildpacks will install further dependencies that are not included in the requirements.txt. For this project, the buildpack required is Python.
 5. Select the Deploy tab
-6. If successfully built, a message appears 'Your app was successfully deployed'. Click 'View' to view the deployed page. 
-7. Note the deployed URL.
+6. When successfully built, a message appears showing the URL'https://the-groomers-network-96ece9118f5d.herokuapp.com/ deployed to Heroku'. Click 'Open App' to view the deployed app.
 
 ### Forking
 1. From the GitHub repository, click on 'Fork', 'Create a Fork'
@@ -219,8 +218,8 @@ This app was deployed to Heroku using the following steps.
 ## Credits
 ### Code
 - Boilerplate code, navbar and footer code modified from Code Institute's walkthrough blog project.
-- Signals code taken modified from Juliia Konovalova's PP5 e-commerce project.
-- 'get_success_url' taken from Kim Bergstroem's PP4 blog project.
+- Signals code was taken and modified from Juliia Konovalova's [e-commerce project]().
+- The code for 'get_success_url' function was taken and modified from Kim Bergstroem's [PP4 project](https://github.com/KimBergstroem/PP4).
 
 
 ### Media

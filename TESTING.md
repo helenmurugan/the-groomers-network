@@ -1,13 +1,65 @@
 # Testing and Validation
 ---
 ## Contents
-
-- [User Story Testing](#user-story-testing)
-- [Form Validation](#form-validation)
 - [Code Validation](#code-validation)
-- [Accessibility](#accessibilty)
+    + [HTML](#html)
+    + [CSS](#css)
+    + [JavaScript](#javascript)
+    + [Python](#python)
 - [Responsivity](#responsivity)
 - [Browser Compatibility](#browser-compatibility)
+- [Accessibility](#accessibilty)
+- [Manual Testing](#manual-testing)
+    + [Landing Page](#landing-page)
+    + [Registration Page](#registration-page)
+    + [Login Page](#login-page)
+    + [Navigation](#navigation)
+    + [My Profile Page](#my-profile-page)
+    + [Home/Posts Page](#homeposts-page)
+    + [Events Page](#events-page)
+    + [Logout Page](#logout-page)
+- [User Story Testing](#user-story-testing)
+---
+## Code Validation
+### HTML
+All deployed templates were tested with the [W3C HTML Validator](https://validator.w3.org/nu/#textarea) and passed in all cases with no errors or warnings. An example is shown below for the landing page.<br>
+![HTML Landing Page](documentation/html_landing_page.jpg)
+
+### CSS
+The CSS code was tested using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) and passed with no errror found.<br>
+![CSS Validator](documentation/css.jpg)
+
+### JavaScript
+A small amount of JavaScript was used for Messages in base.html. This did raise eight errors in [JSHint Validator](https://jshint.com/), which I will go on to fix at a later date. Given such a small amount of JS was used and it passed in terms of functionality, this was not deemed a priority.<br>
+![JS Validator](documentation/js.jpg)
+
+### Python
+All Python files were tested using [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/). Python code passed in all case with no errors or warnings. An example is shown below for views.py in the post app.
+![Python Linter](documentation/python.jpg)
+
+---
+## Responsivity
+---
+## Browser Compatability
+The Groomer's Network has been thoroughly tested and shown to work well across the following browsers.
+- Chrome
+- Safari
+- Firefox
+- Edge
+---
+## Accessibility
+---
+## Manual Testing
+
+### Landing Page
+### Registration Page
+### Login Page
+### Navigation
+### My Profile Page
+### Home/Posts Page
+### Events Page
+### Logout Page
+
 ---
 ## User Story Testing
 
@@ -71,33 +123,7 @@
 
 
 ---
-## Form Validation
-The following tables document how form inputs are validated.
-
-### Registration Form
-
-| Form Field | Requirement | Validation Error | Pass/Fail | 
-| --- | --- | --- | --- |
-| --- | --- | --- | --- |
 
 
-### Sign in Form
-### Profile Form
-### Post Form
-### Comment Form
-
----
-## Code Validation
----
-## Accessibility
----
-## Responsivity
----
-## Browser Compatability
-The Groomer's Network has been thoroughly tested and shown to work well across the following browsers.
-- Chrome
-- Safari
-- Firefox
-- Edge
 
 

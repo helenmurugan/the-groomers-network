@@ -50,7 +50,9 @@ The Groomer's Network is a Django web application that allows pet grooming profe
     + [User Profile](#user-profile)
     + [Posts/Home Page](#postshome-page)
     + [Events Page](#events)
+    + [Log out](#log-out)
     + [Future Development](#future-development)
+    + [Admin Panel](#admin-panel)
 - [Testing](#testing)
 - [Bugs](#bugs)
     + [Fixed Bugs](#fixed-bugs)
@@ -168,6 +170,8 @@ The principles of good UX design were followed when designing and creating The G
 ### User Profile
 ### Posts/Home Page
 ### Events Page
+### Log out
+### Admin Panel
 ### Future Development
 ---
 ## Testing

@@ -18,6 +18,7 @@
     + [Home/Posts Page](#homeposts-page)
     + [Events Page](#events-page)
     + [Logout Page](#logout-page)
+    + [Admin Panel](#admin-panel)
 - [User Story Testing](#user-story-testing)
 ---
 ## Code Validation
@@ -59,6 +60,7 @@ The Groomer's Network has been thoroughly tested and shown to work well across t
 ### Home/Posts Page
 ### Events Page
 ### Logout Page
+### Admin Panel
 
 ---
 ## User Story Testing

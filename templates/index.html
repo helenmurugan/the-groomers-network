@@ -29,13 +29,13 @@
                                 </div>
                             </div>
                             <a href="{% url 'post_detail' post.slug  %}" class="post-link">
-                                <p class="card-title title-size">{{ post.title }}</p>
-                                {% if post.tagline %}
-                                    <p class="card-text">{{ post.tagline}}</p>
-                                {% else %}
-                                    <br>
-                                {% endif %}
+                                <p class="card-title">{{ post.title }}</p> 
                             </a>
+                            {% if post.tagline %}
+                                <p class="card-text">{{ post.tagline}}</p>
+                            {% else %}
+                                <br>
+                            {% endif %}
                             <hr class="card-hr">
                             <p class="card-text text-muted h6">{{ post.created_on}} <i class="far fa-heart"></i>
                                 {{ post.number_of_likes }}</p>

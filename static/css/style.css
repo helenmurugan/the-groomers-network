@@ -77,13 +77,13 @@
     margin-left: 4px;
 }
 
-.title-size {
-    font-size: 1.1 rem;
-}
-
 .post-link:hover,
 .page-link {
     color: black;
+}
+
+.title-size {
+    font-size: 1.1 rem;
 }
 
 /* post detail and event detail pages*/

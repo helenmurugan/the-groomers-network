@@ -19,7 +19,7 @@
         {% if "placeholder" in event.featured_image.url %}
         <img class="card-img-top"
             src="{% static 'images/labrador-placeholder.png' %}" 
-            alt="placeholder AI image of yellow labrador running with grey background">>
+            alt="placeholder AI image of yellow labrador running with grey background">
         {% else %}
         <img class="card-img-top" src=" {{ event.featured_image.url }}" alt="featured image">
         {% endif %}

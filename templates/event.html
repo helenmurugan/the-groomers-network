@@ -20,8 +20,12 @@
                                 {% endif %}
                             </div>
                             <a href="{% url 'event_detail' event.slug  %}" class="post-link">
-                                <h5 class="card-title">{{ event.title }}</h5>
-                                <p class="card-text">{{ event.tagline }}</p>
+                                <p class="card-title">{{ event.title }}</p>
+                                {% if event.tagline %}
+                                    <p class="card-text">{{ event.tagline}}</p>
+                                {% else %}
+                                    <br>
+                                {% endif %}
                             </a>
                             <hr class="card-hr">
                             <p class="card-text text-muted h6">{{ event.date_time}} | {{ event.location}} <i class="far fa-heart"></i>

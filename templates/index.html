@@ -29,7 +29,7 @@
                                 </div>
                             </div>
                             <a href="{% url 'post_detail' post.slug  %}" class="post-link">
-                                <h5 class="card-title font-size">{{ post.title }}</h5>
+                                <p class="card-title font-size">{{ post.title }}</p>
                                 {% if post.tagline %}
                                     <p class="card-text">{{ post.tagline}}</p>
                                 {% else %}

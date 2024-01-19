@@ -34,7 +34,7 @@ A small amount of JavaScript was used for Messages in base.html. This did raise 
 ![JS Validator](documentation/js.jpg)
 
 ### Python
-All Python files were tested using [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/). Python code passed in all case with no errors or warnings. An example is shown below for views.py in the post app.
+All Python files were tested using [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/). Python code passed in all cases with no errors or warnings. An example is shown below for views.py in the post app.
 ![Python Linter](documentation/python.jpg)
 
 ---

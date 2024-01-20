@@ -53,21 +53,23 @@ A small amount of JavaScript was used for Messages in base.html. This raised eig
 All Python files in each app were tested using [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/). Python code passed in all cases with no errors or warnings. An example is shown below for views.py in the post app.
 ![Python Linter](documentation/python.jpg)
 
+
 | App | Comments | Pass/Fail | 
 | --- | --- | --- |
-| event |  | PASS |
-| post |  | PASS |
-| pages |  | PASS |
-| user_profile |  | PASS |
-| directory level files | env.py has two lines that exceed max. line length, however I was unable to break it across two lines, and deemed it acceptable | PASS |
+| event | all files passed with no errors | PASS |
+| post | all files passed with no errors | PASS |
+| pages | all files passed with no errors | PASS |
+| user_profile | all files passed with no errors | PASS |
+| directory level files | env.py has two lines that exceed max. line length, however I was unable to shorten the lines in a satisfactory way, and therefore deemed it acceptable | PASS |
 
 ---
 ## Responsiveness
 
-The app was developed and tested in Google Chrome, DevTools was used continuously to ensure responsiveness across all screen sizes, using a mobile-first approach.
+DevTools was used continuously during development to ensure responsiveness across all screen sizes, using a mobile-first approach.
 The deployed app was tested on the following devices.
 
 | Device | Comments | Pass/Fail | 
+| --- | --- | --- | 
 | Iphone 5S | Displays and functions correctly  | PASS |
 | Samsung S10 | Displays and functions correctly  | PASS |
 | Windows 10 Pro | Displays and functions correctly  | PASS |
@@ -75,12 +77,33 @@ The deployed app was tested on the following devices.
 ---
 ## Browser Compatability
 The Groomer's Network has been thoroughly tested and shown to work well across the following browsers.
-- Chrome
-- Safari
-- Firefox
-- Edge
+
+| Browser | Comments | Pass/Fail | 
+| --- | --- | --- | 
+| Chrome | Displays and functions correctly  | PASS |
+| Safari | Displays and functions correctly  | PASS |
+| Firefox | Displays and functions correctly  | PASS |
+| Edge | Displays and functions correctly  | PASS |
 ---
 ## Accessibility
+Care was taken during development to use semantic HTML, aria labels and alt text. All pages were tested using the Lighthouse tool in DevTools.
+
+![lighthouse](documentation/lighthouse.jpg)
+
+| Template | Score | Pass/Fail | 
+| --- | --- |--- |
+| landing_page.html | 100 | PASS |
+| index.html | 100 | PASS |
+| post_create.html | 100 | PASS |
+| post_update.html | 94 | PASS |
+| post_confirm_delete.html | 94 | PASS |
+| comment_confirm_delete.html | 94 | PASS |
+| event.html | 100 | PASS |
+| event_detail.html | 100 | PASSS |
+| my_profile.html | 100 | PASS |
+| my_profile_update | 100 | PASS |
+| user_profile.html | 100 | PASS |
+
 ---
 ## Manual Testing
 

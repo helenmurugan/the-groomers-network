@@ -13,10 +13,17 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in event.featured_image.url %}
-                                <img class="card-img-top image-contain"
-                                    src="{% static 'images/labrador-placeholder.png' %}" alt="placeholder AI image of yellow labrador running with grey background">
+                                <a href="{% url 'event_detail' event.slug  %}">
+                                    <img class="card-img-top image-contain"
+                                    src="{% static 'images/labrador-placeholder.png' %}" 
+                                    alt="placeholder AI image of yellow labrador running with grey background">
+                                </a>
                                 {% else %}
-                                <img class="card-img-top image-contain" src=" {{ event.featured_image.url }}" alt="featured image">
+                                <a href="{% url 'event_detail' event.slug  %}">
+                                    <img class="card-img-top image-contain" 
+                                    src=" {{ event.featured_image.url }}" 
+                                    alt="featured image">
+                                </a>
                                 {% endif %}
                             </div>
                             <a href="{% url 'event_detail' event.slug  %}" class="post-link">

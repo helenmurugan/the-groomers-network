@@ -160,7 +160,8 @@ class PostDelete(SuccessMessageMixin, LoginRequiredMixin, DeleteView):
 
     def delete(self, request, *args, **kwargs):
         obj = self.get_object()
-        if str(user.username) != str(post.author):
+        post = self.get_object()
+        if str(request.user.username) != str(post.author):
             raise PermissionDenied
         messages.success(self.request, self.success_message % obj.__dict__)
         return super(PostDelete, self).delete(request, *args, **kwargs)

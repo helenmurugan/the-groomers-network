@@ -17,10 +17,16 @@
                         <div class="card-body">
                             <div class="image-container">
                                 {% if "placeholder" in post.featured_image.url %}
-                                <img class="card-img-top image-contain"
-                                    src="{% static 'images/labrador-placeholder.png' %}" alt="placeholder AI image of yellow labrador running with grey background">
+                                <a href="{% url 'post_detail' post.slug  %}">
+                                    <img class="card-img-top image-contain"
+                                    src="{% static 'images/labrador-placeholder.png' %}" 
+                                    alt="placeholder AI image of yellow labrador running with grey background">
+                                </a>
                                 {% else %}
-                                <img class="card-img-top image-contain" src=" {{ post.featured_image.url }}" alt="featured image">
+                                <a href="{% url 'post_detail' post.slug  %}">
+                                    <img class="card-img-top image-contain" 
+                                    src=" {{ post.featured_image.url }}" 
+                                    alt="featured image"></a>
                                 {% endif %}
                                 <div class="image-flash">
                                     <a href="{% url 'profile' post.author %}">

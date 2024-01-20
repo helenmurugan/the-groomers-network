@@ -4,6 +4,8 @@ from cloudinary.models import CloudinaryField
 from django.utils.text import slugify
 from django.utils import timezone
 
+from django.core.validators import MaxLengthValidator
+
 
 class Post(models.Model):
     """
@@ -12,6 +14,7 @@ class Post(models.Model):
     title = models.CharField(
         max_length=40,
         verbose_name="Title",
+        validators=[MaxLengthValidator(40, 'Please use less than 40 characters')],
         )
     slug = models.SlugField(
         max_length=40,

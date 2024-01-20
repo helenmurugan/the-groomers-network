@@ -43,7 +43,7 @@
     <nav class="navbar navbar-expand-lg navbar-light nav-bg">
         <div class="container-fluid line">
             {% if user.is_authenticated %}
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">The Groomer's Network</span></a>
+            <a class="navbar-brand" href="{% url 'landing_page' %}"><span class="brand">The Groomer's Network</span></a>
             {% else %}
             <span class="brand">The Groomer's Network</span>
             {% endif %}

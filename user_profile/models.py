@@ -14,7 +14,7 @@ class Profile(models.Model):
         verbose_name='User',
     )
     full_name = models.CharField(
-        max_length=50,
+        max_length=40,
         blank=True,
         null=True,
         verbose_name='Full name',
@@ -23,13 +23,13 @@ class Profile(models.Model):
     company_name = models.CharField(
         blank=True,
         null=True,
-        max_length=50,
+        max_length=40,
         default='',
     )
     location = models.CharField(
         blank=True,
         null=True,
-        max_length=50,
+        max_length=40,
         default='',
     )
 

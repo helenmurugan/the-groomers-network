@@ -6,7 +6,7 @@
     + [CSS](#css)
     + [JavaScript](#javascript)
     + [Python](#python)
-- [Responsivity](#responsivity)
+- [Responsiveness](#responsiveness)
 - [Browser Compatibility](#browser-compatibility)
 - [Accessibility](#accessibilty)
 - [Manual Testing](#manual-testing)
@@ -23,23 +23,55 @@
 ---
 ## Code Validation
 ### HTML
-All deployed templates were tested with the [W3C HTML Validator](https://validator.w3.org/nu/#textarea) and passed in all cases with no errors or warnings. An example is shown below for the landing page.<br>
+All deployed templates were tested with the [W3C HTML Validator](https://validator.w3.org/nu/#textarea) and passed in all cases with no errors or warnings. To access code that is free of Django syntax I used Google DevTools to access the code under the Sources tab. Note that user input data was not included in the validation eg. user bio, posts and comments. An example of an error-free check is shown below.<br>
 ![HTML Landing Page](documentation/html_landing_page.jpg)
+
+
+| Template | Pass/Fail | 
+| --- | --- |
+| landing_page.html | PASS |
+| index.html | PASS |
+| post_create.html | PASS |
+| post_update.html | PASS |
+| post_confirm_delete.html | PASS |
+| comment_confirm_delete.html | PASS |
+| event.html | PASS |
+| event_detail.html | PASSS |
+| my_profile.html | PASS |
+| my_profile_update | PASS |
+| user_profile.html | PASS |
 
 ### CSS
 The CSS code was tested using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) and passed with no errror found.<br>
 ![CSS Validator](documentation/css.jpg)
 
 ### JavaScript
-A small amount of JavaScript was used for Messages in base.html. This did raise eight errors in [JSHint Validator](https://jshint.com/), which I will go on to fix at a later date. Given such a small amount of JS was used and it passed in terms of functionality, this was not deemed a priority.<br>
+A small amount of JavaScript was used for Messages in base.html. This raised eight errors in [JSHint Validator](https://jshint.com/), which I will go on to fix at a later date. Given such a small amount of JS was used and it passed in terms of functionality, this was not deemed a priority, within the time available.<br>
 ![JS Validator](documentation/js.jpg)
 
 ### Python
-All Python files were tested using [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/). Python code passed in all cases with no errors or warnings. An example is shown below for views.py in the post app.
+All Python files in each app were tested using [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/). Python code passed in all cases with no errors or warnings. An example is shown below for views.py in the post app.
 ![Python Linter](documentation/python.jpg)
 
+| App | Comments | Pass/Fail | 
+| --- | --- | --- |
+| event |  | PASS |
+| post |  | PASS |
+| pages |  | PASS |
+| user_profile |  | PASS |
+| directory level files | env.py has two lines that exceed max. line length, however I was unable to break it across two lines, and deemed it acceptable | PASS |
+
 ---
-## Responsivity
+## Responsiveness
+
+The app was developed and tested in Google Chrome, DevTools was used continuously to ensure responsiveness across all screen sizes, using a mobile-first approach.
+The deployed app was tested on the following devices.
+
+| Device | Comments | Pass/Fail | 
+| Iphone 5S | Displays and functions correctly  | PASS |
+| Samsung S10 | Displays and functions correctly  | PASS |
+| Windows 10 Pro | Displays and functions correctly  | PASS |
+
 ---
 ## Browser Compatability
 The Groomer's Network has been thoroughly tested and shown to work well across the following browsers.

@@ -17,8 +17,8 @@ class Post(models.Model):
         validators=[MaxLengthValidator(40, 'Please use less than 40 characters')],
         )
     slug = models.SlugField(
-        max_length=40,
-        unique=True
+        unique=True,
+        max_length=100,
         )
     author = models.ForeignKey(
         User,

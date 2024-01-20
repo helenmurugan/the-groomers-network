@@ -10,11 +10,11 @@ class Post(models.Model):
     Model for user posts
     """
     title = models.CharField(
-        max_length=150,
+        max_length=40,
         verbose_name="Title",
         )
     slug = models.SlugField(
-        max_length=150,
+        max_length=40,
         unique=True
         )
     author = models.ForeignKey(
@@ -25,6 +25,7 @@ class Post(models.Model):
     content = models.TextField(
         blank=False,
         null=False,
+        max_length=20000,
     )
     featured_image = CloudinaryField(
         'image',
@@ -33,7 +34,7 @@ class Post(models.Model):
         null=True,
         )
     tagline = models.CharField(
-        max_length=200,
+        max_length=40,
         null=True,
         blank=True,
     )
@@ -92,7 +93,9 @@ class Comment(models.Model):
         on_delete=models.CASCADE,
         related_name="post_comment"
         )
-    body = models.TextField()
+    body = models.TextField(
+        max_length=1000,
+    )
     created_on = models.DateTimeField(
         auto_now_add=True
     )

@@ -23,7 +23,7 @@ class Event(models.Model):
     content = models.TextField(
         blank=True,
         null=True,
-        max_length=2000,
+        max_length=20000,
     )
     featured_image = CloudinaryField(
         'image',

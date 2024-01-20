@@ -8,11 +8,11 @@ class Event(models.Model):
     Model for an event
     """
     title = models.CharField(
-            max_length=150,
+            max_length=40,
             verbose_name="event",
         )
     slug = models.SlugField(
-        max_length=150,
+        max_length=40,
         unique=True
         )
     author = models.ForeignKey(
@@ -23,13 +23,14 @@ class Event(models.Model):
     content = models.TextField(
         blank=True,
         null=True,
+        max_length=2000,
     )
     featured_image = CloudinaryField(
         'image',
         default='placeholder'
         )
     tagline = models.CharField(
-        max_length=200,
+        max_length=40,
         null=True,
         blank=True,
     )
@@ -42,7 +43,7 @@ class Event(models.Model):
     location = models.CharField(
         blank=True,
         null=True,
-        max_length=30,
+        max_length=40,
     )
     date_time = models.DateTimeField(
         verbose_name='Date and Time'

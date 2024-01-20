@@ -221,10 +221,17 @@ Important points for before deployment
 This app was deployed to Heroku using the following steps.
 1. Log in to Heroku and from the Dashboard, select 'Create New App'
 2. Create a unique name for your app, and select your location.
-3. Open the settings tab, Click 'Reveal Config Vars'. I added the following Config Vars for deployment of this project:
+3. Open the settings tab, Click 'Reveal Config Vars'. 
+
+I added the following Config Vars for development of this project:
 - DATABASE_URL
 - SECRET_KEY
+- PORT = 8000
+- DISABLE_COLLECTSTATIC = 1
 - CLOUDINARY_URL
+
+For deployment of this project, PORT and DISABLE_COLLECTSTATIC were removed.
+
 4. Click 'Add buildpack'. The buildpacks will install further dependencies that are not included in the requirements.txt. For this project, the buildpack required is Python.
 5. Select the Deploy tab. You can select to view build log to watch the project being built.
 6. When successfully built, a message appears in the build log showing the URL'https://the-groomers-network-96ece9118f5d.herokuapp.com/ deployed to Heroku'. 

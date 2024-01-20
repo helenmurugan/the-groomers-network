@@ -23,13 +23,13 @@ class Profile(models.Model):
     company_name = models.CharField(
         blank=True,
         null=True,
-        max_length=30,
+        max_length=50,
         default='',
     )
     location = models.CharField(
         blank=True,
         null=True,
-        max_length=30,
+        max_length=50,
         default='',
     )
 

@@ -25,7 +25,7 @@ class Post(models.Model):
     content = models.TextField(
         blank=False,
         null=False,
-        max_length=20000,
+        max_length=5000,
     )
     featured_image = CloudinaryField(
         'image',

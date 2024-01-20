@@ -264,8 +264,8 @@ For deployment of this project, PORT and DISABLE_COLLECTSTATIC were removed.
 
 ### Documentation and Useful Blogs
 The following documentation, blogs, tutorials and guides were used to aid development.
-- [Bootstrap](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
-- [Django](https://docs.djangoproject.com/en/5.0/)
+- [Bootstrap documentation](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
+- [Django documentation](https://docs.djangoproject.com/en/5.0/)
 - [Built with Django Blog](https://builtwithdjango.com/blog/styling-authentication-pages)
 - [Sentry](https://sentry.io/welcome/)
 - [Stack Overflow - Bootstrap Nav](https://stackoverflow.com/questions/25044370/make-clicked-tab-active-in-bootstrap)

@@ -3,7 +3,7 @@
 {% block content %}
 {% load crispy_forms_tags %}
 
-<div class="container-fluid masthead">
+<div class="container-fluid">
     <div class="row">
         <div class="card masthead-text">
             <div class="card-body col-xl-5 offset-xl-3 col-md-8 offset-md-2">
@@ -21,8 +21,8 @@
 <div class="card col-xl-5 offset-xl-3 col-md-8 offset-md-2">
     <div class="card-link text-center">
         {% if post.author.id == request.user.id %}
-        <a href="{% url 'post_update' post.slug %}" class="btn btn-secondary mb-4">Edit Post</a>
-        <a href="{% url 'post_confirm_delete' post.slug %}" class="btn btn-danger mb-4">Delete Post</a>
+        <a href="{% url 'post_update' post.slug %}" class="btn btn-secondary mb-4 mt-4">Edit Post</a>
+        <a href="{% url 'post_confirm_delete' post.slug %}" class="btn btn-danger mb-4 mt-4">Delete Post</a>
         {% endif %}
     </div>
     <div class="card-img-top">
@@ -37,7 +37,7 @@
     </div>
     <div class="card-body">
         <p class="card-text">
-            {{ post.content | safe }}
+            {{ post.content | linebreaks | safe }}
         </p>
         <div class="row">
             <div class="col-2">
@@ -82,7 +82,7 @@
                         </span> 
                         wrote:
                     </p>
-                    {{ comment.body | safe }}
+                    {{ comment.body | linebreaks | safe }}
                 </div>
                 {% if comment.author.id == request.user.id %}
                 <a href="{% url 'comment_confirm_delete' comment.id %}" class="text-danger mb-2">Delete</a>

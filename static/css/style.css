@@ -84,10 +84,6 @@
 }
 
 /* post detail and event detail pages*/
-.masthead {
-    height: 25vh;
-}
-
 .masthead-text {
     background-color: #19747E;
     color: white;
@@ -112,6 +108,13 @@
 
 .no-decoration {
     text-decoration: none;
+}
+
+.cancel-link {
+    font-size: 1 rem;
+    text-decoration: none;
+    color: #445261;
+    margin-left: 4px;
 }
 
 /* sign-up page*/
@@ -144,4 +147,6 @@
     .card-hr {
         width: 28vw;
     }
+
+
 }

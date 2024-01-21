@@ -116,6 +116,7 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 |  | Click on 'Events' | Directed to events page | Navbar present and functioning correctly on all pages | PASS |
 |  | Click on 'My Profile' | Directed to my profile page  | Navbar present and functioning correctly on all pages | PASS |
 |  | Click on 'Logout' | Directed to sign out page | Navbar present and functioning correctly on all pages | PASS |
+| Navbar (small screens) | Check burger icon | At screen widths of 990px and below | Nav icon present and functioning correctly on all pages | PASS |
 | Main (authorised users) | Click on 'Start Networking!' | Directed to home/posts page | | PASS |
 | Footer | Click on GitHub logo  | Developer's GitHub page opens in a new window | Footer present and functioning correctly on all pages | PASS |
 |  | Click on LinkedIn logo | Developer's LinkedIn page opens in a new window | Footer present and functioning correctly on all pages | PASS |
@@ -144,11 +145,19 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 ### Home/Posts
 | Section | Test | Expected Result | Comment |Pass/Fail |
 | --- | --- |--- | --- | --- |
-| Posts List | Click on image or post title | Directed to post detail page | | PASS |
-|  | Click on image or post author | Directed to that user's profile | | PASS |
+| Post List | Ensure posts are displaying correctly | Image, author, title, tagline, created on date, number of likes and number of comments are displayed correctly without 'None' showing for empty fields | | PASS |
 |  | Click on'Next' | Directed to next page of post list  | 'Next' and 'Prev' buttons appear correctly when there are multiple pages of posts (six to a page)  | PASS |
 |  | Click on'Prev'  | Directed to previous page of post list  | | PASS |
-|  | Ensure posts are displaying correctly | Image, author, title, tagline, created on date, number of likes are displayed correctly without 'None' showing for empty fields | | PASS |
+|  | Click on post author | Directed to that user's profile | | PASS |
+| Create a Post  | Click 'Create a Post' | Directed to create a post page | | PASS |
+|  | Submit form with empty fields | Validation error '!Please fill in this field.' | This error appears on title and content fields | PASS |
+|  | Submit valid form | Directed back to home/posts page | | PASS |
+|  |  | Message 'Your post has been published | | PASS |
+|  |  | New post appears in post list | | PASS |
+| Read a Post | Click on image or post title | Directed to post detail page | | PASS |
+|  |  |  | | PASS |
+|  |  |  | | PASS |
+|  |  |  | | PASS |
 |  |  |  | | PASS |
 |  |  |  | | PASS |
 

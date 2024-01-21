@@ -12,18 +12,17 @@
 - [Manual Testing](#manual-testing)
     + [Landing Page](#landing-page)
     + [Registration Page](#registration-page)
-    + [Login Page](#login-page)
-    + [Navigation](#navigation)
-    + [My Profile Page](#my-profile-page)
-    + [Home/Posts Page](#homeposts-page)
-    + [Events Page](#events-page)
+    + [Login Page](#login-page) 
+    + [Home/Posts](#homeposts)
+    + [Events](#events)
+    + [My Profile](#my-profile)
     + [Logout Page](#logout-page)
     + [Admin Panel](#admin-panel)
 - [User Story Testing](#user-story-testing)
 ---
 ## Code Validation
 ### HTML
-All deployed templates were tested with the [W3C HTML Validator](https://validator.w3.org/nu/#textarea) and passed in all cases with no errors or warnings. To access code that is free of Django syntax I used Google DevTools to access the code under the Sources tab. Note that user input data was not included in the validation eg. user bio, posts and comments. An example of an error-free check is shown below.<br>
+All deployed templates were tested with the [W3C HTML Validator](https://validator.w3.org/nu/#textarea) and passed in all cases with no errors or warnings. To access code that is free of Jinja I used Google DevTools and copied the code from the correct file under the Sources tab. Note that user input data was not included in the validation eg. user bio, posts and comments. An example of an error-free check is shown below.<br>
 ![HTML Landing Page](documentation/html_landing_page.jpg)
 
 
@@ -86,7 +85,7 @@ The Groomer's Network has been thoroughly tested and shown to work well across t
 | Edge | Displays and functions correctly  | PASS |
 ---
 ## Accessibility
-Care was taken during development to use semantic HTML, aria labels and alt text. All pages were tested using the Lighthouse tool in DevTools.
+Care was taken during development to use semantic HTML, aria labels and alt attributes. All pages were tested using the Lighthouse tool in DevTools.
 
 ![lighthouse](documentation/lighthouse.jpg)
 
@@ -106,16 +105,70 @@ Care was taken during development to use semantic HTML, aria labels and alt text
 
 ---
 ## Manual Testing
-
 ### Landing Page
+| Section | Test | Expected Result | Comment |Pass/Fail |
+| --- | --- |--- | --- | --- |
+| Navbar (unauthorised users) | Click on 'Register' | Directed to sign up page | | PASS |
+|  | Click on 'Login' | Directed to sign in page | | PASS |
+| Main (unauthorised users) | Click on 'Join for free!' | Directed to sign up page | | PASS |
+| Navbar (authorised users) | Click on logo | Directed to landing page | Navbar present and functioning correctly on all pages | PASS |
+|  | Click on 'Home'  | Directed to home/posts page | Navbar present and functioning correctly on all pages | PASS |
+|  | Click on 'Events' | Directed to events page | Navbar present and functioning correctly on all pages | PASS |
+|  | Click on 'My Profile' | Directed to my profile page  | Navbar present and functioning correctly on all pages | PASS |
+|  | Click on 'Logout' | Directed to sign out page | Navbar present and functioning correctly on all pages | PASS |
+| Main (authorised users) | Click on 'Start Networking!' | Directed to home/posts page | | PASS |
+| Footer | Click on GitHub logo  | Developer's GitHub page opens in a new window | Footer present and functioning correctly on all pages | PASS |
+|  | Click on LinkedIn logo | Developer's LinkedIn page opens in a new window | Footer present and functioning correctly on all pages | PASS |
+
 ### Registration Page
+| Section | Test | Expected Result | Comment |Pass/Fail |
+| --- | --- |--- | --- | --- |
+| Link to sign in because you already have an account | Click on 'sign in' | Directed to login page | | PASS |
+| Sign up form | Submit with empty form fields | Validation error '!Please fill in this field.' | This error appears for all fields except for the optional email field | PASS |
+|  | Submit with a username that is already used | Validation error 'A user with that username already exists.' | | PASS |
+|  | Submit with an invalid password | Validation error 'This password is too common.' | | PASS |
+|  |  | Validation error 'This password is entirely numeric.' | | PASS |
+|  |  | Validation error 'You must type the same password each time.' | | PASS |
+|  | Submit a valid form  | Directed to home/posts page | | PASS |
+|  |  | Message 'Successfully signed in as {username}' | All messages disappear automatically after 2.5s | PASS |
+
 ### Login Page
-### Navigation
-### My Profile Page
-### Home/Posts Page
-### Events Page
+| Section | Test | Expected Result | Comment |Pass/Fail |
+| --- | --- |--- | --- | --- |
+| Link to sign up because you don't have an account | Click on 'sign up' | Directed to registration page | | PASS |
+| Sign in form | Submit with empty form fields | Validation error '!Please fill in this field.' | This error appears for all empty fields | PASS |
+|  | Submit an invalid form | Validation error 'The username and/or password you specified are not correct.' | | PASS |
+|  | Submit a valid form | Directed to home/posts page | | PASS |
+|  |  | Message 'Successfully signed in as {username}' | All messages disappear automatically after 2.5s | PASS |
+
+### Home/Posts
+| Section | Test | Expected Result | Comment |Pass/Fail |
+| --- | --- |--- | --- | --- |
+| Posts List | Click on image or post title | Directed to post detail page | | PASS |
+|  | Click on image or post author | Directed to that user's profile | | PASS |
+|  | Click on'Next' | Directed to next page of post list  | 'Next' and 'Prev' buttons appear correctly when there are multiple pages of posts (six to a page)  | PASS |
+|  | Click on'Prev'  | Directed to previous page of post list  | | PASS |
+|  | Ensure posts are displaying correctly | Image, author, title, tagline, created on date, number of likes are displayed correctly without 'None' showing for empty fields | | PASS |
+|  |  |  | | PASS |
+|  |  |  | | PASS |
+
+### Events
+| Section | Test | Expected Result | Comment |Pass/Fail |
+| --- | --- |--- | --- | --- |
+|  |  |  | | PASS |
+### My Profile
+| Section | Test | Expected Result | Comment |Pass/Fail |
+| --- | --- |--- | --- | --- |
+|  |  |  | | PASS |
 ### Logout Page
+| Section | Test | Expected Result | Comment |Pass/Fail |
+| --- | --- |--- | --- | --- |
+| Main | Click to 'Sign out' | Directed to Landing page | | PASS |
+|  |  | Message 'You have signed out' | All messages disappear automatically after 2.5s | PASS |
 ### Admin Panel
+| Section | Test | Expected Result | Comment |Pass/Fail |
+| --- | --- |--- | --- | --- |
+|  |  |  | | PASS |
 
 ---
 ## User Story Testing

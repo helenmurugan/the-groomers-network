@@ -213,7 +213,7 @@ Cloudinary was used to store static and media files.
 ### Before Deployment
 Important points for before deployment
 1. The requirements for the project were added to a requirements.txt file using the command 'pip3 freeze > requirements.txt' in the terminal.
-2. In .gitignore, include env.py to ensure sensitive information is not pushed to GitHub.
+2. In .gitignore, include env.py to ensure sensitive information is not pushed to GitHub. In settings.py, link SECRET_KEY to the env.py file where the secreat key variable is defined.
 3. In settings.py, set 'DEBUG = False' to prevent verbose error pages and to prevent Django serving static files itself instead of relying on Cloudinary.
 4. It is necessary to make migrations and migrate the models to the database before deployment.
 
@@ -221,16 +221,19 @@ Important points for before deployment
 This app was deployed to Heroku using the following steps.
 1. Log in to Heroku and from the Dashboard, select 'Create New App'
 2. Create a unique name for your app, and select your location.
-3. Open the settings tab, Click 'Reveal Config Vars'. 
+3. Open the settings tab, Click 'Reveal Config Vars', and set the Config Vars for production (values are sensitive and have been left out). 
 
-I added the following Config Vars for development of this project:
+Config Vars for development of this project:
 - DATABASE_URL
 - SECRET_KEY
 - PORT = 8000
 - DISABLE_COLLECTSTATIC = 1
 - CLOUDINARY_URL
 
-For deployment of this project, PORT and DISABLE_COLLECTSTATIC were removed.
+Config Vars for production:
+- DATABASE_URL
+- SECRET_KEY
+- CLOUDINARY_URL
 
 4. Click 'Add buildpack'. The buildpacks will install further dependencies that are not included in the requirements.txt. For this project, the buildpack required is Python.
 5. Select the Deploy tab. You can select to view build log to watch the project being built.

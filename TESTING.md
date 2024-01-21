@@ -166,6 +166,7 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 |  | Save Changes with empty fields | Validation error '!Please fill in this field.' | This error appears on mandatory fields (title and content) | PASS |
 |  | Attempt to enter >40 characters in title or tagline fields | Form does not allow >40 characters to be entered  | | PASS |
 |  | Attempt to enter >5000 characters in content field | Form does not allow >5000 characters to be entered | | PASS |
+|  | Click on 'Cancel' | Directed back to post detail page | | PASS |
 |  | Save changes with valid form | Directed back to post detail page | | PASS |
 |  |  | Message 'Your post has been updated!' | | PASS |
 |  |  | Changes appear on post | | PASS |
@@ -205,20 +206,17 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 |  | Attempt to enter >40 characters in full name, company name or location | Form does not allow >40 characters to be entered  | | PASS |
 |  | Attempt to enter >1000 characters in bio field | Form does not allow >1000 characters to be entered | | PASS |
 |  | Click on 'Cancel' | Directed back to My Profile | | PASS |
-|  | Save changes with valid form | Directed back to my_profile page | | PASS |
+|  | Save changes with valid form | Directed back to my_profile page | All fields in this form are optional | PASS |
 |  |  | Message 'Your profile has been updated!' | | PASS |
 |  |  | Changes appear on profile | | PASS |
-|  |  |  | | PASS |
-|  |  |  | | PASS |
-|  |  |  | | PASS |
-|  |  |  | | PASS |
-|  |  |  | | PASS |
+| Other user's profiles | Click on an author from the home page or post detail page | Directed to a user's profile which is displayed correctly | | PASS |
 
 ### Logout Page
 | Section | Test | Expected Result | Comment |Pass/Fail |
 | --- | --- |--- | --- | --- |
 | Main | Click to 'Sign out' | Directed to Landing page | | PASS |
 |  |  | Message 'You have signed out' | All messages disappear automatically after 2.5s | PASS |
+
 ### Admin Panel
 | Section | Test | Expected Result | Comment |Pass/Fail |
 | --- | --- |--- | --- | --- |

@@ -18,6 +18,7 @@
     + [My Profile](#my-profile)
     + [Logout Page](#logout-page)
     + [Admin Panel](#admin-panel)
+    + [Defensive Programming](#defensive-programming)
 - [User Story Testing](#user-story-testing)
 ---
 ## Code Validation
@@ -26,19 +27,23 @@ All deployed templates were tested with the [W3C HTML Validator](https://validat
 ![HTML Landing Page](documentation/html_landing_page.jpg)
 
 
-| Template | Pass/Fail | 
-| --- | --- |
-| landing_page.html | PASS |
-| index.html | PASS |
-| post_create.html | PASS |
-| post_update.html | PASS |
-| post_confirm_delete.html | PASS |
-| comment_confirm_delete.html | PASS |
-| event.html | PASS |
-| event_detail.html | PASSS |
-| my_profile.html | PASS |
-| my_profile_update | PASS |
-| user_profile.html | PASS |
+| Template | Pass/Fail | Comment |
+| --- | --- | --- |
+| landing_page.html | PASS | |
+| signup.html | FAIL |  Three errors of this type are present: 'The value of the for attribute of the label element must be the ID of a non-hidden form control.'|
+| login.html | PASS ||
+| index.html | PASS ||
+| post_create.html | PASS ||
+| post_update.html | PASS ||
+| post_confirm_delete.html | PASS ||
+| comment_confirm_delete.html | PASS ||
+| event.html | PASS ||
+| event_detail.html | PASS ||
+| my_profile.html | PASS ||
+| my_profile_update | PASS ||
+| user_profile.html | PASS ||
+| logout.html | PASS ||
+
 
 ### CSS
 The CSS code was tested using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) and passed with no errror found.<br>
@@ -92,6 +97,8 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 | Template | Score | Pass/Fail | 
 | --- | --- |--- |
 | landing_page.html | 100 | PASS |
+| signup.html | 100| PASS |
+| login.html | 100| PASS |
 | index.html | 100 | PASS |
 | post_create.html | 100 | PASS |
 | post_update.html | 94 | PASS |
@@ -102,6 +109,8 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 | my_profile.html | 100 | PASS |
 | my_profile_update | 100 | PASS |
 | user_profile.html | 100 | PASS |
+| logout.html | 100| PASS |
+
 
 ---
 ## Manual Testing
@@ -147,44 +156,44 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 | Section | Test | Expected Result | Comment |Pass/Fail |
 | --- | --- |--- | --- | --- |
 | Post List | Ensure posts are displaying correctly on home/posts page | Image, author, title, tagline, created on date, number of likes and number of comments are displayed correctly | | PASS |
-|  | Click on'Next' | Directed to next page of post list  | 'Next' and 'Prev' buttons appear correctly when there are multiple pages of posts (six to a page)  | PASS |
-|  | Click on'Prev'  | Directed to previous page of post list  | | PASS |
 |  | Click on post author | Directed to that user's profile | | PASS |
-| Create a Post  | Click 'Create a Post' | Directed to create a post page | | PASS |
-|  | Submit form with empty fields | Validation error '!Please fill in this field.' | This error appears on mandatory fields (title and content) | PASS |
+| | Click 'Create a Post' | Directed to create a post page | | PASS |
+| Pagination | Click on'Next' | Directed to next page of post list  | 'Next' and 'Prev' buttons appear correctly when there are multiple pages of posts (six to a page)  | PASS |
+|  | Click on'Prev'  | Directed to previous page of post list  | | PASS |
+| Create a Post Form | Submit form with empty fields | Validation error '!Please fill in this field.' | This error appears on mandatory fields (title and content) | PASS |
 |  | Attempt to enter >40 characters in title or tagline fields | Form does not allow >40 characters to be entered  | | PASS |
 |  | Attempt to enter >5000 characters in content field | Form does not allow >5000 characters to be entered | | PASS |
 |  | Submit valid form | Directed back to home/posts page | | PASS |
-|  |  | Message 'Your post has been published!' | | PASS |
+|  |  | Message 'Your post has been published!' | All messages disappear automatically after 2.5s | PASS |
 |  |  | New post appears in post list | If no image was uploaded, a placeholder image is shown | PASS |
 | Read a Post | Click on image or post title from post list | Directed to post detail page | | PASS |
 |  | Ensure post is displayed correctly | Image, author, title, tagline, created on date, number of likes, comments and comment form are displayed correctly  | | PASS |
 |  | Click to read a post that was created by the logged in user | Update and Delete buttons are present | | PASS |
 |  | Click on post author | Directed to that user's profile | | PASS |
 |  | Toggle likes | Heart icons can be toggled, like count is correct | | PASS |
-| Update a Post | Click on 'Edit Post' | Directed to Edit Post form | | PASS |
-|  | Save Changes with empty fields | Validation error '!Please fill in this field.' | This error appears on mandatory fields (title and content) | PASS |
+|  | Click on 'Edit Post' | Directed to Edit Post form | | PASS |
+| Update a Post Form | Save Changes with empty fields | Validation error '!Please fill in this field.' | This error appears on mandatory fields (title and content) | PASS |
 |  | Attempt to enter >40 characters in title or tagline fields | Form does not allow >40 characters to be entered  | | PASS |
 |  | Attempt to enter >5000 characters in content field | Form does not allow >5000 characters to be entered | | PASS |
 |  | Click on 'Cancel' | Directed back to post detail page | | PASS |
 |  | Save changes with valid form | Directed back to post detail page | | PASS |
-|  |  | Message 'Your post has been updated!' | | PASS |
+|  |  | Message 'Your post has been updated!' | All messages disappear automatically after 2.5s | PASS |
 |  |  | Changes appear on post | | PASS |
 | Delete a Post | Click on 'Delete Post' | Directed to post_confirm_delete page | | PASS |
 |  | Click on 'Cancel' | Directed back to post detail page | | PASS |
 |  | Click on 'Confirm' | Directed back to home/posts page | | PASS |
-|  |  | Message 'Your post has been deleted!' | | PASS |
+|  |  | Message 'Your post has been deleted!' | All messages disappear automatically after 2.5s | PASS |
 |  |  | Post has been deleted | | PASS |
 | Comments | Click on comment author from post detail page | Directed to that user's profile | | PASS |
 |  | Check links for Delete are correct | Delete link is present only if logged in user wrote the comment | | PASS |
 | Comment Form | Submit form with empty field | Validation error '!Please fill in this field.' |  | PASS |
 |  | Attempt to enter >1000 characters in form field | Form does not allow >1000 characters to be entered | | PASS |
-|  | Submit valid form | Message 'Your comment has been published!'  | | PASS |
+|  | Submit valid form | Message 'Your comment has been published!'  | All messages disappear automatically after 2.5s | PASS |
 |  |  | New comment appears in comment list | | PASS |
 | Delete a Comment | Click on 'Delete Comment' | Directed to comment_confirm_delete page | | PASS |
 |  | Click on 'Cancel' | Directed back to post detail page | | PASS |
 |  | Click on 'Confirm' | Directed back to post detail page | | PASS |
-|  |  | Message 'Your comment has been deleted!' | | PASS |
+|  |  | Message 'Your comment has been deleted!' | All messages disappear automatically after 2.5s | PASS |
 |  |  | Comment has been deleted | | PASS |
 
 
@@ -192,7 +201,7 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 | Section | Test | Expected Result | Comment |Pass/Fail |
 | --- | --- |--- | --- | --- |
 | Event List | Ensure events are displaying correctly on Events page | Image, title, tagline, date, time, location and number of likes are displayed correctly | | PASS |
-|  | Click on'Next' | Directed to next page of event list  | 'Next' and 'Prev' buttons appear correctly when there are multiple pages of events (six to a page)  | PASS |
+| Pagination | Click on'Next' | Directed to next page of event list  | 'Next' and 'Prev' buttons appear correctly when there are multiple pages of events (six to a page)  | PASS |
 |  | Click on'Prev'  | Directed to previous page of event list  | | PASS |
 | Read an Event | Click on image or event title from events list | Directed to event detail page | | PASS |
 |  | Ensure event is displayed correctly | Image, title, tagline, date, time, location and number of likes are displayed correctly  | | PASS |
@@ -202,12 +211,12 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 | Section | Test | Expected Result | Comment |Pass/Fail |
 | --- | --- |--- | --- | --- |
 | My Profile | Ensure profile is displayed correctly | Username, full name, company name, location and bio are displayed correctly | | PASS |
-| Update Profile | Click on 'Edit Profile' | Directed to Edit Profile form | | PASS |
-|  | Attempt to enter >40 characters in full name, company name or location | Form does not allow >40 characters to be entered  | | PASS |
+|  | Click on 'Edit Profile' | Directed to Edit Profile form | | PASS |
+| Update Profile Form | Attempt to enter >40 characters in full name, company name or location | Form does not allow >40 characters to be entered  | | PASS |
 |  | Attempt to enter >1000 characters in bio field | Form does not allow >1000 characters to be entered | | PASS |
 |  | Click on 'Cancel' | Directed back to My Profile | | PASS |
 |  | Save changes with valid form | Directed back to my_profile page | All fields in this form are optional | PASS |
-|  |  | Message 'Your profile has been updated!' | | PASS |
+|  |  | Message 'Your profile has been updated!' | All messages disappear automatically after 2.5s | PASS |
 |  |  | Changes appear on profile | | PASS |
 | Other user's profiles | Click on an author from the home page or post detail page | Directed to a user's profile which is displayed correctly | | PASS |
 
@@ -218,9 +227,23 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 |  |  | Message 'You have signed out' | All messages disappear automatically after 2.5s | PASS |
 
 ### Admin Panel
-| Section | Test | Expected Result | Comment |Pass/Fail |
-| --- | --- |--- | --- | --- |
-|  |  |  | | PASS |
+Admin can log into the administration panel to manage the content of the site. Each section of the admin panel has been customised and tested in terms of create, update and delete functionality, fields listed on panel, search fields, filters and form validation.
+
+| Section | Comments |Pass/Fail |
+| --- | --- |--- |
+| Users | All functions work correctly  | PASS |
+| Posts | All functions work correctly  | PASS |
+| Comments |All functions work correctly  | PASS |
+| Events | All functions work correctly.<br> Summernote editor tested  | PASS |
+
+### Defensive Programming
+Care was taken to ensure user's cannot access restricted functions, for example, by copying the URL of a page when logged in by User 1 and then accessing that same URL when logged in as User 2.
+
+| Section | Test | Expected Result | Pass/Fail |
+| Update a Post | Check that a user cannot update the post of another user by copying a URL | Custom Error 404 page | PASS |
+| Delete a Post | Check that a user cannot delete the post of another user by copying a URL | Custom Error 403 page | PASS |
+| Delete a Comment | Check that a user cannot delete the post of another user by copying a URL | Custom Error 404 page | PASS |
+| Update a Profile | Check that a user cannot update the profile of another user by copying a URL | Custome Error 404 page | PASS |
 
 ---
 ## User Story Testing
@@ -234,9 +257,8 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 | | Users can easily sign out from the navbar. | PASS |
 | | Authenticated users have full access to the site and functionality. | PASS |
 | | Unauthenticated users have no access to the site, beyond the landing page and registration/signin pages. | PASS |
-| As a Site User, I can immediately receive feedback when I make changes to data so that I understand what action I have just performed | Messages appear when a user makes changes to the data | PASS |
+| As a Site User, I can immediately receive feedback when I make changes to data so that I understand what action I have just performed | Messages inform the user of all changes and actions they have performed. | PASS |
 | | Messages automatically disappear after a set time. | PASS |
-| | Messages inform the user of all changes and actions they have performed. | PASS |
 | As a Site User, I can create and manage my own posts so that I can network with other users | Users can create posts | PASS |
 | | Users can select any post to view | PASS |
 | | Users can update their own posts | PASS |
@@ -250,8 +272,8 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 | As a Site User, I can view a list of posts so that I can click on a post to view the full content | All posts can be viewed by authorised users | PASS |
 | | Users can select from a list of posts to view a particular post in detail | PASS |
 | | Post titles can be clicked on to view the post in more detail | PASS |
-| As a Site User, I can view several posts on each page so that I can easily navigate between pages to view the content | The user should be able to view up to 6 posts on the page (depending on screen size) | PASS |
-| | Buttons allow easy navigate forward and backward between pages | PASS |
+| As a Site User, I can view several posts on each page so that I can easily navigate between pages to view the content | The user should be able to view up to 6 posts on the page | PASS |
+| | Buttons allow easy navigation forwards and backwards between pages | PASS |
 | As a Site User, I can manage my comments on posts so that I can be a part of the conversation | Users can comment on posts | PASS |
 | | Users can view all comments on the post | PASS |
 | | Users can delete their own posts | PASS |
@@ -263,8 +285,8 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 | | Users can view the number of likes on a post | PASS |
 | As a Site User, I can view a list of events and click on an event so that I can read the full content | Events can be added by admin only | PASS |
 | | Users can select from a list of events to view a particular event | PASS |
-| As a Site User, I can view several events on each page so that I can easily navigate between pages | The user should be able to view up to 6 events on the page (depending on screen size) | PASS |
-| | Buttons allow easy navigate forward and backward between pages | PASS |
+| As a Site User, I can view several events on each page so that I can easily navigate between pages | The user should be able to view up to 6 events on the page | PASS |
+| | Buttons allow easy navigation forwards and backwards between pages | PASS |
 | As a Site User, I can like or unlike an event so that I can interact with the content | Users can toggle like/unlike by clicking | PASS |
 | | Users can view the number of likes on an event | PASS |
 | | Users can immediately see if they have liked an event | PASS |

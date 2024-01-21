@@ -16,7 +16,7 @@
             <form id="signup_form" method="post" action="{% url 'account_signup' %}">
                 {% csrf_token %}
                 {{ form.non_field_errors | safe }}
-                <input type="hidden" name="remember" value="true" />
+                <input type="hidden" name="remember" value="true">
                 <div>
                     <div class="m-2">
                     {{ form.username.errors | safe }}

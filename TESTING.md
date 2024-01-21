@@ -10,7 +10,7 @@
 - [Browser Compatibility](#browser-compatibility)
 - [Accessibility](#accessibilty)
 - [Manual Testing](#manual-testing)
-    + [Landing Page](#landing-page)
+    + [Landing Page and Navigation](#landing-page-and-navigation)
     + [Registration Page](#registration-page)
     + [Login Page](#login-page) 
     + [Home/Posts](#homeposts)
@@ -105,18 +105,19 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 
 ---
 ## Manual Testing
-### Landing Page
+### Landing Page and Navigation
 | Section | Test | Expected Result | Comment |Pass/Fail |
 | --- | --- |--- | --- | --- |
 | Navbar (unauthorised users) | Click on 'Register' | Directed to sign up page | | PASS |
 |  | Click on 'Login' | Directed to sign in page | | PASS |
-| Main (unauthorised users) | Click on 'Join for free!' | Directed to sign up page | | PASS |
 | Navbar (authorised users) | Click on logo | Directed to landing page | Navbar present and functioning correctly on all pages | PASS |
 |  | Click on 'Home'  | Directed to home/posts page | Navbar present and functioning correctly on all pages | PASS |
 |  | Click on 'Events' | Directed to events page | Navbar present and functioning correctly on all pages | PASS |
 |  | Click on 'My Profile' | Directed to my profile page  | Navbar present and functioning correctly on all pages | PASS |
 |  | Click on 'Logout' | Directed to sign out page | Navbar present and functioning correctly on all pages | PASS |
+|  | Check active page on navbar | Active page text is black (non-active pages are grey) | | PASS |
 | Navbar (small screens) | Check burger icon | At screen widths of 990px and below | Nav icon present and functioning correctly on all pages | PASS |
+| Main (unauthorised users) | Click on 'Join for free!' | Directed to sign up page | | PASS |
 | Main (authorised users) | Click on 'Start Networking!' | Directed to home/posts page | | PASS |
 | Footer | Click on GitHub logo  | Developer's GitHub page opens in a new window | Footer present and functioning correctly on all pages | PASS |
 |  | Click on LinkedIn logo | Developer's LinkedIn page opens in a new window | Footer present and functioning correctly on all pages | PASS |
@@ -125,7 +126,7 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 | Section | Test | Expected Result | Comment |Pass/Fail |
 | --- | --- |--- | --- | --- |
 | Link to sign in because you already have an account | Click on 'sign in' | Directed to login page | | PASS |
-| Sign up form | Submit with empty form fields | Validation error '!Please fill in this field.' | This error appears for all fields except for the optional email field | PASS |
+| Sign up form | Submit with empty form fields | Validation error '!Please fill in this field.' | This error appears for all mandatory fields | PASS |
 |  | Submit with a username that is already used | Validation error 'A user with that username already exists.' | | PASS |
 |  | Submit with an invalid password | Validation error 'This password is too common.' | | PASS |
 |  |  | Validation error 'This password is entirely numeric.' | | PASS |
@@ -137,7 +138,7 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 | Section | Test | Expected Result | Comment |Pass/Fail |
 | --- | --- |--- | --- | --- |
 | Link to sign up because you don't have an account | Click on 'sign up' | Directed to registration page | | PASS |
-| Sign in form | Submit with empty form fields | Validation error '!Please fill in this field.' | This error appears for all empty fields | PASS |
+| Sign in form | Submit with empty form fields | Validation error '!Please fill in this field.' | The error appears for all empty fields | PASS |
 |  | Submit an invalid form | Validation error 'The username and/or password you specified are not correct.' | | PASS |
 |  | Submit a valid form | Directed to home/posts page | | PASS |
 |  |  | Message 'Successfully signed in as {username}' | All messages disappear automatically after 2.5s | PASS |
@@ -145,30 +146,74 @@ Care was taken during development to use semantic HTML, aria labels and alt attr
 ### Home/Posts
 | Section | Test | Expected Result | Comment |Pass/Fail |
 | --- | --- |--- | --- | --- |
-| Post List | Ensure posts are displaying correctly | Image, author, title, tagline, created on date, number of likes and number of comments are displayed correctly without 'None' showing for empty fields | | PASS |
+| Post List | Ensure posts are displaying correctly on home/posts page | Image, author, title, tagline, created on date, number of likes and number of comments are displayed correctly | | PASS |
 |  | Click on'Next' | Directed to next page of post list  | 'Next' and 'Prev' buttons appear correctly when there are multiple pages of posts (six to a page)  | PASS |
 |  | Click on'Prev'  | Directed to previous page of post list  | | PASS |
 |  | Click on post author | Directed to that user's profile | | PASS |
 | Create a Post  | Click 'Create a Post' | Directed to create a post page | | PASS |
-|  | Submit form with empty fields | Validation error '!Please fill in this field.' | This error appears on title and content fields | PASS |
+|  | Submit form with empty fields | Validation error '!Please fill in this field.' | This error appears on mandatory fields (title and content) | PASS |
+|  | Attempt to enter >40 characters in title or tagline fields | Form does not allow >40 characters to be entered  | | PASS |
+|  | Attempt to enter >5000 characters in content field | Form does not allow >5000 characters to be entered | | PASS |
 |  | Submit valid form | Directed back to home/posts page | | PASS |
-|  |  | Message 'Your post has been published | | PASS |
-|  |  | New post appears in post list | | PASS |
-| Read a Post | Click on image or post title | Directed to post detail page | | PASS |
+|  |  | Message 'Your post has been published!' | | PASS |
+|  |  | New post appears in post list | If no image was uploaded, a placeholder image is shown | PASS |
+| Read a Post | Click on image or post title from post list | Directed to post detail page | | PASS |
+|  | Ensure post is displayed correctly | Image, author, title, tagline, created on date, number of likes, comments and comment form are displayed correctly  | | PASS |
+|  | Click to read a post that was created by the logged in user | Update and Delete buttons are present | | PASS |
+|  | Click on post author | Directed to that user's profile | | PASS |
+|  | Toggle likes | Heart icons can be toggled, like count is correct | | PASS |
+| Update a Post | Click on 'Edit Post' | Directed to Edit Post form | | PASS |
+|  | Save Changes with empty fields | Validation error '!Please fill in this field.' | This error appears on mandatory fields (title and content) | PASS |
+|  | Attempt to enter >40 characters in title or tagline fields | Form does not allow >40 characters to be entered  | | PASS |
+|  | Attempt to enter >5000 characters in content field | Form does not allow >5000 characters to be entered | | PASS |
+|  | Save changes with valid form | Directed back to post detail page | | PASS |
+|  |  | Message 'Your post has been updated!' | | PASS |
+|  |  | Changes appear on post | | PASS |
+| Delete a Post | Click on 'Delete Post' | Directed to post_confirm_delete page | | PASS |
+|  | Click on 'Cancel' | Directed back to post detail page | | PASS |
+|  | Click on 'Confirm' | Directed back to home/posts page | | PASS |
+|  |  | Message 'Your post has been deleted!' | | PASS |
+|  |  | Post has been deleted | | PASS |
+| Comments | Click on comment author from post detail page | Directed to that user's profile | | PASS |
+|  | Check links for Delete are correct | Delete link is present only if logged in user wrote the comment | | PASS |
+| Comment Form | Submit form with empty field | Validation error '!Please fill in this field.' |  | PASS |
+|  | Attempt to enter >1000 characters in form field | Form does not allow >1000 characters to be entered | | PASS |
+|  | Submit valid form | Message 'Your comment has been published!'  | | PASS |
+|  |  | New comment appears in comment list | | PASS |
+| Delete a Comment | Click on 'Delete Comment' | Directed to comment_confirm_delete page | | PASS |
+|  | Click on 'Cancel' | Directed back to post detail page | | PASS |
+|  | Click on 'Confirm' | Directed back to post detail page | | PASS |
+|  |  | Message 'Your comment has been deleted!' | | PASS |
+|  |  | Comment has been deleted | | PASS |
+
+
+### Events
+| Section | Test | Expected Result | Comment |Pass/Fail |
+| --- | --- |--- | --- | --- |
+| Event List | Ensure events are displaying correctly on Events page | Image, title, tagline, date, time, location and number of likes are displayed correctly | | PASS |
+|  | Click on'Next' | Directed to next page of event list  | 'Next' and 'Prev' buttons appear correctly when there are multiple pages of events (six to a page)  | PASS |
+|  | Click on'Prev'  | Directed to previous page of event list  | | PASS |
+| Read an Event | Click on image or event title from events list | Directed to event detail page | | PASS |
+|  | Ensure event is displayed correctly | Image, title, tagline, date, time, location and number of likes are displayed correctly  | | PASS |
+|  | Toggle likes | Heart icons can be toggled, like count is correct | | PASS |
+
+### My Profile
+| Section | Test | Expected Result | Comment |Pass/Fail |
+| --- | --- |--- | --- | --- |
+| My Profile | Ensure profile is displayed correctly | Username, full name, company name, location and bio are displayed correctly | | PASS |
+| Update Profile | Click on 'Edit Profile' | Directed to Edit Profile form | | PASS |
+|  | Attempt to enter >40 characters in full name, company name or location | Form does not allow >40 characters to be entered  | | PASS |
+|  | Attempt to enter >1000 characters in bio field | Form does not allow >1000 characters to be entered | | PASS |
+|  | Click on 'Cancel' | Directed back to My Profile | | PASS |
+|  | Save changes with valid form | Directed back to my_profile page | | PASS |
+|  |  | Message 'Your profile has been updated!' | | PASS |
+|  |  | Changes appear on profile | | PASS |
 |  |  |  | | PASS |
 |  |  |  | | PASS |
 |  |  |  | | PASS |
 |  |  |  | | PASS |
 |  |  |  | | PASS |
 
-### Events
-| Section | Test | Expected Result | Comment |Pass/Fail |
-| --- | --- |--- | --- | --- |
-|  |  |  | | PASS |
-### My Profile
-| Section | Test | Expected Result | Comment |Pass/Fail |
-| --- | --- |--- | --- | --- |
-|  |  |  | | PASS |
 ### Logout Page
 | Section | Test | Expected Result | Comment |Pass/Fail |
 | --- | --- |--- | --- | --- |

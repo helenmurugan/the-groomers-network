@@ -17,7 +17,7 @@
                             {% csrf_token %}
                             <div class="text-center">
                                 <button type="submit" class="btn btn-signup my-4">Save Changes</button>
-                                <a href="{% url 'my_profile' user=request.user  %}" class="post-link">Cancel</a>
+                                <a href="{% url 'my_profile' user=request.user  %}" class="cancel-link">Cancel</a>
                             </div>
                         </form>
                     </div>

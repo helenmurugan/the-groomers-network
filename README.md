@@ -175,8 +175,11 @@ The principles of good UX design were followed when designing and creating The G
 ### Future Development
 ---
 ## Testing
+
 The application has been thoroughly tested and code validated. All testing documentation can be found in the separate [TESTING.md](/TESTING.md) file.
+
 ---
+
 ## Bugs
 ### Fixed Bugs
 - During Development the following bugs were fixed:
@@ -264,6 +267,14 @@ Config Vars for production:
 - Dog image was taken from [rawpixel](https://www.rawpixel.com/) (id-12054680)
 
 ### Content
+- Event and Post details taken from:
+    - [The SouthEast Grooming Show](#https://wildwash.co.uk/event/the-south-east-grooming-show-2024/)
+    - [The Dog Grooming Academy](#https://allevents.in/org/the-dog-grooming-academy/23332180)
+    - [GroomFest](#https://groomfest.co.uk/)
+    - [Gov.uk](#https://www.gov.uk/government/news/new-legal-restrictions-on-xl-bully-dog-now-in-force)
+    - [Groomer's Choice Blog](#https://blog.groomerschoice.com/5-tips-for-new-competitive-groomers)
+    - [Groomers](#https://www.groomers-online.com/blog/2022/09/what-is-competitive-dog-grooming-all-about/)
+    - [Total Grooming Magazine](#https://totalgroomingmagazine.co.uk/groomers-of-the-month-emma-darlington/)
 
 ### Documentation and Useful Blogs
 The following documentation, blogs, tutorials and guides were used to aid development.

@@ -50,7 +50,7 @@ The CSS code was tested using [W3C CSS Validator](https://jigsaw.w3.org/css-vali
 ![CSS Validator](documentation/css.jpg)
 
 ### JavaScript
-A small amount of JavaScript was used for Messages in base.html. This raised eight errors in [JSHint Validator](https://jshint.com/), which I will go on to fix at a later date. Given such a small amount of JS was used and it passed in terms of functionality, this was not deemed a priority, within the time available.<br>
+A small amount of JavaScript was used for Messages in base.html. This raised two wearnings in [JSHint Validator](https://jshint.com/), which I will go on to fix at a later date. Given such a small amount of JS was used and it passed in terms of functionality, this was not deemed a priority, within the time available.<br>
 ![JS Validator](documentation/js.jpg)
 
 ### Python

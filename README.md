@@ -138,6 +138,14 @@ Wireframes were created during planning of this project using [Balsamiq Cloud](#
 
 ![Landing page wireframe](documentation/landing_page_wireframe.jpg)
 
+* Registration Page
+
+![Sign up wireframe](documentation/signup_wireframe.jpg)
+
+* Login Page
+
+![Login wireframe](documentation/login_wireframe.jpg)
+
 * Home
 
 ![Home page wireframe](documentation/home_wireframe.jpg)
@@ -233,10 +241,6 @@ Labels were added to user stories to assist with prioritisation of tasks. The Mo
 The project was organised using a KanBan board containing columns for TO DO, IN PROGRESS, DONE and BACKLOG. The board is considered a live document, and was continuously managed between sprints to organise and prioritise workload effectively. Backlog was used to list bugs that required fixing. In future,  backlog can be used as a broad list of all items to be done, including those that are not yet scheduled for immediate action. Once ready for action, the item is pulled into TO DO, then IN PROGRESS and finally DONE when all tasks have been completed.
 
 ![KanBan Board](documentation/kanban.jpg)
-
-
----
-
 
 ---
 ## Features

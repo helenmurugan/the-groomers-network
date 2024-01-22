@@ -5,7 +5,7 @@ Deployed website: [Link to website](https://the-groomers-network-96ece9118f5d.he
 
 ![Main image](documentation/readme_landing_page.jpg)
 
-The Groomer's Network is a Django web application that allows pet grooming professionals to network. It has a registration/login system that allows users to create and manage a personalised profile. Users can post content to promote themselves, share information and network with other users through comments. They can also access information about upcoming events such as grooming workshops, seminars and competitions.
+The Groomer's Network is a Django web application that allows pet grooming professionals to network. It has a registration/login system that allows users to create and manage a personalised profile. Users can post content to promote themselves, share information and interact with other users through likes and comments. Users can also access information about upcoming events such as grooming workshops, seminars and competitions.
 
 ![GitHub Badge](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=for-the-badge)
 ![Gitpod Badge](https://img.shields.io/badge/Gitpod-FFAE33?logo=gitpod&logoColor=fff&style=for-the-badge)
@@ -107,11 +107,11 @@ Epic 5: Administration and Site Management
 - [Site Management](https://github.com/helenmurugan/the-groomers-network/issues/16) - As a Site Admin, I can use a dedicated admin panel so that I can delete any inappropriate content and manage the content of the site.
 
 ### Site Goals
-1. To provide users with a place to network with pet grooming professionals.
-2. To provide users with a place to access information about grooming events.
-3. To provide a place where users can post information such as articles, blogs or questions to fellow grooming professionals.
+1. To provide users with a place to network with other pet grooming professionals.
+3. To provide a place where users can post information such as articles, blogs or questions.
 4. To provide users with the ability to interact with content through comments and likes.
-3. To provide users with the ability to create a personalised profile to increase their visibility with the grooming community.
+2. To provide users with a place to access information about grooming events.
+3. To provide users with the ability to create a personalised profile to increase their visibility within the grooming community.
 5. To make the site accessible and responsive to all devices.
 6. To provide administrators with the ability to manage all contents of the site.
 
@@ -170,15 +170,36 @@ Lato was chosen from [Google Fonts](#https://fonts.google.com/specimen/Lato) as 
 ![lato font](documentation/lato.jpg)
 
 ### Database
+An entity-relationship diagram was created using [dbdiagram.io](https://dbdiagram.io).
 
-
+![database schema](documentation/database.jpg)
 
 ### Models
 
-Post Table
-Comments Table
-Events Table
-Profile Table
+1. User Table
+    * The User model is built into Django AllAuth and is used for user authentication. 
+    * Predefined fields for username, email and password come as standard. 
+1. Profile Table
+    * The profile model is a custom model that enables users to create a personalised profile.
+    * The profile model is related to the user model with one-to-one relationship. One User can have one profile. 
+    * Signals are used to automatically create a related profile when a new user is registered.
+    * The profile table stores additional information that a user inputs to their profile. All profile fields except username are optional because the fields need to empty when the profile is created.
+1. Post Table 
+    * The post table represents posts created by users.
+    * One user can be the author of many posts, a one-to-many relationship.
+    * The timestamp that the post was created on and the title of the post are concatenated to form a unique slug.
+    * Likes and users are related by a many-to-many relationship. A user can like many posts and a post can be liked by many users.
+    * Useful information is stored in the post table and displayed to the user such as title, tagline, author, content, image and date published. 
+1. Comments Table
+    * The comment table enables users to comment on posts.
+    * Many comments can be related to one post, a many-to-one relationship.
+    * Useful information is stored in the comment table and displayed to the user such as body, author, date published.
+1. Events Table
+    * The event table is a custom model that represents events created by users (admin-only).
+    * One user can be the author of many posts, a one-to-many relationship.
+    * Likes and users are related by a many-to-many relationship. A user can like many posts and a post can be liked by many users.
+    * Useful information is stored in the event table and displayed to the user such as title, tagline, content, image, date, time and location.
+
 
 ---
 ### Agile Methodology

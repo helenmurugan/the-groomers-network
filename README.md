@@ -262,15 +262,11 @@ The application has been thoroughly tested and code validated. All testing docum
 
 ## Bugs
 ### Fixed Bugs
-- During Development the following bugs were fixed:
-
-- During Deployment the following bugs were fixed:
-    - Initially CSS was not loading on the delpoyed project. To fix this I removed the DISABLE_COLLECTSTATIC Config Var and set DEBUG=False.
-    - Initially the Images were not loading on the deployed project. To fix this I added {% load static %} tags to the top of each html template that requires an image to be loaded and corrected the image source Django syntax as follows src="{% static 'images/labrador.png' %}".
+- search field
+- slug thing
 
 ### Unfixed Bugs
-- Bio in Profile. Attempted to add Summernote Editor in order to fix this but it was not responsive and therefore removed it.
-- Not a bug exactly, but the photo quality is drammatically reduced when posting to the site. This would need to be improved for production.
+
 ---
 ## Technologies Used
 ### Languages

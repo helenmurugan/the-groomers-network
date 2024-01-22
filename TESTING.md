@@ -305,9 +305,4 @@ Care was taken to ensure user's cannot access restricted functions, for example,
 | | Site admin can filter posts and comments by created on date | PASS |
 | | Site admin can use search function to locate a specific post, comment or profile | PASS |
 
-
 ---
-
-
-
-

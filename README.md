@@ -80,12 +80,12 @@ The Groomer's Network is a Django web application that allows pet grooming profe
 
 ### User Stories 
 
-Epic 1: New User Experience
+EPIC 1: New User Experience
 - [Visually Appealing Landing Page](https://github.com/helenmurugan/the-groomers-network/issues/27) - As a Site User, I am welcomed by a visually appealing landing page with intuitive navigation so that I can select to register or sign in to the site.
 - [Account Registration](https://github.com/helenmurugan/the-groomers-network/issues/5) - As a Site User, I can register for an account so that I can sign in and have access to the complete functionality of the site.
 - [Immediate feedback through messages](https://github.com/helenmurugan/the-groomers-network/issues/39) - As a Site User, I can immediately receive feedback when I make changes to data so that I understand what action I have just performed.
 
-Epic 2: User Interaction With Posts and Comments
+EPIC 2: User Interaction With Posts and Comments
 - [Create and Manage Posts](https://github.com/helenmurugan/the-groomers-network/issues/8) - As a Site User, I can create and manage my own posts so that I can network with other users.
 - [Images](https://github.com/helenmurugan/the-groomers-network/issues/30) - As a Site User, I can upload and view images so that posts are meaningful and engaging.
 - [View Posts](https://github.com/helenmurugan/the-groomers-network/issues/1) - As a Site User, I can view a list of posts so that I can click on a post to view the full content
@@ -93,17 +93,17 @@ Epic 2: User Interaction With Posts and Comments
 - [Interact Using Comments](https://github.com/helenmurugan/the-groomers-network/issues/20) - As a Site User, I can manage my comments on posts so that I can be a part of the conversation.
 - [Like/Unlike Posts](https://github.com/helenmurugan/the-groomers-network/issues/7) - As a Site User, I can like or unlike a post so that I can interact with the content.
 
-Epic 3: Events
+EPIC 3: Events
 - [View Events](https://github.com/helenmurugan/the-groomers-network/issues/19) - As a Site User, I can view a list of events and click on an event so that I can read the full content.
 - [Site Pagination for Events](https://github.com/helenmurugan/the-groomers-network/issues/37) - As a Site User, I can view several events on each page so that I can easily navigate between pages.
 - [Like/Unlike Comments](https://github.com/helenmurugan/the-groomers-network/issues/3) - As a Site User, I can like or unlike an event so that I can interact with the content.
 - [Create and Manage Events](https://github.com/helenmurugan/the-groomers-network/issues/35) - As a Site Admin, I can create and manage events so that they can be shared with the user.
 
-Epic 4: User Profiles
+EPIC 4: User Profiles
 - [User Profile](https://github.com/helenmurugan/the-groomers-network/issues/25) - As a Site User, I can manage my profile so that I can display and update my details as necessary.
 - [View Other User's Profiles](https://github.com/helenmurugan/the-groomers-network/issues/36) - As a Site User, I can click on the username of another user so that I can view their profile.
 
-Epic 5: Administration and Site Management
+EPIC 5: Administration and Site Management
 - [Site Management](https://github.com/helenmurugan/the-groomers-network/issues/16) - As a Site Admin, I can use a dedicated admin panel so that I can delete any inappropriate content and manage the content of the site.
 
 ### Site Goals
@@ -204,12 +204,35 @@ An entity-relationship diagram was created using [dbdiagram.io](https://dbdiagra
 ---
 ### Agile Methodology
 ## Overview
-Agile methodologies and principles were used when planning and creating The Groomer's Network.
+Agile methodologies and principles were used when planning and creating The Groomer's Network. Development was organised by working in sprints, focussed on a specific user story or stories, which could then be marked as complete. The user stories are arranged on a KanBan board, which was continuously managed throughout development to enable prioritisation of the workload.
+
 ## EPICS
+Epics were used to plan the high-level bodies of work that needed to be accomplished. Customised colour-coded labels were added to user stories to show which EPICS they belong to.
+
+EPIC 1: New User Experience
+
+EPIC 2: User Interaction With Posts and Comments
+
+EPIC 3: Events
+
+EPIC 4: User Profile
+
+EPIC 5: Administration and Site Management
+
 ## User Stories as Issues
-## MosSCoW Prioritisation
+The EPICS are broken down into user stories which are further broken down into acceptance criteria and tasks. The full list of user stories can be found in the [User Experience](#user-experience) section.
+
+![User story](documentation/user_story.jpg)
+
+## MoSCoW Prioritisation
+Labels were added to user stories to assist with prioritisation of tasks. The MoSCoW system involves adding labels for MUST HAVE, SHOULD HAVE, COULD HAVE and WON'T HAVE. By labelling issues in such a way, the developer can focus on completing all the MUST HAVE tasks before moving onto tasks of lower priority, this is critical when working to a tight deadline to ensure a minimum viable product is completed in time.
+
+![issues list](documentation/issues_list.jpg)
+
 ## GitHub Projects
-##
+The project was organised using a KanBan board containing columns for TO DO, IN PROGRESS, DONE and BACKLOG. The board is considered a live document, and was continuously managed between sprints to organise and prioritise workload effectively. Backlog was used to list bugs that required fixing. In future,  backlog can be used as a broad list of all items to be done, including those that are not yet scheduled for immediate action. Once ready for action, the item is pulled into TO DO, then IN PROGRESS and finally DONE when all tasks have been completed.
+
+![KanBan Board](documentation/kanban.jpg)
 
 
 ---

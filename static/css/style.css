@@ -76,6 +76,7 @@
     color: #445261;
     margin-left: 4px;
     font-size: 1.25rem;
+    font-weight: bolder
 }
 
 .post-link:hover,
@@ -111,7 +112,7 @@
 }
 
 .cancel-link {
-    font-size: 1 rem;
+    font-size: 1rem;
     text-decoration: none;
     color: #445261;
     margin-left: 4px;

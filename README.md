@@ -5,7 +5,7 @@ Deployed website: [Link to website](https://the-groomers-network-96ece9118f5d.he
 
 ![Main image](documentation/readme_landing_page.jpg)
 
-The Groomer's Network is a Django web application that allows pet grooming professionals to network and access information about upcoming events. It has a registration/login system that allows users to create and manage a personalised profile. Users can post content to promote themselves, share information and network with other users. They can also access information about upcoming grooming workshops, seminars and competitions.
+The Groomer's Network is a Django web application that allows pet grooming professionals to network. It has a registration/login system that allows users to create and manage a personalised profile. Users can post content to promote themselves, share information and network with other users through comments. They can also access information about upcoming events such as grooming workshops, seminars and competitions.
 
 ![GitHub Badge](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=fff&style=for-the-badge)
 ![Gitpod Badge](https://img.shields.io/badge/Gitpod-FFAE33?logo=gitpod&logoColor=fff&style=for-the-badge)
@@ -29,9 +29,11 @@ The Groomer's Network is a Django web application that allows pet grooming profe
     + [Site Goals](#site-goals)
     + [Justification](#justification)
     + [Target Audience](#target-audience)
-    + [Scope](#scope)
-- [Database](#database)
-    + [Entity-Relationship Diagram](#entity-relationshiper-diagram)
+- [UX Design](#ux-design)
+    + [Wireframes](#wireframes)
+    + [Colour](#colour)
+    + [Fonts](#fonts)
+    + [Database](#database)
     + [Models](#models)
 - [Agile Methodology](#agile-methodology)
     + [Overview](#overview)
@@ -39,10 +41,6 @@ The Groomer's Network is a Django web application that allows pet grooming profe
     + [User Stories as Issues](#user-stories-as-issues)
     + [MoSCoW Prioritisation](#mosscow-prioritisation)
     + [GitHub Projects](#github-projects)
-- [UX Design](#ux-design)
-    + [Wireframes](#wireframes)
-    + [Colour](#colour)
-    + [Fonts](#fonts)
 - [Features](#features)
     + [Landing Page](#landing-page)
     + [Registration/Log in](#registrationlog-in)
@@ -109,39 +107,79 @@ Epic 5: Administration and Site Management
 - [Site Management](https://github.com/helenmurugan/the-groomers-network/issues/16) - As a Site Admin, I can use a dedicated admin panel so that I can delete any inappropriate content and manage the content of the site.
 
 ### Site Goals
-- Intuitive and easy navigation around the site.
-- Dedicated platform for like-minded grooming professionals.
-- Personalised profiles to enable the user to highlight their accomplishments within the grooming community.
-- Engaging posts and events that benefit the user through sharing of knowledge.
-- Sharing of knowledge, promote professional accomplishments and network through posts.
-- Interaction with content through comments and likes.
-- Responsive design. Users can expect the application to work on all their devices.
-
-- Site management through a dedicated admin panel, allowing administrators to manage user accounts, moderate content and promote grooming events.
-- A platform which fosters a sense of community and raises professional standards.
+1. To provide users with a place to network with pet grooming professionals.
+2. To provide users with a place to access information about grooming events.
+3. To provide a place where users can post information such as articles, blogs or questions to fellow grooming professionals.
+4. To provide users with the ability to interact with content through comments and likes.
+3. To provide users with the ability to create a personalised profile to increase their visibility with the grooming community.
+5. To make the site accessible and responsive to all devices.
+6. To provide administrators with the ability to manage all contents of the site.
 
 ### Justification
 - Currently, professional pet groomers use private Facebook pages as a platform to ask questions to other groomers and promote events. The pages are very active and can be difficult to manage.
 - The Groomer's Network provides a dedicated setting that encourages a more professional approach to networking. The majority of pet grooming professionals work alone, as small business owners, and therefore the need for this type of platform is real, to enhance professional standards through sharing of information.
-- Often grooming events such as seminars, workshops, training and competitions are promoted solely on private Facebook pages which can be restrictive. The Groomer's Network provides an alternative site where events can be listed in one place.
+- Often grooming events such as seminars, workshops, training and competitions are promoted solely on private Facebook pages which can be restrictive. The Groomer's Network provides an alternative site where all events can be listed in one place.
 
 ### Target Audience
-The Groomer's Network is designed for UK pet grooming professionals who:
+The Groomer's Network is designed for pet grooming professionals who:
 - Are committed to improving professional standards through sharing information.
 - Seek to improve their knowledge and skills by attending professional events.
 - Seek to network with others and raise their profile within the grooming community.
 - Wish to stay updated with the latest trends, technologies and standards in their profession.
 
-### Scope
+---
+## UX Design
+The principles of good UX design were followed when designing and creating The Groomer's Network, as detailed in this section.
+
+### Wireframes
+Wireframes were created during planning of this project using [Balsamiq Cloud](#https://balsamiq.cloud/).
+
+* Landing Page
+
+![Landing page wireframe](documentation/landing_page_wireframe.jpg)
+
+* Home
+
+![Home page wireframe](documentation/home_wireframe.jpg)
+
+* Post Detail Page
+
+![Post detail page wireframe](documentation/post_detail_wireframe.jpg)
+
+* Events Page
+
+![Event page wireframe](documentation/events_wireframe.jpg)
+
+* Event Detail Page
+
+![Event detail page wireframe](documentation/event_detail_wireframe.jpg)
 
 
-## Database
-### Entity-Relationship(ER) Diagram
+* Profile Page
+
+![Profile page wireframe](documentation/profile_wireframe.jpg)
+
+### Colour
+The following colours were selected for this project, with the intention of creating an environment that is calm, professional and visually appealing. The colour palette tool used during the design process was [Coolors](#https://coolors.co/).
+
+![Colour palette](documentation/colours.jpg)
+
+### Fonts
+Lato was chosen from [Google Fonts](#https://fonts.google.com/specimen/Lato) as the font for this website. It is simple, easy to read and appropriate for a professional site.
+
+![lato font](documentation/lato.jpg)
+
+### Database
+
+
+
 ### Models
-Profile Table
+
 Post Table
-Events Table
 Comments Table
+Events Table
+Profile Table
+
 ---
 ### Agile Methodology
 ## Overview
@@ -154,12 +192,6 @@ Agile methodologies and principles were used when planning and creating The Groo
 
 
 ---
-## UX Design
-The principles of good UX design were followed when designing and creating The Groomer's Network.
-### Wireframes
-### Colour
-### Fonts
-### Structure
 
 
 ---
@@ -275,6 +307,7 @@ Config Vars for production:
     - [Groomer's Choice Blog](#https://blog.groomerschoice.com/5-tips-for-new-competitive-groomers)
     - [Groomers](#https://www.groomers-online.com/blog/2022/09/what-is-competitive-dog-grooming-all-about/)
     - [Total Grooming Magazine](#https://totalgroomingmagazine.co.uk/groomers-of-the-month-emma-darlington/)
+    - [Care of Pet Professionals](#https://careofpetprofessionals.co.uk/)
 
 ### Documentation and Useful Blogs
 The following documentation, blogs, tutorials and guides were used to aid development.

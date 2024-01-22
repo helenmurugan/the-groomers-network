@@ -34,8 +34,8 @@
                                     <br>
                                 {% endif %}
                             <h5 class="mb-2 teal-text">Bio</h5>
-                                {% if user.bio %}
-                                    <p>{{ user.bio | safe }}</p>
+                                {% if user_profile.bio %}
+                                    <p>{{ user_profile.bio | linebreaks | safe }}</p>
                                 {% else %}
                                     <br>
                                 {% endif %}

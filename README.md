@@ -48,7 +48,9 @@ The Groomer's Network is a Django web application that allows pet grooming profe
     + [Login](#login)
     + [User Profile](#user-profile)
     + [Posts/Home Page](#postshome-page)
+    + [Post Detail Page](#post-detail-page)
     + [Events Page](#events)
+    + [Event Detail Page](#event-detail-page)
     + [Log out](#log-out)
     + [Admin Panel](#admin-panel)
     + [Future Development](#future-development)
@@ -248,14 +250,107 @@ A link to the GitHub project board can be found [here](https://github.com/users/
 ---
 ## Features
 ### Navigation
+* The navbar features on all pages. It is fully responsive and was built using Bootstrap.
+* For unauthorised users, the navbar features links to Register and Login.
+* For authorised users, the navbar provides links to Home, Events, My Profile and Logout. In addition, the logo acts as a link back to the landing page.
+* The active nav link appears black (as opposed to grey) to show the user which page they are currently on.
+* At screen sizes of 991px and below, a collapsible nav icon is used.
+
+<details><summary>Navbar Images</summary>
+<img src="documentation/navbar-logged-out.jpg">
+<br>
+<img src="documentation/navbar-logged-in.jpg">
+<br>
+<img src="documentation/navbar-collapsible.jpg">
+</details>
 
 ### Landing Page
+The landing page provides:
+* a welcome message
+* A heading 'Professional Networking for Pet Groomers'
+* A link with a call to action. For unauthorised users the link shows 'Join for free!'. For authorised users the link shows 'Start Networking'.
+* An AI generated image of a labrador.
+
+These features make the site purpose immediately evident to the user.
+
+<details><summary>Landing Page Images</summary>
+<img src="documentation/landing-page.png">
+</details>
+
 ### Registration
+
+<details><summary>Registration Images</summary>
+<img src="documentation/sign-up.png">
+</details>
+
 ### Login
+
+<details><summary>Login Images</summary>
+<img src="documentation/login.png">
+</details>
+
 ### User Profile
+
+<details><summary>My Profile Images</summary>
+<img src="documentation/profile.png">
+</details>
+
+<details><summary>Update My Profile Form</summary>
+<img src="documentation/update-profile.png">
+</details>
+
 ### Posts/Home Page
+
+<details><summary>Home Images</summary>
+<img src="documentation/home.png">
+</details>
+
+<details><summary>Create a Post Form</summary>
+<img src="documentation/create-post.png">
+</details>
+
+
+### Post Detail Page
+
+<details><summary>Post Detail Images</summary>
+<img src="documentation/post-detail.png">
+</details>
+
+<details><summary>Comment Form</summary>
+<img src="documentation/post-detail-2.png">
+</details>
+
+<details><summary>Update a Post Form</summary>
+<img src="documentation/update-post.png">
+</details>
+
+<details><summary>Delete a Post</summary>
+<img src="documentation/delete-post.jpg">
+</details>
+
+<details><summary>Delete a Comment</summary>
+<img src="documentation/delete-comment.jpg">
+</details>
+
+
 ### Events Page
+
+<details><summary>Events Images</summary>
+<img src="documentation/events.png">
+</details>
+
+### Events Detail Page
+
+<details><summary>Event Detail Images</summary>
+<img src="documentation/event-detail.png">
+</details>
+
 ### Log out
+
+<details><summary>Logout Images</summary>
+<img src="documentation/logout.png">
+</details>
+
 ### Admin Panel
 ### Future Development
 ---

@@ -213,11 +213,11 @@ An entity-relationship diagram was created using [dbdiagram.io](https://dbdiagra
 
 
 ---
-### Agile Methodology
-## Overview
+## Agile Methodology
+### Overview
 Agile methodologies and principles were used when planning and creating The Groomer's Network. Development was organised by working in sprints, focussed on a specific user story or stories, which could then be marked as complete. The user stories are arranged on a KanBan board, which was continuously managed throughout development to enable prioritisation of the workload.
 
-## EPICS
+### EPICS
 Epics were used to plan the high-level bodies of work that needed to be accomplished. Customised colour-coded labels were added to user stories to show which EPICS they belong to.
 
 EPIC 1: New User Experience
@@ -230,17 +230,17 @@ EPIC 4: User Profile
 
 EPIC 5: Administration and Site Management
 
-## User Stories as Issues
+### User Stories as Issues
 The EPICS are broken down into user stories which are further broken down into acceptance criteria and tasks. The full list of user stories can be found in the [User Experience](#user-experience) section.
 
 ![User story](documentation/user_story.jpg)
 
-## MoSCoW Prioritisation
+### MoSCoW Prioritisation
 Labels were added to user stories to assist with prioritisation of tasks. The MoSCoW system involves adding labels for MUST HAVE, SHOULD HAVE, COULD HAVE and WON'T HAVE. By labelling issues in such a way, the developer can focus on completing all the MUST HAVE tasks before moving onto tasks of lower priority, this is critical when working to a tight deadline to ensure a minimum viable product is completed in time.
 
 ![issues list](documentation/issues_list.jpg)
 
-## GitHub Projects
+### GitHub Projects
 The project was organised using a KanBan board containing columns for TO DO, IN PROGRESS, DONE and BACKLOG. The board is considered a live document, and was continuously managed between sprints to organise and prioritise workload effectively. Backlog was used to list bugs that required fixing. In future,  backlog can be used as a broad list of items to be done, including those that are not yet scheduled for immediate action. Once ready for action, the item is pulled into TO DO, then IN PROGRESS and finally DONE when said item is completed.
 
 A link to the GitHub project board can be found [here](https://github.com/users/helenmurugan/projects/8)
@@ -280,7 +280,7 @@ These features make the site purpose immediately evident to the user.
 </details>
 
 ### Registration
-* The registration page has input fields for username, optional email address, and password.
+* The registration page has input fields for username, optional email address, password and password (again).
 * There is also a link to sign in, if the user already has an account.
 * When signed in, a popup message will inform the user 'Successfully signed in as {username}'.
 
@@ -315,7 +315,7 @@ These features make the site purpose immediately evident to the user.
 ### Posts/Home Page
 * The Home page displays posts that have been created by users and/or admin.
 * On the Home page, each post features the following information:
-    * Featured image or placeholder if no image has been uploaded. The placeholder used is the AI labrador to be consistent with the image on the landing page.
+    * Featured image or placeholder (if no image has been uploaded). The placeholder used is an image of the AI-generated labrador to be consistent with the image on the landing page.
     * Author
     * Title
     * Tagline (optional)
@@ -326,15 +326,15 @@ These features make the site purpose immediately evident to the user.
 * For medium and large screens, the posts are displayed in rows of three, with images appearing as equally-sized squares. 
 * For small screens, posts appear in a single column and span the width of the screen.
 * Users can click on the image or title to view a post.
-* Users can click on the author to view another users profile.
+* Users can click on the author to view another user's profile.
 
-<details><summary>Home Images</summary>
+<details><summary>Home Page Images</summary>
 <img src="documentation/home.png">
 </details>
 
 
 * From the Home page users can select the Create a Post button, which is located at the top of the page for ease of use.
-* This will open a Create a Post Form where users can create a post by inputting the following information.
+* This will open a Create a Post Form where users can input the following information.
     * Title
     * Tagline (optional)
     * Content
@@ -342,7 +342,7 @@ These features make the site purpose immediately evident to the user.
 * For good UX, the mandatory fields are marked with an asterisk.
 * The form fields are validated with maximum character length (detailed in the Manual Testing section of [TESTING.md](/TESTING.md)) to prevent users entering excessively long data.
 * Validation errors will appear if a user tries to submit a form with mandatory fields empty (detailed in the Manual Testing section of [TESTING.md](/TESTING.md)).
-* Users can select to Submit the form or to Cancel, in either case the user is redirect to the Home page.
+* Users can select to Submit the form or to Cancel, in either case the user is redirected to the Home page.
 * If a post has been created, a popup message will inform the user 'Your post has been published!', and the new post will appear at the top of the home page.
 
 <details><summary>Create a Post Form</summary>
@@ -355,7 +355,7 @@ These features make the site purpose immediately evident to the user.
 * The page displays the following information:
     * A masthead which contains the title, author and date published.
     * The content of the post.
-    * A heart icon that will be solid or outline for liked/unliked, and the number of likes. This way the user can immediately see whether they have liked a post.
+    * A heart icon that will be solid or an outline for liked/unliked, and the number of likes. This way the user can immediately see whether they have liked a post.
     * A speech bubble icon with the number of comments.
     * A list of comments, which includes:
         * Comment author
@@ -384,9 +384,9 @@ These features make the site purpose immediately evident to the user.
 <br>
 
 * If a user chooses to delete their own post, they are directed to a page which asks if they would like to confirm deletion of the post or cancel. This is important for good UX,to ensure users cannot accidently delete a post.
-* Deleting a post will allow delete all associated comments.
+* Deleting a post will also delete all associated comments.
 * On deletion of a post, the user will be redirected to the home page and a popup message will inform the user 'Your post has been deleted!'
-* On cancelling post deletion, the user will be redirecetd to the post.
+
 <details><summary>Delete a Post</summary>
 <img src="documentation/delete-post.jpg">
 </details>
@@ -405,10 +405,10 @@ The comment form has the following features:
 
 
 ### Events Page
-* The Events page displays a list of events that have been created admin from the admin panel. Only admin can create events, this is to ensure the listings are relevant and meet required standards.
+* The Events page displays a list of events that have been created by admin from the admin panel. Only admin can create events, this is to ensure the listings are relevant and meet required standards.
 
-* On the Home page, each event features the following information:
-    * Featured image or placeholder if no image has been uploaded. The placeholder used is the AI labrador to be consistent with the image on the landing page.
+* On the Events page, each event features the following information:
+    * Featured image or placeholder (if no image has been uploaded). The placeholder used is the AI-generated labrador to be consistent with the image on the landing page.
     * Title
     * Tagline (optional)
     * Date and time of event
@@ -428,7 +428,7 @@ The comment form has the following features:
 * The page displays the following information:
     * A masthead which contains the title, location and date of the event.
     * The content of the event.
-    * A heart icon that will be solid or outline for liked/unliked, and the number of likes. This way the user can immediately see whether they have liked an event.
+    * A heart icon that will be solid or an outline for liked/unliked, and the number of likes. This way the user can immediately see whether they have liked an event.
 
 <details><summary>Event Detail Images</summary>
 <img src="documentation/event-detail.png">
@@ -443,7 +443,8 @@ The comment form has the following features:
 
 ### Admin Panel
 * Django's dedicated admin panel allows administrators to log in and manage the full contents of the site. Admins have access to all users, profiles, posts, comments and events. All of which can be deleted as required.
-* The admin panel is fully customised to list useful identifying features in the list display, search in, and filter by specified fields. Care and planning went into this customisation to ensure good UX for administrators.
+* The admin panel is fully customised to list useful identifying features in the list display, search in specified fields, and filter by specified fields. Care and planning went into this customisation to ensure good UX for administrators.
+* The events section on the admin panel contains a Summernote What You See Is What You Get (WYSIWYG) editor. This enables admin to easily add more detail, style, images and web links to the events listings in order to make them more appealing.
 
 ### Error Pages
 * Custom error pages handle any errors that the user encounters. 
@@ -464,10 +465,11 @@ The comment form has the following features:
 ### Future Development
 Future development of this project will include:
 * Addition of extra features to the Profile model. This could include a profile image and qualifications field.
-* Update functionality on comments.
+* Functionality to update comments.
 * Additional features to the Events model, such as website field, address field, price field etc.
 * Functionality to comment on events.
-* Multiple posts pages could be added for different themes, for example home grooming, mobile grooming, salon grooming, breed-specific grooming. The list of possible themes is endless but this would allow posts to be grouped for better user experience.
+* Functionality to comment on comments.
+* Multiple post pages could be added for different themes, for example mobile grooming, salon grooming, breed-specific grooming. The list of possible themes is endless but this would allow posts to be grouped for a better user experience.
 
 ---
 ## Testing
@@ -478,16 +480,17 @@ The application has been thoroughly tested and code validated. All testing docum
 
 ## Bugs
 ### Fixed Bugs
-- During customisation of the admin panel, I wanted the administrators to be able to search in the author field for a particular post or event. When I included 'author' in the search_fields list, it raised an error in the admin panel when attempting to search. Through my research, I discovered the reason for this is that you cannot search a ForeignKey. The solution was to use 'author__username' in the lsit, which was found by asking ChatGPT.
+I encountered many challenges during development and embraced a very steep learning curve! Several bugs are detailed on my [GitHub project board](https://github.com/users/helenmurugan/projects/8), however, a detailed description of the most interesting bugs, and how I fixed them, is listed below.
+- During customisation of the admin panel, I wanted the administrators to be able to search in the author field for a particular post or event. When I included 'author' in the search_fields list, it raised an error in the admin panel when attempting to search. Through my research, I discovered the reason for this is that you cannot search a ForeignKey. The solution was to use 'author__username' in the list, which was found by asking ChatGPT.
 
-- When testing the ability to create a post, I could successfully create a post when I input a short title eg. test. However, if I input a longer title which was still under the maximum character length, I would receive an error stating that the maximum character length had been exceeded. Therefore, the post could not be published. This took a while to fix because I was stuck on the assumption that the maximum length being exceeded was the title field. In fact, it was the slug field that was exceeding the maximum length because the slug is created by adding the title(plus hyphens) to the timestamp. Eventually, I realised the problem and was able to fix it by increasing the max_length attribute on the slug field in the post model. 
+- When testing the create a post function, I could successfully create a post when I input a short title eg. 'test'. However, if I input a longer title which was still under the maximum character length, I would receive an error stating that the maximum character length had been exceeded. Therefore, the post could not be published. This took a while to fix because I was stuck on the assumption that the maximum length being exceeded was the title field. In fact, it was the slug field that had exceeded the maximum length because the slug is created by adding the title(plus hyphens) to the timestamp. Eventually, I realised the problem whilst talking it through, and was able to fix it by increasing the maximum length attribute on the slug field in the post model. 
 
 ### Known Issues
 * There are a few issues on the Registration page.
     * For small devices, the form is presented to the left of the screen rather than central. This is acceptable but not ideal.
-    * The AllAuth signup form has validation messages that appear if a user input is not valid eg. password does not conatin enough characters. There is no style on these errors and therefore they appear as bulleted black text, which does not stand out. [Built with Django Blog](https://builtwithdjango.com/blog/styling-authentication-pages) describes how to style these validation messages, but unfortunately time did not allow on this occassion. 
-    * I used the method in the [Built with Django Blog](https://builtwithdjango.com/blog/styling-authentication-pages) to style the form itself, and this has led to some code which did not pass HTML validation (detailed in the Code Validation section of [TESTING.md](/TESTING.md)). Again, when time allows I will investigate the invalid HTML code.
-* When a heart icon is toggled to like/unlike a post or event, the page refreshes and returns to the top of the page. This is not considered good UX, a better approach would be to use JavaScript to toggle the likes, this is something I can return to when I have time.
+    * The AllAuth signup form has validation messages that appear if a user input is not valid eg. password does not contain enough characters. There is no style on these errors and therefore they appear as bulleted black text, which does not stand out, and is easy to miss. [Built with Django Blog](https://builtwithdjango.com/blog/styling-authentication-pages) describes how to style these validation messages, but unfortunately time did not allow this to be addressed before the project deadline.
+    * I used the method in the [Built with Django Blog](https://builtwithdjango.com/blog/styling-authentication-pages) to style the form itself, and this has led to some code which did not pass HTML validation (detailed in the Code Validation section of [TESTING.md](/TESTING.md)). When time allows I will investigate and correct the invalid HTML code.
+* When a heart icon is toggled to like/unlike a post or event, the page refreshes and returns to the top of the page. This is not considered good UX, a better approach would be to use JavaScript to toggle the likes, this would give a much smoother experience, and is something I can return to when I have time.
 
 ---
 ## Technologies Used
@@ -498,46 +501,50 @@ The application has been thoroughly tested and code validated. All testing docum
 * Python
 
 ### Frameworks
-* Django
-* Crispy Forms
-* Bootstrap4
-* Cloudinary
+* Django - a Python framework used to build The Groomer's Network
+* Crispy Forms - Django package used for rendering forms
+* Bootstrap4 - a CSS framework used for styling the project.
+* Cloudinary - a cloud-based platform for storing and serving images
 
 ### Database
-* ElephantSQL
-* SQLite was used in development
+* ElephantSQL - a cloud-based database used for this project
+* SQLite - a local database used in development
 
 ### Tools
-* Git
-* GitHub
-* Gitpod
-* Heroku
-* Balsamiq Cloud
-* DB diagram
-* Google Fonts
-* Font Awesome
-* Coolors
-* Favicon.io
+* Git - version control software used to commit code and push to GitHub
+* GitHub - a web-based hosting service used for storing and managing the repository and project board.
+* Gitpod - the IDE used for development
+* Heroku - a cloud platform used for deployment and hosting
+* Balsamiq Cloud - used for drawing wireframes
+* DB diagram - used for building an ER diagram.
+* Google Fonts - a catalog of free, open-source fonts. Used for typography.
+* Font Awesome - a catalog of free, open-source icons. Used for profile, heart and speech bubble icons.
+* Coolors - used for generating the colour palette.
+* Favicon Generator - used for generating a favicon.
+* Code Institute Python Linter - code validation tool used for Python.
+* JSHint - code validation tool used for JavaScript.
+* W3C Validator - code validation tool used for HTML and CSS.
+* Google Developer Tools - used during testing, debugging and styling.
 
 ### Supporting Libraries and Packages
-asgiref==3.7.2
-cloudinary==1.36.0
-dj-database-url==0.5.0
-dj3-cloudinary-storage==0.0.6
-Django==3.2.3
-django-allauth==0.58.2
-django-crispy-forms==1.8.1
-django-summernote==0.8.20.0
-django-widget-tweaks==1.5.0
-gunicorn==21.2.0
-oauthlib==3.2.2
-psycopg2==2.9.9
-PyJWT==2.8.0
-python3-openid==3.2.0
-pytz==2023.3.post1
-requests-oauthlib==1.3.1
-sqlparse==0.4.4
-urllib3==1.26.15
+asgiref==3.7.2 <br>
+cloudinary==1.36.0<br>
+dj-database-url==0.5.0<br>
+dj3-cloudinary-storage==0.0.6<br>
+Django==3.2.3<br>
+django-allauth==0.58.2<br>
+django-crispy-forms==1.8.1<br>
+django-summernote==0.8.20.0<br>
+django-widget-tweaks==1.5.0<br>
+gunicorn==21.2.0<br>
+oauthlib==3.2.2<br>
+psycopg2==2.9.9<br>
+PyJWT==2.8.0<br>
+python3-openid==3.2.0<br>
+pytz==2023.3.post1<br>
+requests-oauthlib==1.3.1<br>
+sqlparse==0.4.4<br>
+urllib3==1.26.15<br>
 
 ---
 ## Deployment
@@ -555,7 +562,8 @@ Cloudinary was used to store static and media files.
 ### Before Deployment
 Important points for before deployment
 1. The requirements for the project were added to a requirements.txt file using the command 'pip3 freeze > requirements.txt' in the terminal.
-2. In .gitignore, include env.py to ensure sensitive information is not pushed to GitHub. In settings.py, link SECRET_KEY to the env.py file where the secreat key variable is defined.
+2. In .gitignore, include env.py to ensure sensitive information is not pushed to GitHub. 
+3. In settings.py, link SECRET_KEY to the env.py file where the secret key variable is defined.
 3. In settings.py, set 'DEBUG = False' to prevent verbose error pages and to prevent Django serving static files itself instead of relying on Cloudinary.
 4. It is necessary to make migrations and migrate the models to the database before deployment.
 
@@ -599,11 +607,11 @@ Config Vars for production:
 - Boilerplate code, navbar and footer code modified from Code Institute's walkthrough blog project.
 - Signals code was taken and modified from Juliia Konovalova's [e-commerce project](https://github.com/IuliiaKonovalova/e-commerce).
 - The code for 'get_success_url' function was taken and modified from Kim Bergstroem's [PP4 project](https://github.com/KimBergstroem/PP4).
+- Code on url permission in views.py in the post app was taken from  DamianJacob's [MS4 project](https://github.com/Damianjacob/MS4_breadit/tree/main/breadit).
 
 
 ### Media
-- Favicon was created using [Favicon.io](https://favicon.io/favicon-generator/)
-- Dog image was taken from [rawpixel](https://www.rawpixel.com/) (id-12054680)
+- AI-generated dog image was taken from [rawpixel](https://www.rawpixel.com/) (id-12054680)
 
 ### Content
 - Event and Post details taken from:
@@ -628,10 +636,9 @@ The following documentation, blogs, tutorials and guides were used to aid develo
 - [Widget Tweaks Documentation](https://pypi.org/project/django-widget-tweaks/)
 
 ### Acknowledgments
-- Juliia Konovalova for support during the early stages of the project.
-- Spencer Barriball for 
-- Code Institute's tutoring service
-- Inspiration on structure and design of templates taken from Kim Bergstroem's PP4 Gamer's Insight blog project.
+- A huge thank you to Juliia Konovalova for mentoring support during the early stages of the project.
+- Another huge thank you to Spencer Barriball for excellent advice and mentoring during the latter stages of the project.
+- I am grateful to the Code Institute London community for testing my project and offering really useful advice.
 
 
 

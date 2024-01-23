@@ -1,5 +1,5 @@
 # Testing and Validation
----
+
 ## Contents
 - [Code Validation](#code-validation)
     + [HTML](#html)
@@ -23,9 +23,12 @@
 ---
 ## Code Validation
 ### HTML
-All deployed templates were tested with the [W3C HTML Validator](https://validator.w3.org/nu/#textarea) and passed in all cases with no errors or warnings. To access code that is free of Jinja I used Google DevTools and copied the code from the correct file under the Sources tab. Note that user input data was not included in the validation eg. user bio, posts and comments. An example of an error-free check is shown below.<br>
+All deployed templates were tested with the [W3C HTML Validator](https://validator.w3.org/nu/#textarea). To access code that is free of Jinja syntax I used Google DevTools and copied the code from the relevant file under the Sources tab. Note that user input data was not included in the validation eg. user bio, posts and comments. An example of an error-free check is shown below.<br>
+
+
 ![HTML Landing Page](documentation/html_landing_page.jpg)
 
+<br>
 
 | Template | Pass/Fail | Comment |
 | --- | --- | --- |
@@ -47,14 +50,17 @@ All deployed templates were tested with the [W3C HTML Validator](https://validat
 
 ### CSS
 The CSS code was tested using [W3C CSS Validator](https://jigsaw.w3.org/css-validator/validator) and passed with no errror found.<br>
+
 ![CSS Validator](documentation/css.jpg)
 
 ### JavaScript
-A small amount of JavaScript was used for Messages in base.html. This raised two wearnings in [JSHint Validator](https://jshint.com/), which I will go on to fix at a later date. Given such a small amount of JS was used and it passed in terms of functionality, this was not deemed a priority, within the time available.<br>
+A small amount of JavaScript was used for Messages in base.html. This raised two warnings in [JSHint Validator](https://jshint.com/), which I will go on to fix at a later date. Given such a small amount of JS was used and it passed in terms of functionality, this was not deemed a priority, within the time available.<br>
+
 ![JS Validator](documentation/js.jpg)
 
 ### Python
 All Python files in each app were tested using [PEP8 CI Python Linter](https://pep8ci.herokuapp.com/). Python code passed in all cases with no errors or warnings. An example is shown below for views.py in the post app.
+
 ![Python Linter](documentation/python.jpg)
 
 
@@ -240,6 +246,7 @@ Admin can log into the administration panel to manage the content of the site. E
 Care was taken to ensure user's cannot access restricted functions, for example, by copying the URL of a page when logged in by User 1 and then accessing that same URL when logged in as User 2.
 
 | Section | Test | Expected Result | Pass/Fail |
+| --- | --- |--- |--- |
 | Update a Post | Check that a user cannot update the post of another user by copying a URL | Custom Error 404 page | PASS |
 | Delete a Post | Check that a user cannot delete the post of another user by copying a URL | Custom Error 403 page | PASS |
 | Delete a Comment | Check that a user cannot delete the post of another user by copying a URL | Custom Error 404 page | PASS |

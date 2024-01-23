@@ -42,15 +42,16 @@ The Groomer's Network is a Django web application that allows pet grooming profe
     + [MoSCoW Prioritisation](#mosscow-prioritisation)
     + [GitHub Projects](#github-projects)
 - [Features](#features)
-    + [Landing Page](#landing-page)
-    + [Registration/Log in](#registrationlog-in)
     + [Navigation](#navigation)
+    + [Landing Page](#landing-page)
+    + [Registration](#registration)
+    + [Login](#login)
     + [User Profile](#user-profile)
     + [Posts/Home Page](#postshome-page)
     + [Events Page](#events)
     + [Log out](#log-out)
-    + [Future Development](#future-development)
     + [Admin Panel](#admin-panel)
+    + [Future Development](#future-development)
 - [Testing](#testing)
 - [Bugs](#bugs)
     + [Fixed Bugs](#fixed-bugs)
@@ -238,7 +239,7 @@ Labels were added to user stories to assist with prioritisation of tasks. The Mo
 ![issues list](documentation/issues_list.jpg)
 
 ## GitHub Projects
-The project was organised using a KanBan board containing columns for TO DO, IN PROGRESS, DONE and BACKLOG. The board is considered a live document, and was continuously managed between sprints to organise and prioritise workload effectively. Backlog was used to list bugs that required fixing. In future,  backlog can be used as a broad list of all items to be done, including those that are not yet scheduled for immediate action. Once ready for action, the item is pulled into TO DO, then IN PROGRESS and finally DONE when all tasks have been completed.
+The project was organised using a KanBan board containing columns for TO DO, IN PROGRESS, DONE and BACKLOG. The board is considered a live document, and was continuously managed between sprints to organise and prioritise workload effectively. Backlog was used to list bugs that required fixing. In future,  backlog can be used as a broad list of items to be done, including those that are not yet scheduled for immediate action. Once ready for action, the item is pulled into TO DO, then IN PROGRESS and finally DONE when said item is completed.
 
 A link to the GitHub project board can be found [here](https://github.com/users/helenmurugan/projects/8)
 
@@ -246,9 +247,11 @@ A link to the GitHub project board can be found [here](https://github.com/users/
 
 ---
 ## Features
-### Landing Page
-### Registration/Log in
 ### Navigation
+
+### Landing Page
+### Registration
+### Login
 ### User Profile
 ### Posts/Home Page
 ### Events Page

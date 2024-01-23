@@ -268,7 +268,9 @@ A link to the GitHub project board can be found [here](https://github.com/users/
 The landing page provides:
 * a welcome message
 * A heading 'Professional Networking for Pet Groomers'
-* A link with a call to action. For unauthorised users the link shows 'Join for free!'. For authorised users the link shows 'Start Networking'.
+* A link with a call to action. 
+    * For unauthorised users the link shows 'Join for free!', which directs the user to the registration page. 
+    * For authorised users the link shows 'Start Networking', which directs the user to the home (posts) page.
 * An AI generated image of a labrador.
 
 These features make the site purpose immediately evident to the user.
@@ -278,32 +280,70 @@ These features make the site purpose immediately evident to the user.
 </details>
 
 ### Registration
+* The registration page has input fields for username, optional email address, and password.
+* There is also a link to sign in, if the user already has an account.
+* When signed in, a popup message will inform the user 'Successfully signed in as {username}'.
 
 <details><summary>Registration Images</summary>
 <img src="documentation/sign-up.png">
 </details>
 
 ### Login
+* Users who are already registered can sign in from the login page by inputting their username and password.
+* There is also a link to sign up, if the user does not have an account.
+* When signed in, a popup message will inform the user 'Successfully signed in as {username}'.
 
 <details><summary>Login Images</summary>
 <img src="documentation/login.png">
 </details>
 
 ### User Profile
+* A user profile is automatically created, using signals, when a user registers for an account.
+* On My Profile page the user can view their profile, initially it will be empty, other than the username that was used to sign up; the username is the only field that cannot be edited.
+* Selecting Edit Profile, will open the Edit Profile Form.
+* The user can input their details for full name, company name, location and bio. Then select to Save Changes or Cancel; in either case the user will be redirected to their profile page.
+* The form fields are validated with maximum character length (detailed in the Manual Testing section of [TESTING.md](/TESTING.md)) to prevent users entering excessively long data.
+* If changes have been saved, they will immediately appear on the Profile page and a popup message will inform the user 'Your profile has been updated!'
 
 <details><summary>My Profile Images</summary>
 <img src="documentation/profile.png">
 </details>
-
 <details><summary>Update My Profile Form</summary>
 <img src="documentation/update-profile.png">
 </details>
 
 ### Posts/Home Page
+* The Home page displays posts that have been created by users and/or admin.
+* On the Home page, each post features the following information:
+    * Featured image or placeholder if no image has been uploaded. The placeholder used is the AI labrador to be consistent with the image on the landing page.
+    * Author
+    * Title
+    * Tagline (optional)
+    * Date and time published
+    * Heart icon with number of likes
+    * Speech bubble icon with number of comments
+* Up to six posts are displayed on a page, with Next and Prev buttons to move between pages.
+* For medium and large screens, the posts are displayed in rows of three, with images appearing as equally-sized squares. 
+* For small screens, posts appear in a single column and span the width of the screen.
+* Users can click on the image or title to view a post.
+* Users can click on the author to view another users profile.
 
 <details><summary>Home Images</summary>
 <img src="documentation/home.png">
 </details>
+
+
+* From the Home page users can select the Create a Post button, which is located at the top of the page for ease of use.
+* This will open a Create a Post Form where users can create a post by inputting the following information.
+    * Title
+    * Tagline (optional)
+    * Content
+    * Image (optional)
+* For good UX, the mandatory fields are marked with an asterisk.
+* The form fields are validated with maximum character length (detailed in the Manual Testing section of [TESTING.md](/TESTING.md)) to prevent users entering excessively long data.
+* Validation errors will appear if a user tries to submit a form with mandatory fields empty (detailed in the Manual Testing section of [TESTING.md](/TESTING.md)).
+* Users can select to Submit the form or to Cancel, in either case the user is redirect to the Home page.
+* If a post has been created, a popup message will inform the user 'Your post has been published!', and the new post will appear at the top of the home page.
 
 <details><summary>Create a Post Form</summary>
 <img src="documentation/create-post.png">
@@ -311,6 +351,18 @@ These features make the site purpose immediately evident to the user.
 
 
 ### Post Detail Page
+* The post detail pages allow users to view the full contents of a post with associated comments. They can also leave new comments by submitting a comment form at the bottom of the page.
+* The page displays the following information:
+    * A masthead which contains the title, author and date published.
+    * The content of the post.
+    * A heart icon that will be solid or outline for liked/unliked, and the number of likes. This way the user can immediately see whether they have liked a post.
+    * A speech bubble icon with the number of comments.
+    * A list of comments, which includes:
+        * Comment author
+        * Date and time published
+        * Content (body) of the comment
+        * If the logged in user created the comment there will also be a link to delete the comment.
+    * A comment form where the user can submit a new comment.
 
 <details><summary>Post Detail Images</summary>
 <img src="documentation/post-detail.png">
@@ -319,14 +371,33 @@ These features make the site purpose immediately evident to the user.
 <details><summary>Comment Form</summary>
 <img src="documentation/post-detail-2.png">
 </details>
+<br>
 
-<details><summary>Update a Post Form</summary>
+* If the logged in user created the post, there will be buttons at the top of the page to Edit Post and Delete Post.
+* The Edit Post form is much the same as the Create a Post form and will be pre-filled with the relevant post, so that the user can easily make changes.
+* From the Edit Post Form the user can select to Save Changes or Cancel, in either case, will be redirected to the relevant post.
+* If changes have been saved, a popup message will inform the user 'Your post has been updated!'
+
+<details><summary>Edit Post Form</summary>
 <img src="documentation/update-post.png">
 </details>
+<br>
 
+* If a user chooses to delete their own post, they are directed to a page which asks if they would like to confirm deletion of the post or cancel. This is important for good UX,to ensure users cannot accidently delete a post.
+* Deleting a post will allow delete all associated comments.
+* On deletion of a post, the user will be redirected to the home page and a popup message will inform the user 'Your post has been deleted!'
+* On cancelling post deletion, the user will be redirecetd to the post.
 <details><summary>Delete a Post</summary>
 <img src="documentation/delete-post.jpg">
 </details>
+<br>
+
+The comment form has the following features:
+* A validation message will appear if the user tries to submit an empty comment form.
+* The comment form has a maximum number of characters to prevent users entering excessively long comments (detailed in the Manual Testing section of [TESTING.md](/TESTING.md)).
+* When a comment has been published, a popup message will appear 'Your comment has been published!'
+* If a user chooses to delete their own comment, they are directed to a page which asks if they would like to confirm deletion of the comment or cancel. This is important for good UX, to ensure users cannot accidently delete a comment.
+* On deletion of a comment, a popup message will inform the user 'Your comment has been deleted!'
 
 <details><summary>Delete a Comment</summary>
 <img src="documentation/delete-comment.jpg">
@@ -334,25 +405,70 @@ These features make the site purpose immediately evident to the user.
 
 
 ### Events Page
+* The Events page displays a list of events that have been created admin from the admin panel. Only admin can create events, this is to ensure the listings are relevant and meet required standards.
+
+* On the Home page, each event features the following information:
+    * Featured image or placeholder if no image has been uploaded. The placeholder used is the AI labrador to be consistent with the image on the landing page.
+    * Title
+    * Tagline (optional)
+    * Date and time of event
+    * Location
+    * Heart icon with number of likes
+* Up to six events are displayed on a page, with Next and Prev buttons to move between pages.
+* For medium and large screens, the events are displayed in rows of three, with images appearing as equally-sized squares. 
+* For small screens, events appear in a single column and span the width of the screen.
+* Users can click on the image or title to view an event.
 
 <details><summary>Events Images</summary>
 <img src="documentation/events.png">
 </details>
 
 ### Events Detail Page
+* The event detail pages allow users to view the full contents of an event listing.
+* The page displays the following information:
+    * A masthead which contains the title, location and date of the event.
+    * The content of the event.
+    * A heart icon that will be solid or outline for liked/unliked, and the number of likes. This way the user can immediately see whether they have liked an event.
 
 <details><summary>Event Detail Images</summary>
 <img src="documentation/event-detail.png">
 </details>
 
 ### Log out
+* To ensure users cannot accidently logout, there is a page to confirm that the user does want to log out from the site.
 
-<details><summary>Logout Images</summary>
-<img src="documentation/logout.png">
+<details><summary>Logout Image</summary>
+<img src="documentation/logout.jpg">
 </details>
 
 ### Admin Panel
+* Django's dedicated admin panel allows administrators to log in and manage the full contents of the site. Admins have access to all users, profiles, posts, comments and events. All of which can be deleted as required.
+* The admin panel is fully customised to list useful identifying features in the list display, search in, and filter by specified fields. Care and planning went into this customisation to ensure good UX for administrators.
+
+### Error Pages
+* Custom error pages handle any errors that the user encounters. 
+
+<details><summary>Error 403</summary>
+<img src="documentation/403.jpg">
+</details>
+<details><summary>Error 404</summary>
+<img src="documentation/404.jpg">
+</details>
+<details><summary>Error 405</summary>
+<img src="documentation/405.jpg">
+</details>
+<details><summary>Error 500</summary>
+<img src="documentation/500.jpg">
+</details>
+
 ### Future Development
+Future development of this project will include:
+* Addition of extra features to the Profile model. This could include a profile image and qualifications field.
+* Update functionality on comments.
+* Additional features to the Events model, such as website field, address field, price field etc.
+* Functionality to comment on events.
+* Multiple posts pages could be added for different themes, for example home grooming, mobile grooming, salon grooming, breed-specific grooming. The list of possible themes is endless but this would allow posts to be grouped for better user experience.
+
 ---
 ## Testing
 
@@ -362,19 +478,67 @@ The application has been thoroughly tested and code validated. All testing docum
 
 ## Bugs
 ### Fixed Bugs
-- search field
-- slug thing
+- During customisation of the admin panel, I wanted the administrators to be able to search in the author field for a particular post or event. When I included 'author' in the search_fields list, it raised an error in the admin panel when attempting to search. Through my research, I discovered the reason for this is that you cannot search a ForeignKey. The solution was to use 'author__username' in the lsit, which was found by asking ChatGPT.
 
-### Unfixed Bugs
+- When testing the ability to create a post, I could successfully create a post when I input a short title eg. test. However, if I input a longer title which was still under the maximum character length, I would receive an error stating that the maximum character length had been exceeded. Therefore, the post could not be published. This took a while to fix because I was stuck on the assumption that the maximum length being exceeded was the title field. In fact, it was the slug field that was exceeding the maximum length because the slug is created by adding the title(plus hyphens) to the timestamp. Eventually, I realised the problem and was able to fix it by increasing the max_length attribute on the slug field in the post model. 
+
+### Known Issues
+* There are a few issues on the Registration page.
+    * For small devices, the form is presented to the left of the screen rather than central. This is acceptable but not ideal.
+    * The AllAuth signup form has validation messages that appear if a user input is not valid eg. password does not conatin enough characters. There is no style on these errors and therefore they appear as bulleted black text, which does not stand out. [Built with Django Blog](https://builtwithdjango.com/blog/styling-authentication-pages) describes how to style these validation messages, but unfortunately time did not allow on this occassion. 
+    * I used the method in the [Built with Django Blog](https://builtwithdjango.com/blog/styling-authentication-pages) to style the form itself, and this has led to some code which did not pass HTML validation (detailed in the Code Validation section of [TESTING.md](/TESTING.md)). Again, when time allows I will investigate the invalid HTML code.
+* When a heart icon is toggled to like/unlike a post or event, the page refreshes and returns to the top of the page. This is not considered good UX, a better approach would be to use JavaScript to toggle the likes, this is something I can return to when I have time.
 
 ---
 ## Technologies Used
 ### Languages
+* HTML
+* CSS
+* JavaScript
+* Python
+
 ### Frameworks
+* Django
+* Crispy Forms
+* Bootstrap4
+* Cloudinary
+
 ### Database
-### Technologies and Programs
+* ElephantSQL
+* SQLite was used in development
+
+### Tools
+* Git
+* GitHub
+* Gitpod
+* Heroku
+* Balsamiq Cloud
+* DB diagram
+* Google Fonts
+* Font Awesome
+* Coolors
+* Favicon.io
+
 ### Supporting Libraries and Packages
-- widget_tweaks for modifying the allauth signup form - see blog link below
+asgiref==3.7.2
+cloudinary==1.36.0
+dj-database-url==0.5.0
+dj3-cloudinary-storage==0.0.6
+Django==3.2.3
+django-allauth==0.58.2
+django-crispy-forms==1.8.1
+django-summernote==0.8.20.0
+django-widget-tweaks==1.5.0
+gunicorn==21.2.0
+oauthlib==3.2.2
+psycopg2==2.9.9
+PyJWT==2.8.0
+python3-openid==3.2.0
+pytz==2023.3.post1
+requests-oauthlib==1.3.1
+sqlparse==0.4.4
+urllib3==1.26.15
+
 ---
 ## Deployment
 ### ElephantSQL
@@ -382,7 +546,6 @@ An external database was created in ElephantSQL using the following steps
 1. Log in to ElephantSQL and select 'Create New Instance'
 2. Select a plan, input your details and review.
 3. Once created, use the copy icon to copy the DATBASE_URL.
-
 
 ### Cloudinary
 Cloudinary was used to store static and media files.
@@ -465,7 +628,9 @@ The following documentation, blogs, tutorials and guides were used to aid develo
 - [Widget Tweaks Documentation](https://pypi.org/project/django-widget-tweaks/)
 
 ### Acknowledgments
-- Excellent mentoring and expert guidance from Juliia Konovalova and Spencer Barriball
+- Juliia Konovalova for support during the early stages of the project.
+- Spencer Barriball for 
+- Code Institute's tutoring service
 - Inspiration on structure and design of templates taken from Kim Bergstroem's PP4 Gamer's Insight blog project.
 
 
